@@ -359,105 +359,6 @@ Par exemple, depuis le nœud <lg> au milieu de la diapositive qui nous sert de c
 - etc.
 
 ---
-## Les axes de type .red[forward axes]
-
-axe | signification | types de noeud
-:--|:--|:--
-`child`                 | fils du nœud contexte| `element`, `text`, `comment`, `processing instruction`
-`descendant`            | fils, petits-fils et tous les descendants du nœud contexte| `element`, `text`, `comment`, `processing instruction`
-`descendant-or-self`    | qui descendent du nœud contexte ainsi que le nœud contexte lui-même| `element`, `text`, `comment`, `processing-instruction`
-`following-sibling`     | frères droits du nœud contexte.| `element`, `text`, `comment`, `processing instruction`
-`following`             | situés après le nœud contexte (à l’exception des descendants)| `element`, `texte`, `comment`, `processing instruction`
-`attribute`             | attribut du nœud contexte|
-`namespace`             | espace de nom du noeud contexte|
-`processing instruction`| qui descendent du nœud contexte|
-
-
-???
-XPath distingue ainsi plusieurs catégories d’axes de déplacement dans l’abre XML.
-## Les axes de type .red[forward axes]
-
-- `child` : sélectionne tous les enfants du nœud contexte, dans l’ordre du document.
-L’axe child ne sélectionne rien pour tous les nœuds qui ne sont ni un nœud document ni un nœud élément.
-Rappel : les enfants d’un nœud élément n’incluent pas ses attributs ou espaces de noms, seulement le nœuds textuels, les nœuds de type élément, instruction de traitement et commentaire.
-
-- `descendant` : sélectionne tous les enfants du nœuds contexte et leurs enfants, et ainsi de suite récursivement dans l’ordre du document.
-Si le nœud contexte est un élément, l’axe descendant contient tous les nœuds texte, élément, commentaire, et instruction de traitement qui apparaissent dans le document source à l’intérieur des balises de cet élément.
-
-- `descendant-of-self` : idem, à la différence que le premier nœud sélectionné est le nœud contexte.
-
-- following` : sélectionne tous les nœuds qui apparaissent après le nœud contexte dans l’ordre du document, en excluant les descendants du nœuds contexte.
-Si le nœud d’origine est un nœud element, l’axe comporte tous les nœuds texte, élément, commentaire, et instruction de traitement du document qui débute après la balise fermente du nœud contexte.
-L’axe following ne contiendra jamais de nœuds attributs ou d’espace de noms.
-
-- `following-sibling` : Sélectionne tous les nœuds qui suivent le nœud contexte dans l’ordre du document et qui sont les enfants du même nœud parent.
-Si le nœud contexte est un nœud racine, un nœud attribut, ou espace de noms, alors l’axe following-sibling sera toujours vide.
-
-- `attribute` : si le nœud contexte est un élément, cet axe sélectionne tous ses nœuds attributs, dans un ordre arbitraire.
-Sinon, il ne sélectionne rien.
-
-- `namespace` : si le nœud d’origine est un élément, cet axe sélectionne tous les nœuds d’espace de nom qui sont dans la portée de cet élément dans un ordre arbitraire.
-
----
-## Les axes de type .red[reverse axes]
-
-axe | signification | types de noeud
-:--|:--|:--
-`parent`            | père du nœud contexte | `element`, `document`
-`ancestor`          | ancêtres du nœud contexte (parent du nœud contexte, ou parent du partent, etc.) | `element`, `document`
-`ancestor-or-self`  | ancêtres du nœud contexte ainsi que le nœud contexte lui-même | `element`, `document`
-`preceding`         | situés avant le nœud contexte (à l’exclusion des nœuds ancêtres) |  `element`, `text`, `comment`, `processing instruction`
-`preceding-sibling` | frères gauches du nœud contexte |  `element`, `text`, `comment`, `processing instruction`
-
-XPath fournit enfin un axe particulier nommé `self` qui permet de sélectionner le nœud servant de contexte lui-même.
-
-
-???
-## Les axes de type .red[forward axes]
-XPath distingue également une catégorie d’axe .red[reverse axes]
-dont la particularité est de ne pouvoir supporter un déplacement que depuis le nœud qui sert de contexte, ou des nœuds situés avant ce nœud dans l’ordre du document :
-- `parent` : cet axe sélectionne un seul nœud parent du õud contexte. Si le nœud contexte est un nœud document, l’axe parent est vide.
-- `ancestor` : sélectionne tous les nœuds qui sont les ancêtres du nœud contexte, dans l’ordre inverse du document, jusqu’au nœud document.
-
-- `ancestor-or-self` : sélectionne les mêmes nœuds que l’axe ancestor mais en débutant par le nœud contexte plutôt que par son parent.
-
-- `preceding` : sélectionne tous les nœuds qui apparaissent avant le nœud contexte en excluant ses ancêtres, dans l’ordre inverse du document.
-Si le nœud contexte est un élément, l’axe contient tous les nœuds texte, élément, commentaires et instruction de traitement qui se terminent avant la balise ouvrante de l’élement contexte dans le document.
-L’axe ne contiendra jamais d’attribut ou de nœud espace de nom.
-
-- `preceding-sibling` : tous les nœuds qui précèdent le nœud origine et qui sont les enfants du même parent dans l’ordre inverse du document.
-Toujours vide depuis un nœud attribut ou espace de nom.
-
-XPath fournit enfin un axe particulier nommé `self`
-- `self` : sélectionne un nœud unique, le nœud contexte lui-même. Cet axe n’est jamais vide.
-
-## Nota : un attribut n’est pas le fils d’un élément ! même si dans XPath on peut atteindre l’élément depuis l’attribut en suivant l’axe parent, etc.
-
----
-
-## Axes child, parent, attribute
-
-![axes1](./images/diagramAxes01.svg)
-
----
-
-## Axes ancestor
-
-![solution](./images/diagramAxes02.svg)
-
----
-
-## Axes following-sibling et preceding-sibling
-
-![solution](./images/diagramAxes03.svg)
-
----
-
-## Axe following
-
-![solution](./images/diagramAxes04.svg)
-
----
 
 template: inverse
 class: middle center
@@ -672,7 +573,125 @@ div/*/@*
 
 //*
 ```
-]
+
+---
+## Les axes de type .red[forward axes]
+
+axe | signification | types de noeud
+:--|:--|:--
+`child`                 | fils du nœud contexte| `element`, `text`, `comment`, `processing instruction`
+`descendant`            | fils, petits-fils et tous les descendants du nœud contexte| `element`, `text`, `comment`, `processing instruction`
+`descendant-or-self`    | qui descendent du nœud contexte ainsi que le nœud contexte lui-même| `element`, `text`, `comment`, `processing-instruction`
+`following-sibling`     | frères droits du nœud contexte.| `element`, `text`, `comment`, `processing instruction`
+`following`             | situés après le nœud contexte (à l’exception des descendants)| `element`, `texte`, `comment`, `processing instruction`
+`attribute`             | attribut du nœud contexte|
+`namespace`             | espace de nom du noeud contexte|
+`processing instruction`| qui descendent du nœud contexte|
+
+
+???
+XPath distingue ainsi plusieurs catégories d’axes de déplacement dans l’abre XML.
+## Les axes de type .red[forward axes]
+
+- `child` : sélectionne tous les enfants du nœud contexte, dans l’ordre du document.
+L’axe child ne sélectionne rien pour tous les nœuds qui ne sont ni un nœud document ni un nœud élément.
+Rappel : les enfants d’un nœud élément n’incluent pas ses attributs ou espaces de noms, seulement le nœuds textuels, les nœuds de type élément, instruction de traitement et commentaire.
+
+- `descendant` : sélectionne tous les enfants du nœuds contexte et leurs enfants, et ainsi de suite récursivement dans l’ordre du document.
+Si le nœud contexte est un élément, l’axe descendant contient tous les nœuds texte, élément, commentaire, et instruction de traitement qui apparaissent dans le document source à l’intérieur des balises de cet élément.
+
+- `descendant-of-self` : idem, à la différence que le premier nœud sélectionné est le nœud contexte.
+
+- following` : sélectionne tous les nœuds qui apparaissent après le nœud contexte dans l’ordre du document, en excluant les descendants du nœuds contexte.
+Si le nœud d’origine est un nœud element, l’axe comporte tous les nœuds texte, élément, commentaire, et instruction de traitement du document qui débute après la balise fermente du nœud contexte.
+L’axe following ne contiendra jamais de nœuds attributs ou d’espace de noms.
+
+- `following-sibling` : Sélectionne tous les nœuds qui suivent le nœud contexte dans l’ordre du document et qui sont les enfants du même nœud parent.
+Si le nœud contexte est un nœud racine, un nœud attribut, ou espace de noms, alors l’axe following-sibling sera toujours vide.
+
+- `attribute` : si le nœud contexte est un élément, cet axe sélectionne tous ses nœuds attributs, dans un ordre arbitraire.
+Sinon, il ne sélectionne rien.
+
+- `namespace` : si le nœud d’origine est un élément, cet axe sélectionne tous les nœuds d’espace de nom qui sont dans la portée de cet élément dans un ordre arbitraire.
+
+---
+## Les axes de type .red[reverse axes]
+
+axe | signification | types de noeud
+:--|:--|:--
+`parent`            | père du nœud contexte | `element`, `document`
+`ancestor`          | ancêtres du nœud contexte (parent du nœud contexte, ou parent du partent, etc.) | `element`, `document`
+`ancestor-or-self`  | ancêtres du nœud contexte ainsi que le nœud contexte lui-même | `element`, `document`
+`preceding`         | situés avant le nœud contexte (à l’exclusion des nœuds ancêtres) |  `element`, `text`, `comment`, `processing instruction`
+`preceding-sibling` | frères gauches du nœud contexte |  `element`, `text`, `comment`, `processing instruction`
+
+XPath fournit enfin un axe particulier nommé `self` qui permet de sélectionner le nœud servant de contexte lui-même.
+
+
+???
+## Les axes de type .red[forward axes]
+XPath distingue également une catégorie d’axe .red[reverse axes]
+dont la particularité est de ne pouvoir supporter un déplacement que depuis le nœud qui sert de contexte, ou des nœuds situés avant ce nœud dans l’ordre du document :
+- `parent` : cet axe sélectionne un seul nœud parent du õud contexte. Si le nœud contexte est un nœud document, l’axe parent est vide.
+- `ancestor` : sélectionne tous les nœuds qui sont les ancêtres du nœud contexte, dans l’ordre inverse du document, jusqu’au nœud document.
+
+- `ancestor-or-self` : sélectionne les mêmes nœuds que l’axe ancestor mais en débutant par le nœud contexte plutôt que par son parent.
+
+- `preceding` : sélectionne tous les nœuds qui apparaissent avant le nœud contexte en excluant ses ancêtres, dans l’ordre inverse du document.
+Si le nœud contexte est un élément, l’axe contient tous les nœuds texte, élément, commentaires et instruction de traitement qui se terminent avant la balise ouvrante de l’élement contexte dans le document.
+L’axe ne contiendra jamais d’attribut ou de nœud espace de nom.
+
+- `preceding-sibling` : tous les nœuds qui précèdent le nœud origine et qui sont les enfants du même parent dans l’ordre inverse du document.
+Toujours vide depuis un nœud attribut ou espace de nom.
+
+XPath fournit enfin un axe particulier nommé `self`
+- `self` : sélectionne un nœud unique, le nœud contexte lui-même. Cet axe n’est jamais vide.
+
+## Nota : un attribut n’est pas le fils d’un élément ! même si dans XPath on peut atteindre l’élément depuis l’attribut en suivant l’axe parent, etc.
+
+---
+
+## Axes child, parent, attribute
+
+![axes1](./images/diagramAxes01.svg)
+
+---
+
+## Axes ancestor
+
+![solution](./images/diagramAxes02.svg)
+
+---
+
+## Axes following-sibling et preceding-sibling
+
+![solution](./images/diagramAxes03.svg)
+
+---
+
+## Axe following
+
+![solution](./images/diagramAxes04.svg)
+
+---
+
+# Prédicats
+
+```xpath
+div[child::lg]
+```
+
+```xpath
+div[lg]
+```
+
+```xpath
+div[1]
+```
+
+```xpath
+div[p='test']
+```
 
 ---
 template: inverse
@@ -691,12 +710,12 @@ Voici quelques unes des fonctions XPath communes :
 concat('ligneN', l/@n)
 ```
 
-- ``normalize-space()` normaliser les espaces
+- `normalize-space()` normaliser les espaces
 ```xpath
 normalize-space(//lg/l)
 ```
 
-- ``string()` valeur textuelle du nœud
+- `string()` valeur textuelle du nœud
 ```xpath
 string(/l[@n="2"])
 ```
