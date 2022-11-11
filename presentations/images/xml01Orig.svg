@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns:xl="http://www.w3.org/1999/xlink"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="800px" height="450px"
+	 viewBox="0 0 800 450" enable-background="new 0 0 800 450" xml:space="preserve">
+<text transform="matrix(0.8169 0 0 1 18.5962 207.9697)"><tspan x="0" y="0" font-family="'TheSans-Regular', 'sans-serif'" font-size="63.8134">commencé </tspan><tspan x="317.916" y="0" fill="#FC0079" font-family="'TheSans-Regular'" font-size="63.8134">&lt;date&gt;</tspan><tspan x="506.737" y="0" font-family="'TheSans-Regular'" font-size="63.8134">en 1736</tspan><tspan x="707.172" y="0" fill="#FC0079" font-family="'TheSans-Regular'" font-size="63.8134">&lt;/date&gt;</tspan></text>
+<text transform="matrix(1 0 0 1 105.4414 80.5)" fill="#606060" font-family="'TheSans-RegularItalic', 'sans-serif'" font-size="48">balise ouvrante</text>
+<text transform="matrix(1 0 0 1 441.4414 80.5)" fill="#606060" font-family="'TheSans-RegularItalic', 'sans-serif'" font-size="48">balise fermante</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 312.8965 101.103)" fill="#606060" font-family="'TheSans-Light', 'sans-serif'" font-size="144.8132">{</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 637.8965 101.103)" fill="#606060" font-family="'TheSans-Light', 'sans-serif'" font-size="144.8132">{</text>
+<text transform="matrix(-4.371139e-08 -1 1 -4.371139e-08 559.9189 286.3125)" fill="#606060" font-family="'TheSans-Light', 'sans-serif'" font-size="144.8132">{</text>
+<text transform="matrix(1 0 0 1 175.4414 342.5)" fill="#606060" font-family="'TheSans-RegularItalic', 'sans-serif'" font-size="48">contenu de l’élément</text>
+</svg>
