@@ -1,0 +1,1 @@
+perl -pi -e 's|xmlns="http://www.tei-c.org/ns/Examples"||e' *.html
