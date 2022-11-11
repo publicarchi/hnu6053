@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../Downloads/tei_manuscrit.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <!-- teiHeader est obligatoire dans un document TEI, et les éléments title, publisher et sourceDesc dans fileDesc le sont aussi -->
+    <!-- fileDesc :description bibliographique du document TEI -->
+    <fileDesc>
+      <!-- titleStmt : la mention de titre et de responsabilité (une des zones dans la norme de description bibliographique ISBD)-->
+      <titleStmt>
+        <!-- le titre du document TEI ; les Guidelines recommandent d’y spécifier le caractère spécifique de l’édition réalisée : elle est électronique, se différencie ainsi d’autres éditions -->
+        <title>Le confort du courtisan : ordres royaux pour le logement à Marly</title>
+        <!-- <title type="complement">une édition électronique</title>-->
+        <!-- title est répétable ; on pourrait donc ici ajouter d’autres éléments title, pour entrer des sous-titres, titres parallèles dans d’autres langues, etc. Dans ce cas on utiliserait les attributs type et xml:lang -->
+        <!-- encodage des différentes mentions de responsabilité. Ici la source primaire n’est pas une oeuvre, c’est un document d'archives. On ne peut donc pas dire qu’il y a un ou des auteurs. Par contre il y a un éditeur scientifique, qui a transcrit et critiqué le texte, et préparé des commentaires, etc. Il y a aussi des responsables secondaires, qui ont aidé à ce travail. On utilise principal et respStmt. On peut si besoin est affecter un identifiant à chacune des personnes responsables -->
+        <principal xml:id="NLC">Nicolas Lyon-Caen</principal>
+        <respStmt>
+          <resp>contributions à l'édition</resp>
+          <name xml:id="OP">Olivier Poncet</name>
+          <!-- les informations ci-dessus pourraient être encodées plus finement ; exemple :<persName> <surname>Poncet</surname> <forename>Olivier</forename> <affiliation>Ecole nationale des chartes</affiliation> <roleName>professeur d'archivistique et diplomatique moderne</roleName> </persName> -->
+        </respStmt>
+        <respStmt>
+          <resp>encodage en XML/TEI, conversion en HTML</resp>
+          <name xml:id="FC">Florence Clavaud</name>
+        </respStmt>
+        <!-- respStmt est répétable, on pourrait donc l’utiliser autant de fois que nécessaire pour d’autres responsables secondaires (encodage du document, illustrations, préface, intro, traduction...) -->
+        <!-- sponsor et fundor sont à utiliser à la place de respStmt si applicables -->
+      </titleStmt>
+      <!-- editionStmt pourrait ensuite apparaître, utile seulement si plusieurs versions successives de cette édition sont prévues ou existent -->
+      <!-- extent pourrait être utilisé pour renseigner sur la taille de ce document TEI -->
+      <!-- publicationStmt : spécifie qui est l’entité qui distribue ou diffuse le document TEI -->
+      <publicationStmt>
+        <publisher>École nationale des chartes</publisher>
+        <address>
+          <addrLine>19 rue de la Sorbonne</addrLine>
+          <addrLine>75005 <placeName>Paris</placeName></addrLine>
+        </address>
+        <!-- la date de la publication, bien sûr très importante -->
+        <date when="2011-03">mars 2011</date>
+        <!-- le numéro de la publication, une URL, un numéro ISBN, bref un identifiant public pour cette édition : par exemple : <idno>Dossiers documentaires THELEME numéro [XXX]</idno> -->
+        <!-- availability : donner des infos sur les conditions d’accès et d’utilisation du document TEI ; ex. : <availability><p>Utilisable librement uniquement dans le cadre de recherches scientifiques, aucune utilisation possible dans un but commercial sans l’accord préalable écrit des auteurs</p></availability> Voir par ex. les licences Creative Commons, http://creativecommons.org-->
+      </publicationStmt>
+      <!-- description de la source utilisée. Ici on édite une source primaire manuscrite. On pourrait aussi faire une édition électronique d’une édition imprimée de cette source. Dans le premier cas, la source consiste en un manuscrit, on va donc utiliser msDesc ; dans le 2e, la source serait un livre imprimé, et on utiliserait bibl ou biblStruct -->
+      <!-- nota : on peut aussi utiliser tout simplement p dans sourceDesc -->
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <country>France</country>
+            <institution>Archives nationales</institution>
+            <repository>site de Paris</repository>
+            <collection>Maison du roi</collection>
+            <idno>O/1/284, n° 525</idno>
+          </msIdentifier>
+          <msContents>
+            <summary>
+              <date when="1763-05"
+                >1763, mai</date> [<placeName>Versailles</placeName>]. En prévision d’un voyage de la cour à <placeName
+                ref="#marly">Marly</placeName>, le <rs ref="#noailles"
+              >gouverneur de Versailles</rs> soumet au roi des questions relatives au logement d’un certain nombre de courtisans et de serviteurs royaux qui accompagnent le souverain. Le château sera éclairé comme à l’ordinaire et le roi fournira du bois de chauffage à certains domestiques seulement, ainsi qu’une demi bougie et de l’argent au personnel ecclésiastique.</summary>
+            <textLang mainLang="fre">en français</textLang>
+          </msContents>
+          <!-- On pourrait décrire ici tout le manuscrit, beaucoup plus finement, mais on ne dispose pas des informations nécessaires. -->
+          <!-- Cependant ici on a au moins besoin de déclarer le nombre de mains, il y en a trois -->
+          <physDesc>
+            <objectDesc form="feuillet">
+              <supportDesc>
+                <support><material>papier</material></support>
+                <extent>
+                  <dimensions unit="mm">
+                    <!-- dimensions non mesurées en fait... -->
+                    <height>250</height>
+                    <width>150</width>
+                  </dimensions>
+                </extent>
+                <condition>en bon état</condition>
+              </supportDesc>
+            </objectDesc>
+            <handDesc>
+              <handNote xml:id="secretaire" scope="major">Un secrétaire a couché par écrit une liste de questions, se faisant le relais de Luthier, employé pour le bois et la bougie au château de Marly.</handNote>
+              <handNote xml:id="PDN" scope="minor">Philippe de Noailles (1715-1794), intendant et gouverneur du château et domaine de Versailles, a porté dans la marge de gauche les réponses du roi, en paraphant ces réponses. Il a également titré et signé le document.</handNote>
+              <handNote xml:id="anonyme" scope="minor">Une autre main a noté la date du document en haut de la page.</handNote>
+            </handDesc>
+            <additions>
+              <p>Le recto de la page porte l’estampille de la direction générale des Archives (Empire français).</p>
+              <p>Un archiviste a également, probablement au XIX<hi rend="super">e</hi> siècle, noté dans la marge de gauche la cote du document : <quote>0<hi rend="super"
+                  >1</hi> 284 n° 525</quote>.</p>
+            </additions>
+          </physDesc>
+          <additional>
+            <adminInfo>
+              <custodialHist>
+                <p>Ce document fait partie d'un ensemble de bons du roi datant des années 1741-1792, aujourd'hui conservés dans 7 cartons au sein des archives du secrétariat de la Maison du Roi.</p>
+              </custodialHist>
+            </adminInfo>
+          </additional>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <!-- les sections suivantes de l’en-tête fournissent des informations sur le processus de création du document TEI : son contexte (le projet dans lequel cette édition s’inscrit), les choix éditoriaux, le profil du fichier résultat -->
+    <encodingDesc>
+      <!-- encodingDesc peut contenir des paragraphes p et/ou des éléments plus spécialisés ; nous présentons certains de ces sous-éléments ci-après. -->
+      <!-- projectDesc : description du projet, en paragraphes -->
+      <projectDesc>
+        <p>Édition électronique réalisée en mars 2011 pour servir pendant un stage organisé par l'École des chartes, dans le cadre de son offre de formation continue, sur l'utilisation de TEI pour l'édition critique des manuscrits. Le fichier obtenu n’est qu’une proposition de mise en oeuvre du modèle TEI pour ce document.</p>
+      </projectDesc>
+      <!-- samplingDecl : présentation des principes de sélection des informations dans la source éditée, si sélection il y a eu -->
+      <samplingDecl>
+        <p>{du texte}</p>
+      </samplingDecl>
+      <!-- appInfo : les outils logiciels qui ont été utilisés pour produire le contenu du document TEI ou de parties de ce document : <appInfo><application version="{numéro de version}" ident="identifiant"><label>{le nom de l’application}</label></application></appInfo> -->
+      <!-- editorialDecl : les principes éditoriaux -->
+      <editorialDecl>
+        <!-- une série de paragraphes ou bien des sous-éléments plus spécialisés, tels que correction, normalization, segmentation, quotation, hyphenation, interpretation -->
+        <normalization>
+          <p>Le texte a été édité en respectant la graphie du document. Lorsque l'orthographe actuelle diffère de celle employée, les deux graphies (celle du document et la graohie actuelle) ont été encodées. Les abréviations ont été développées en isolant le segment résultat du développement et en conservant la trace de leur forme originale. En ce qui concerne les accents, la ponctuation et l'emploi des majuscules, c'est l'usage actuel qui a été suivi.</p>
+        </normalization>
+        <interpretation>
+          <p>
+            <interpGrp type="parts-of-speech">
+              <interp xml:id="date">date</interp>
+              <interp xml:id="analyse">analyse</interp>
+              <interp xml:id="req">requête</interp>
+              <interp xml:id="ord">ordre</interp>
+              <interp xml:id="sig">signature</interp>
+            </interpGrp>
+          </p>
+        </interpretation>
+      </editorialDecl>
+      <!-- classDecl : déclaration de taxonomies applicables au document TEI, par exemple type de document, vocabulaire matières etc. -->
+      <classDecl>
+        <!-- un vocabulaire embarqué dans le document TEI -->
+        <taxonomy xml:id="types-documents">
+          <category xml:id="typedoc-001">
+            <catDesc>bon du roi</catDesc>
+          </category>
+          <category xml:id="typedoc-002">
+            <catDesc>acte royal</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+      <charDecl>
+        <glyph xml:id="paraphe">
+          <desc>le paraphe de Philippe de Noailles</desc>
+          <graphic url="paraphe.jpg"/>
+        </glyph>
+      </charDecl>
+      <geoDecl datum="WGS84"/>
+      <!-- On pourra aussi, entre autres, trouver ici un élement refsDecl qui permettra de spécifier, en paragraphes ou en utilisant des éléments spécialisés, la manière dont les références internes au document, i.e. les identifiants, sont construits -->
+    </encodingDesc>
+    <!-- Suit profileDesc, un élément pour décrire le profil du document TEI. On devrait y saisir systématiquement, en particulier, les langues utilisées (élément langUsage). On peut aussi y trouver, entre autres, des éléments de classification du texte selon les vocabulaires déclarés plus hauts, des informations sur le contexte (lieu et date) de création du contenu intellectuel du document, ou sur les différentes mains trouvées dans les sources primaires éditées - nous préférons saisir ces dernièers informations dans la description de la source -->
+    <profileDesc>
+      <langUsage>
+        <!-- les identifiants des langues devraient être conformes à la norme en vigueur, cf. <http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CH.html#CHSH> -->
+        <language ident="fre">français (langue de l’édition, langue par défaut), et langue du document édité</language>
+      </langUsage>
+      <textClass>
+        <catRef target="#typedoc-001"/>
+        <catRef target="#typedoc-002"/>
+      </textClass>
+    </profileDesc>
+    <!-- revisionDesc : description des modifications faites au document TEI -->
+    <!-- une série d’éléments change, avec un attribut when et un attribut who ; le dernier événement doit être mentionné en premier -->
+    <!-- ex. <change when="2011-03-10" who="#FC">Compléments apportés à l’en-tête</change>-->
+    <!-- </revisionDesc> -->
+  </teiHeader>
+  <text>
+    <body>
+      <div type="transcription" xml:lang="fre" facs="acteRoyal.jpg">
+        <div>
+          <p ana="#date">
+            <add hand="#anonyme" place="top">Mai 1763</add>
+          </p>
+        </div>
+        <div>
+          <p ana="#analyse">
+            <add hand="#PDN" place="top">Ordre du roy <seg type="paraphe"><g ref="#paraphe"/></seg>
+              <!-- <abbr type="paraphe"><am><g ref="#paraphe"/></am></abbr>-->
+            </add>
+          </p>
+          <!-- <signed><g ref="#paraphe"/></signed>-->
+        </div>
+        <div type="aea">
+          <p ana="#req"><hi rend="bigger">L</hi>e <choice>
+              <expan>s<ex>ieur</ex></expan>
+              <abbr>s<am>.</am></abbr>
+            </choice> Luthier<ref type="note" target="#n-001"
+              /> demande si l’on éclairera<lb/> et chauffera le <placeName ref="#marly">château de Marly</placeName><ref
+              type="note" target="#n-002"/> le <lb/> voyage prochain comme dans les voyages<lb/> ordinaires. </p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">Le pavillon du <choice>
+                <orig>roy</orig>
+                <reg>roi</reg>
+              </choice> comme <lb/>à l’ordinaire, mais l’on ne <lb/>donnera de bois d’arrivée à<lb/> personne. <seg
+                type="paraphe"><g ref="#paraphe"/></seg></add>
+          </p>
+        </div>
+        <div>
+          <p ana="#req">Si le concierge, les garçons du garde-meuble<ref type="note" target="#n-003"/>,<lb/> les <choice>
+              <expan>s<ex>ieur</ex>s</expan>
+              <abbr>s<am>.s</am></abbr>
+            </choice> Boucheman<ref type="note" target="#n-004"/> et Lemoine<ref type="note" target="#n-005"/>, les<lb/> garçons du château, l’<choice>
+              <orig>orloger</orig>
+              <reg>horloger</reg>
+            </choice>, le garçon des chiens<ref type="note" target="#n-006"/>
+            <lb/>et les porteurs seront chauffés et éclairés.</p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">Le voyage étant comme <lb/>celui de Versailles, l’on n’est<lb/> obligé à rien, mais on peut <lb/>leur donner quelque secours en <lb/>bois et lumières ; <choice>
+                <expan>m<ex>essieu</ex>rs</expan>
+                <abbr>m<am>rs</am></abbr>
+              </choice> Bouchement<lb/> et Lemoine, oui sûrement. <seg type="paraphe"><g ref="#paraphe"/></seg></add>
+          </p>
+        </div>
+        <div>
+          <p ana="#req">Si on éclairera les salles des gardes <lb/>de <hi rend="bigger"
+              >Votre Majesté</hi>, des gardes de <lb/>la Porte<ref type="note" target="#n-007"/> et des Cent Suisses<ref
+              type="note" target="#n-008"/>.</p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">Oui, sans doute. <seg type="paraphe"><g ref="#paraphe"/></seg></add>
+          </p>
+        </div>
+        <div>
+          <p ana="#req"
+            >Si les femmes de chambre de mesdames <lb/>qui logent hors du château seront chauffées <lb/>et éclairées.</p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">Oui, en observant la règle <lb/>la plus exacte <seg type="paraphe"><g
+                  ref="#paraphe"/></seg></add>
+          </p>
+        </div>
+        <div>
+          <p ana="#req">Si on donnera une bougie blanche par <lb/>jour au supérieur des cordeliers de <lb/>Noisy<ref
+              type="note" target="#n-009"/>.</p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">
+              <subst>
+                <del>Oui</del>
+                <add>Non, une demie</add>
+              </subst>
+              <lb/>
+              <seg type="paraphe"><g ref="#paraphe"/></seg>
+            </add>
+          </p>
+        </div>
+        <div>
+          <p ana="#req">Et si on donnera une bougie par <lb/>jour au vicaire de la <choice>
+              <orig>parroisse</orig>
+              <reg>paroisse</reg>
+            </choice> qui dessert <lb/>la chapelle du commun<ref type="note" target="#n-010"/>.</p>
+          <p ana="#ord">
+            <add hand="#PDN" place="margin-left">Non, mais la <lb/>valeur en argent. <seg type="paraphe"><g
+                  ref="#paraphe"/></seg></add>
+          </p>
+        </div>
+        <div>
+          <p ana="#ord">
+            <add hand="#PDN" place="bottom"
+                >Le roy chauffe et éclaire les conseillers<lb/> d’État à leur pied-à-terre qui est au 5 au commun<ref
+                type="note" xml:id="a-011" target="#n-010"/>. <seg type="paraphe"><g ref="#paraphe"/></seg>
+            </add>
+          </p>
+          <!-- <signed/> -->
+        </div>
+        <div>
+          <!-- <p/> <signed rend="bigger">Noailles</signed>-->
+          <p ana="#sig"><add hand="#PDN"><seg type="signature" rend="bigger"><persName ref="#noailles"
+                  >Noailles</persName><ref target="#n-011" type="note" xml:id="a-012"/></seg></add></p>
+        </div>
+      </div>
+      <div type="commentaires">
+        <div type="diplo">
+          <head>Commentaire diplomatique</head>
+          <p>L’acte désigné ici comme un « ordre du roi », qu’il n’est pas vraiment puisqu’il ne porte pas de notation écrite du souverain, est un type documentaire devenu fréquent à la fin de l’Ancien Régime. Il est issu de la catégorie diplomatique des bons du roi. Le souverain appose, sur une requête qu’on lui présente, son accord (signifiée par le terme « bon » écrit de sa main) ou son refus : ici la seule signature du gouverneur manifeste que la volonté royale s’est exprimée. L’usage en est devenu systématique dans l’administration de Versailles pour tout ce qui regarde les projets de dépenses ou l’affectation de logements. Ces ordres tiennent lieu de décharge au gouverneur – des mandats de paiement en quelque sorte – qui bénéficie d’un travail particulier et régulier avec le monarque. Il lui soumet sous forme de questions des demandes émanant directement de lui-même ou de ses subordonnés et écrites de la main d’un secrétaire. Le gouverneur note ensuite, dans la marge prévue à cet effet dans la partie gauche de la feuille, le résultat concret de ce travail – la réponse donnée par le roi. Le paraphe du gouverneur porté à la fin de chaque réponse, comparable aux usages notariés en cas de corrections marginales, confère un caractère officiel au document auquel il appose de surcroît sa signature.</p>
+        </div>
+        <div type="histo">
+          <head>Commentaire historique</head>
+          <p>Louis XV séjourne régulièrement au cours du mois de mai au château de Marly. Créé par Louis XIV qui a acheté la baronnie en 1676, il est intégré au domaine de Versailles et érigé en administration particulière en 1693 sous la direction d’un gouverneur. Ce dernier est chargé en particulier de répartir les logements des châteaux (tout particulièrement à Versailles) entre les différents demandeurs (courtisans, personnel de service), de payer les divers employés (concierges, gardes, etc.) et d’assurer la fourniture de la pourvoierie (bois de chauffage, éclairage, charbon). </p>
+          <p>Ce document règle des problèmes de détail liés aux fournitures de bois pour l’éclairage et le chauffage et de bougies en prévision d’un séjour à Marly, à la demande de l’employé chargé de les distribuer. Outre les questions de protocole et de respect des hiérarchies, le contexte de la fin de la guerre de Sept Ans, conclue par le traité de Paris du 10 février 1763, incite la monarchie à restreindre ses dépenses : ses dettes montent à 1,8 milliards de livres. La pourvoierie représente d’ailleurs le plus gros poste de dépenses du gouvernement de Versailles, environ 430 000 livres sur 2 millions à la veille de la Révolution. Il s’agit donc de déterminer précisément ce que le roi prend à sa charge et ce que sa suite et ses serviteurs devront payer eux-mêmes. Les deux valets de chambre de quartier qui accompagnent le roi sont entièrement défrayés, les autres doivent se prendre en charge. Enfin le roi emmène avec lui, en plus des courtisans triés sur le volet, un certain nombre de membres du Conseil pour pouvoir continuer à travailler. Leurs bureaux (des logements collectifs) sont installés dans les communs du château. Les conseillers d’État bénéficient normalement à la cour du même traitement que les secrétaires d’État, les deux groupes étant réputés « commensaux pour l’honneur de première classe » (<bibl><author>Sophie <surname>de Laverny</surname></author>, <title>Les domestiques commensaux des rois de France au XVII<hi
+                  rend="super">e</hi> siècle</title>, p.27</bibl>).</p>
+        </div>
+        <div type="biblio">
+          <head>Bibliographie complémentaire</head>
+          <listBibl>
+            <bibl><author><surname>Da Vinha</surname> (Mathieu)</author>, <title>Les valets de chambre de Louis XIV</title>, Paris, Perrin, 2004, 520 p.</bibl>
+            <bibl xml:id="laverny"
+                  ><author><surname>Laverny</surname> (Sophie de)</author>, <title>Les domestiques commensaux des rois de France au XVII<hi
+                  rend="super">e</hi> siècle</title>, Paris, Presses de l’Université Paris-Sorbonne, 2002, 557 p.</bibl>
+            <bibl><author><surname>Marotaux</surname> (Vincent)</author>, « Une curiosité institutionnelle : l’administration du domaine de Versailles sous l’Ancien Régime », dans <title>Bibliothèque de l’École des chartes</title>, t. 143, 1985, p. 275-312.</bibl>
+            <bibl><author><surname>Newton</surname> (William Ritchey)</author>, <title>L’espace du roi. Le cour de France au château de Versailles, 1682-1789</title>, Paris, Fayard, 2000, 588 p.</bibl>
+            <bibl><author><surname>Newton</surname> (William Ritchey)</author>, <title>La Petite cour. Service et serviteurs à la cour de Versailles au xviii<hi
+                  rend="super">e</hi> siècle</title>, Paris, Fayard, 2006, 662 p.</bibl>
+          </listBibl>
+        </div>
+      </div>
+    </body>
+    <back>
+      <div type="notes">
+        <note xml:id="n-001"
+            >Louis-François Luthier était employé pour le bois et la bougie du château de Marly avec 1 000 l. de gages en 1759 (Arch. nat., O<hi
+            rend="super">1</hi> 3913 bis, n° 2, état pour servir de certificat de service).</note>
+        <note xml:id="n-002"
+            >Le château de Marly (aujourd’hui Marly-le-Roi) a été bâti sur les plan de Jules Hardouin-Mansart pour Louis XIV entre 1679 et 1685. Au XVIII<hi
+            rend="super">e</hi> siècle, il fait partie du domaine royal de Versailles.</note>
+        <note xml:id="n-003"
+          >Le garde-meuble de la couronne est une administration chargée de la gestion du mobilier et des objets d'art destinés à l'ornement des appartements royaux.</note>
+        <note xml:id="n-004"
+          >Louis-Marie de Boucheman, valet de chambre ordinaire du roi depuis 1727 à la suite de son père et concierge du château de Versailles à partir d’octobre 1768.</note>
+        <note xml:id="n-005">Probablement de Louis-Henry Lemoine, valet de chambre ordinaire (Arch. nat., Z<hi
+            rend="super">1a</hi> 481, état de la maison du roi pour 1759).</note>
+        <note xml:id="n-006">Le roi disposait à Marly même d’un chenil particulier depuis 1702.</note>
+        <note xml:id="n-007"
+          >Les gardes de la Porte : compagnie de cinquante hommes d’armes chargée de veiller de jour sur les portes intérieures du palais royal.</note>
+        <note xml:id="n-008"
+          >Les Cent Suisses : compagnie de cent militaires venus de cantons suisses créée en 1496 pour assurer la garde personnel du roi dans les palais royaux</note>
+        <note xml:id="n-009"
+          >Un couvent de religieux franciscains (cordeliers) est fondé à Noisy en 1599. Parmi les aumônes royales versées aux paroisses et religieux des environs du domaine apparaissent les écoles paroissiales de Noisy (aujourd’hui Noisy-le-Roi). Les cordeliers desservent régulièrement le château (Arch. nat., O1 3913A, liasse 1, certificat attestant qu’ils ont rempli leur service au château de Marly en 1761 suivant les intentions du roi).</note>
+        <note xml:id="n-010"
+          >La chapelle du commun du château, prévue pour les domestiques, par opposition à la chapelle du château lui-même. Le curé de la paroisse de Marly dit normalement la messe dans cette dernière qui compte néanmoins un chapelain en titre. C’est sans doute son vicaire qui la célèbre dans celle du commun.</note>
+        <note xml:id="n-011"
+          >Philippe de Noailles (1715-1794) comte de Noailles puis maréchal et duc de Mouchy, intendant et gouverneur du château et domaine de Versailles en survivance (1720-1729) puis en titre (1729-1778).</note>
+      </div>
+      <div type="indexes">
+        <listPerson>
+          <person xml:id="noailles">
+            <!-- Bnf : Mouchy, Philippe de Noailles (1715-1794 ; duc de) ; notice http://catalogue.bnf.fr/ark:/12148/cb14955974j/PUBLIC -->
+            <persName type="complete">Mouchy, Philippe de Noailles (1715-1794 ; duc de)</persName>
+            <persName>
+              <forename>Philippe</forename>
+              <nameLink>de</nameLink>
+              <surname>Noailles</surname>
+              <roleName>duc de Mouchy</roleName>
+            </persName>
+            <sex value="1">masculin</sex>
+            <birth>
+              <date when="1715">1715</date>
+            </birth>
+            <death>
+              <date when="1794">1794</date>
+            </death>
+            <occupation>Comte de Noailles puis maréchal et duc de Mouchy, intendant et gouverneur du château et domaine de Versailles en survivance (1720-1729) puis en titre (1729-1778).</occupation>
+            <note>Voir la notice d’autorité BnF <ref target="http://catalogue.bnf.fr/ark:/12148/cb14955974j/PUBLIC"
+                >http://catalogue.bnf.fr/ark:/12148/cb14955974j/PUBLIC</ref>, et la <bibl><ref
+                  target="http://fr.wikipedia.org/wiki/Philippe_de_Noailles"
+                  >page relative à Ph. de Noailles dans Wikipédia</ref></bibl>.</note>
+          </person>
+        </listPerson>
+        <listPlace>
+          <place xml:id="marly">
+            <!-- château de Marly : Marly-le-Roi, château de (Yvelines, Ile-de-France, France)-->
+            <placeName type="complete">Marly, château de</placeName>
+            <location>
+              <district type="commune">Marly-le-Roi</district>
+              <district type="departement">Yvelines</district>
+              <region>Ile-de-France</region>
+              <country>France</country>
+              <geo>48,85 -2,023</geo>
+              <!-- <geo corresp="http://www.geoportail.fr/visu2D.do?cg=djoxLjEqYzptZXRyb3BvbGUqY3Y6MS4wKnZ2OjEuMSp4eToyLjA5NDE2NjY2NjY2NjY2OTR8NDguODY2OTQ0NDQ0NDQ0NDEqczo5KnB2OjEuMCpwOmRlY291dmVydGUqbDpDYXNzaW5pfDF8MTAwfDE1">-->
+              <!-- Longitude : 02° 05' 54" E Latitude : 48° 51' 38'' N -->
+              <!-- http://www.geoportail.fr/visu2D.do?cg=djoxLjEqYzptZXRyb3BvbGUqY3Y6MS4wKnZ2OjEuMSp4eToyLjA5NDE2NjY2NjY2NjY2OTR8NDguODY2OTQ0NDQ0NDQ0NDEqczo5KnB2OjEuMCpwOmRlY291dmVydGUqbDpDYXNzaW5pfDF8MTAwfDE1 (c) 2007 www.geoportail.fr -->
+              <!-- </geo> -->
+            </location>
+            <desc>Le château de Marly (aujourd’hui Marly-le-Roi) a été bâti sur les plans de Jules Hardouin-Mansart pour Louis XIV entre 1679 et 1685. Au XVIIIe siècle, il fait partie du domaine royal de Versailles.</desc>
+            <bibl>Voir la <ref target="http://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Marly"
+                >page relative au château dans Wikipédia</ref></bibl>
+            <bibl/>
+          </place>
+        </listPlace>
+      </div>
+    </back>
+  </text>
+</TEI>

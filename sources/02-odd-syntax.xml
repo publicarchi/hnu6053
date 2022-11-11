@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="fr">Initiation ODD</title>
+        <title xml:lang="en">An ODD Initiation</title>
+        <author>Emmanuel Château-Dutier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>publica.archi</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>From previous talks in Tours, Paris, Barcelona, Paris, Graz... Préparé pour ENC MasterPro 2015, puis formation 2017.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2022-11">Révision et remaniement par emchateau pour HNU6053</change>
+      <change when="2017-02-18">Revised by emchateau for ENC</change>
+      <change who="#LB" when="2014-09-23">Revised for MM14</change>
+      <change who="#LB" when="2014-02-17">Revised for Mutec</change>
+      <change who="#LB" when="2013-10-20">Finalised for SUFCO formation, Oct 2013</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>One Document Does It All</titlePart>
+        <docImprint>HNU6053</docImprint>
+      </titlePage>
+    </front>
+    <body>
+      <div rend="title" xml:lang="fr" xml:id="index">
+        <head>La syntaxe ODD</head>
+      </div>
+
+      <div type="slide" xml:lang="fr">
+        <head>Les composants principaux d’un fichier ODD</head>
+        <p>Un fichier ODD contient un ensemble de spécifications et de références</p>
+        <list type="label">
+          <label>
+            <gi>schemaSpec</gi>
+          </label>
+          <item>définit et identifie un schéma</item>
+          <label>
+            <gi>elementSpec</gi>
+          </label>
+          <item>fournit la définition d’élément, entièrement ou en partie</item>
+          <label>
+            <gi>elementRef</gi>
+          </label>
+          <item>utilise une définition d’un élément existant</item>
+          <label>
+            <gi>classSpec</gi>
+          </label>
+          <item>fournit la définition d’une classe</item>
+          <label>
+            <gi>classRef</gi>
+          </label>
+          <item>utilise une définition de classe existante</item>
+          <label>
+            <gi>moduleRef</gi>
+          </label>
+          <item>fournit un ensemble de spécifications d’éléments en faisant référence à un
+ <soCalled>module</soCalled> </item>
+        </list>
+        <p>Un ODD peut combiner plusieurs spécifications pour un même objet</p>
+      </div>
+      
+      <div type="slide">
+        <head>L’élément <gi>schemaSpec</gi></head>
+        <p>L’élément <gi>schemaSpec</gi> est utilisé pour spécifier un schéma</p>
+        <list>
+          <item>L’attribut <att>ident</att> est obligatoire, il fournit un nom pour le schéma</item>
+          <item>L’attribut <att>start</att> indique le ou les noms des éléments racines du schéma</item>
+          <item>L’attribut <att>source</att> indique l’emplacement des déclarations référencées par le schéma (par exemple une version spécifique de la P5)</item>
+          <item>Les attributs <att>docLang</att> et <att>targetLang</att> permettent de sélectionner les langues pour les noms ou la description des éléments</item>
+        </list>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="test" source="tei:1.5.0" docLang="fr">
+            <!-- déclarations -->
+          </schemaSpec>
+        </egXML>
+      </div>
+      
+      <div types="slide">
+        <head>Composants d’un <gi>schemaSpec</gi></head>
+        <list>
+          <item><gi>elementSpec</gi>, <gi>classSpec</gi>, <gi>dataSpec</gi>, <gi>macroSpec</gi>, etc. permettent de spécifier de nouveaux éléments</item>
+          <item><gi>elementRef</gi>, <gi>classRef</gi>, <gi>dataRef</gi>, <gi>macroRef</gi>, etc. font référence à des objets déjà existant quelque part</item>
+          <item><gi>moduleRef</gi> désigne un ensemble d’objets fournis par un module de la TEI</item>
+        </list>
+        <p>L’élément <gi>moduleRef</gi> permet la sélection d’un ensemble d’objets TEI par défaut dans son entièreté. L’allocation des objets référencés peut être spécifiée par un attribut <att>source</att>. Par défaut il s’agit de la version la plus récente de la TEI P5.</p>
+      </div>
+      
+      <div type="slide">
+        <head><gi>moduleRef</gi> sélection par exclusion</head>
+        <p>Il est possible de spécifier les éléments que l’on souhaite supprimer parmi ceux proposés par un module</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="test">
+            <moduleRef key="core" except="mentioned said"/>
+            <!-- ... -->
+          </schemaSpec>
+        </egXML>
+        <p>ou aussi :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="test">
+            <moduleRef key="core">
+              <elementSpec ident="mentioned" mode="delete"/>
+              <elementSpec ident="said" mode="delete"/>
+              <!-- ... -->
+            </moduleRef>
+          </schemaSpec>
+        </egXML>
+        <p>L’attribut <att>mode</att> contrôle la résolution de déclarations multiples</p>
+      </div>
+      
+      <div type="slide">
+        <head><gi>moduleRef</gi> sélection par inclusion</head>
+        <p>Il est possible de spécifier les éléments que l’on souhaite inclure parmi ceux proposés par un module</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="test">
+            <moduleRef key="core" include="mentioned said"/>
+            <!-- ... -->
+          </schemaSpec>
+        </egXML>
+        <p>ou aussi :</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="test">
+            <moduleRef key="core">
+              <elementRef key="mentioned" />
+              <elementRef key="said" />
+              <!-- ... -->
+            </moduleRef>
+          </schemaSpec>
+        </egXML>
+        <p>Attention ! un module peut définir bien d’autres choses que des éléments. Les attributs <att>include</att> et <att>exclude</att> ne s’appliquent qu’aux éléments.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Utilisation des modules</head>
+        <list>
+          <item>Il n’est pas nécessaire de préciser le module lorsque l’on fait référence à un élément</item>
+          <item>Un simple <gi>elementRef</gi> suffit pourvu que l’élément concerné soit déclaré dans la source invoquée</item>
+          <item>Par contre, il faut préciser son module si vous souhaitez inclure ou utiliser une classe de modèle de contenu ou une classe d’attribut</item>
+          <item>La plupart des classes TEI étant définies par le module <ident>tei</ident>, celui-ci est à peu près essentiel pour tout ODD TEI.</item>
+        </list>
+      </div>
+      
+      <div type="slide">
+        <head>Spécifications multiples</head>
+        <p>Le traitement d’un ODD implique la résolution de spécifications multiples pour un même objet.</p>
+        <p>Supposons deux <gi>elementSpec</gi> pour un même élément, la résolution est déterminée par la valeur de l’attribut <att>mode</att> :</p>
+        <list>
+          <item>mode="add" (par défaut) : effectue une nouvelle déclaration</item>
+          <item>mode="delete" : aucune déclaration n’est valide, l’élément est supprimé</item>
+          <item>mode="replace" : cette déclaration remplace entièrement toute autre déclaration</item>
+          <item>mode="change" : les parties de cette déclaration remplacent les parties correspondantes dans une autre déclaration, le reste ne change pas</item>
+        </list>
+      </div>
+      
+      <div type="slide">
+        <head>Exemples de spécifications multiples</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="testschema">
+            <moduleRef key="core" include="p hi"/> <elementSpec key="p" mode="delete"/>
+          </schemaSpec>
+        </egXML>
+        <p>L’élément <gi>p</gi> est supprimé</p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec start="TEI" ident="testschema">
+            <moduleRef key="core" include="p hi"/> <elementSpec key="p" mode="change">
+              <desc>Cet élément ne contient que de texte</desc>
+              <content>
+                <textNode/>
+              </content>
+            </elementSpec>
+          </schemaSpec>
+        </egXML>
+        <p>Le contenu et la description de l’élément <gi>p</gi> sont changés, ses autres propriétés (par exemple ses attributs) restent inchangés.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Traitement d’un ODD</head>
+        <list>
+          <item>Toutes les déclarations (Spec ou Ref) sont d’abord réunies et canonicalisées</item>
+          <item>Les déclarations multiples sont résolues</item>
+          <item>La sortie de cette procédure est ensuite transformée en schéma, et/ou en documentation</item>
+        </list>
+        <p>Une feuille de style odd2odd permet d’effectuer les deux étapes initiales et d’en concerver le résultat : cela s’appelle un <soCalled>Compiled ODD</soCalled></p>
+        <p>Un tel fichier est utilisable comme la source d’un autre ODD.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Exemple de personnalisation</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec ident="transMin" start="TEI text div" docLang="fr">
+            <moduleRef key="tei"/>
+            <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/>
+            <moduleRef key="textstructure" include="TEI text body div"/>
+            <elementRef key="ab"/>
+            <elementRef key="pb"/>
+            <elementRef key="unclear"/> <elementRef key="hi"/>
+            <elementRef key="name"/>
+            <elementRef key="title"/>
+            <classRef key="att.global.rendition" except="rendition style"/> 
+            <classSpec type="atts" ident="att.declaring" mode="delete"/>
+            <classSpec type="atts" ident="att.edition" mode="delete"/>
+            <classSpec type="atts" ident="att.editLike" mode="delete"/>
+          </schemaSpec>
+        </egXML>
+      </div>
+      <div type="slide">
+        <head>Exemple de personnalisation</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"
+          xmlns:rng="http://relaxng.org/ns/structure/1.0">
+          <schemaSpec ident="transMin"
+            start="TEI text div" docLang="fr">
+            <!-- ... -->
+            <elementSpec ident="botName" ns="http://monexcellentprojet.com">
+              <desc>nom botanique</desc>
+              <desc xml:lang="en">botanical
+                name</desc>
+              <classes>
+                  <memberOf key="model.phrase"/>
+                  <memberOf key="att.global"/> </classes>
+              <content>
+                <macroRef key="macro.paraContent"/>
+              </content>
+            </elementSpec>
+            <!-- ... -->
+          </schemaSpec>
+        </egXML>
+      </div>
+      <div xml:lang="fr" rend="slide">
+        <head>Définition du contenu d’un élément</head>
+        <p>L'element <gi>content</gi> peut contenir: </p><list><item><gi>elementRef</gi> : un element</item><item><gi>classRef</gi> une classe d'element</item><item><gi>macroRef</gi> reference a un patron</item><item><gi>textNode</gi> un morceau de texte</item><item><gi>anyElement</gi> : un element non-specifie</item></list>
+        <p>Regroupé par :</p>
+        <list><item><gi>alternate</gi> une alternation</item><item><gi>sequence</gi> une séquence</item></list>
+        <p>Tous sous contrôle des attributs <att>minOccurs</att> et <att>maxOccurs</att> en ce qui concerne leurs fréquences d’occurence</p>
+        <!-- a traduire -->
+      </div>
+      
+      <div xml:lang="fr" rend="slide">
+        <head>Par exemple ...</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <content>
+            <alternate maxOccurs="unbounded">
+              <classRef key="model.pLike"/>
+              <classRef key="model.listLike"/>
+            </alternate></content></egXML>
+        <p><q>Un ou plusieurs éléments membres des classes <ident>model.pLike</ident> ou bien
+          <ident>model.listLike</ident></q></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <content>
+            <sequence maxOccurs="unbounded">
+              <classRef key="model.pLike"/>
+              <classRef key="model.listLike"/>
+            </sequence>
+          </content></egXML>
+        <p><q>Une ou plusieurs répétitions d'un élément de la classe <ident>model.pLike</ident> suivi d'un élément de la classe 
+          <ident>model.listLike</ident></q></p>
+      </div>
+      
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Plan de cours</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>public.archi</publisher>
+            <date from="2022">2022</date>
+            <idno type="URI">http://www.public.archi/hnu6052/plan-de-cours</idno>
+         </publicationStmt>
+         <seriesStmt>
+            <title type="main"
+               >HNU3052/HNU6052, Utilisation avancée de la Text Encoding Initiative (TEI)</title>
+            <title type="sub">Approfondissements (ODD, exploitation des documents)</title>
+            <idno type="uri">http://www.public.archi/hnu6053</idno>
+         </seriesStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2022-11-09">Création du fichier</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <head>HNU3052/HNU6052, Utilisation avancée de la Text Encoding Initiative (TEI)</head>
+         <head>Approfondissements (ODD, exploitation des documents)</head>
+         <div>
+            <head>Méta</head>
+            <list>
+               <item>Cours optionnel, 1 crédits</item>
+               <item><label>Horaire</label> 11 novembre, 25 novembre et 2 décembre 2022</item>
+               <item><label>Local</label> Pavillon Lionel-Groulx C-2035</item>
+               <item><label>Professeur</label> Emmanuel Château-Dutier</item>
+               <item><label>Bureau</label> Pavillon Lionel-Groulx, local C-2067</item>
+               <item><label>Disponibilités</label> lundi de 10h-13h ou sur rendez-vous</item>
+               <item><label>Téléphone</label> +1 (514) 343-6026</item>
+               <item><label>Courriel</label> <ref type="email"
+                  target="mailto:emmanuel.chateau.dutier@umontreal.ca"
+                  >emmanuel.chateau.dutier@umontreal.ca</ref></item>
+            </list>
+         </div>
+         <div>
+            <head>Présentation</head>
+            <p>La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI pour l’adapter finement aux objectifs scientifiques de son projet.</p>
+            <p>Cette formation de niveau avancé (perfectionnement) est principalement destinée à travailler sur la modélisation de son édition critique au moyen d’ODD et l’exploitation des éditions structurées avec XSLT. Elle s’adresse à des participants ayant déjà des notions minimales sur la TEI et qui souhaitent s’approprier plus avant les moyens offerts par la TEI. Le programme laisse une large place au travail sur les projets des participants sous la forme d’ateliers.</p>
+         </div>
+         <div>
+            <head>Objectifs de l’atelier</head>
+            <list>
+               <item>Comprendre les enjeux de la modélisation d’une édition critique</item>
+               <item>Apprendre le langage ODD</item>
+               <item>Savoir documenter son modèle</item>
+               <item>Savoir manipuler ses documents XML-TEI</item>
+               <item>Utiliser XPath et XSLT</item>
+            </list>
+         </div>
+         <div>
+            <head>Calendrier des séances</head>
+            <p>L’atelier se déroule sur trois vendredis : 11 novembre, 25 novembre et 2 décembre 2022.</p>
+            <div>
+               <head>Séance 1 – vendredi 11 novembre 2022, 9h30-12h30</head>
+               <list>
+                  <item>présentation des participantes et des participants ;</item>
+                  <item>La modélisation des éditions critiques ;</item>
+                  <item>Premiers pas avec ODD.</item>
+               </list>
+            </div>
+            <div>
+               <head>Séance 2 – vendredi 25 novembre 2022 9h30-12h30</head>
+               <list>
+                  <item>Exercice de modélisation avec ODD ;</item>
+                  <item>Modélisation avancée ;</item>
+                  <item>L’organisation d’un document ODD.</item>
+               </list>
+            </div>
+            <div>
+               <head>Séance 3 – vendredi 25 novembre 2022 13h30-16h30</head>
+               <list>
+                  <item>XPath ;</item>
+                  <item>XSLT ;</item>
+                  <item>exercices de mise en pratique.</item>
+               </list>
+            </div>
+            <div>
+               <head>Séance 4 – vendredi 25 novembre 2022 9h30-12h30</head>
+               <list>
+                  <item>Récursions et traitements conditionnel ;</item>
+                  <item>Modes et règles nommées.</item>
+               </list>
+            </div>
+            <div>
+               <head>Séance 5 – vendredi 2 décembre 2022 13h30-16h30</head>
+               <list>
+                  <item>Usages avancés</item>
+                  <item>Bilan des 4 séances.</item>
+               </list>
+            </div>
+         </div>
+         <div>
+            <head>Évaluation</head>
+            <p>L’évaluation de l’atelier reposera sur des travaux pratiques de définition de modèles et de transformations.<list>
+               <item>Premier modèle ODD (30%)</item>
+               <item>Exercices XPath (40%)</item>
+               <item>Production d’une transformation complète (40%)</item>
+               </list></p>
+         </div>
+         <divGen type="toc" />
+      </body>
+   </text>
+</TEI>

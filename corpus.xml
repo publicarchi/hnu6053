@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="./xsl/main.xsl"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>HNU65053/3503, Utilisation avancée de la Text Encoding Initiative (TEI)</title>
+                <title type="sub">Approfondissements (ODD, exploitation des documents)</title>
+                <author>
+                    <persName>
+                        <forename>Emmanuel</forename>
+                        <surname>Chateau-Dutier</surname>
+                        <affiliation>Université de Montréal</affiliation>
+                    </persName>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>public.archi</publisher>
+                <date from="2022-11">Depuis novembre 2011</date>
+                <idno type="uri">http://www.public.archi/hnu6053</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Fichier nativement numérique</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2022-11-09">Création du fichier</change>
+        </revisionDesc>
+    </teiHeader>
+    <xi:include href="./index.xml" parse="xml">
+        <xi:fallback>Fichier non trouvé</xi:fallback>
+    </xi:include>
+    <xi:include href="./biblio.xml" parse="xml">
+        <xi:fallback>Fichier non trouvé</xi:fallback>
+    </xi:include>
+    <!--<xi:include href="./sources/ledoux.xml" parse="xml">
+      <xi:fallback>Fichier non trouvé</xi:fallback>
+   </xi:include>-->
+</teiCorpus>

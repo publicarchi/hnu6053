@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="fr">Introduction à One Document Does It All (ODD)</title>
+        <author>Emmanuel Château-Dutier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>publica.archi</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>From previous talks in Tours, Paris, Barcelona, Paris, Graz... Préparé pour ENC MasterPro 2015, puis formation 2017.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2022-11">Révision et remaniement par emchateau pour HNU6053</change>
+      <change when="2017-02-18">Revised by emchateau for ENC</change>
+      <change who="#LB" when="2014-09-23">Revised for MM14</change>
+      <change who="#LB" when="2014-02-17">Revised for Mutec</change>
+      <change who="#LB" when="2013-10-20">Finalised for SUFCO formation, Oct 2013</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>One Document Does It All (ODD), Introduction</titlePart>
+        <docImprint>HNU6053</docImprint>
+      </titlePage>
+    </front>
+    <body>
+      <div rend="title" xml:lang="fr" xml:id="index">
+        <head>Introduction à One Document Does It All (ODD)</head>
+      </div>
+
+      <div type="slide">
+        <head>Qu’est-ce qu’un ODD</head>
+        <list>
+          <item>Un langage de spécification de document applicable pour n’importe quel type balisage</item>
+          <item>ODD est le langage de définition et de maintenance de la TEI</item>
+          <item>Celui-ci peut être utilisé pour déclarer une personnalisation TEI</item>
+        </list>
+      </div>
+
+      <div type="slide">
+        <head>La TEI, un modèle extensible pour l’encodage des textes</head>
+        <p>La Text Encoding Initiative (TEI) offre un cadre de travail personnalisable et extensible pour traiter tout type de document textuels dans le contexte académique.</p>
+        <p>Elle offre :
+        <list> <item>un cadre de travail pour l’édition structurée</item>
+          <item>un vocabulaire et des outils pour produire des textes balisés</item>
+          <item>des mécanismes étendus de personnalisation et d’extension</item> </list></p>
+      </div>
+
+      <div type="slide" xml:lang="fr"><head>De quoi avons nous besoin ? </head><p rend="box"
+        >La documentation d’une édition structurée réclame deux choses complémentaires :</p>Un <hi>schéma formel</hi> (à l’instar d’autres langages informatiques tels que DTD, RELAX NG, W3C Schema, Schematron) pour contrôler l’édition<list>
+        <item>déterminer quelles sont les balises disponibles</item>
+        <item>dans quels contextes</item> <item>avec quels attributs</item>
+        <item>avec quelles valeurs</item> <item>en respectant quelles contraintes</item>
+        </list><p>Une <hi>documentation</hi> pour expliciter aux utilisateurs/développeurs nos principes éditoriaux, nos principes de choix de balises, etc. :<list>
+        <item>dans plusieurs langues naturelles ;</item>
+        <item>dans plusieurs formats de fichier (PDF, MsWord, HTML, epub,...).</item> </list> </p>
+        <!--  <item>Mais aussi d’outils informatiques pour transformer et gérer nos données XML.</item>
+--></div>
+
+      <div type="slide" xml:lang="fr">
+        <head>Pourquoi ODD ?</head>
+        <p>Ces différents pré-requis pourraient être satisfaits de diverses manières.</p>
+        <p>ODD présente plusieurs avantages : <list>
+          <item>il utilise un format XML bien établi,</item>
+          <item>il fait partie intégrante du système  de la TEI,</item>
+          <item>il permet un traitement fortement intégré avec d’autres systèmes TEI,</item>
+          <item>son utilisation améliore la pérennisation à long terme d’une édition</item>
+          <item>il permet de partager des standardisations</item> </list></p>
+      </div>
+
+      <div type="slide" xml:lang="fr">
+        <head>L’idée essentielle de ODD</head>
+        <p rend="box"><hi>O</hi>ne <hi>D</hi>ocument <hi>D</hi>oes it all</p>
+        <p>Un vocabulaire spécialisé pour la déclaration et la documentation :<list>
+          <item>des types d’élément XML, indépendamment de l’utilisation d’autres langages de schémas</item>
+          <item>des patrons (macros)</item> <item>des types de données (datatypes)</item>
+          <item>des classes et des sous-classes d’éléments</item>
+          <item>des regroupements de déclarations (specGrp)</item>
+          <itme>des références à d’autres schémas</itme> </list> </p>
+        <p>Un <hi>schéma</hi> peut combiner :<list>
+          <item>n’importe quel objet qui figure dans la liste ci-dessus</item>
+          <item>des références à un regroupement prédéfini de tels objets (moduleRef)</item></list></p>
+      </div>
+      <div type="slide">
+        <head>Un ODD peut combiner plusieurs spécifications</head>
+        <p>Un ODD peut combiner plusieurs spécifications pour un même objet</p>
+        <list>
+          <item>une spécification <soCalled>canonique</soCalled> telle que référencée dans les <title>Guidelines</title></item>
+          <item>une ou plusieurs spécifications complètement ou en partie modifiées</item>
+          <item>des spécifications explicitées ou héritées d’un autre ODD</item>
+          <item>le statut de chaque spécification supplémentaire est explicité par son attribut <att>mode</att> (par défaut <ident>add</ident>)</item>
+        </list>
+      </div>
+
+      <div type="slide">
+        <head>Le langage de spécification de la TEI</head>
+        <p>La TEI est exprimée dans le langage ODD. C’est d’ailleurs à cette fin que le langage a été mis au point.</p>
+        <p>Le code source disponible à cette adresse, <ref
+          target="http://www.tei-c.org/release/xml/tei/odd/Source/"
+          >http://www.tei-c.org/release/xml/tei/odd/Source/</ref>, rassemble :</p>
+        <list>
+          <item>39 fichiers en TEI, dont 25 chapitres de la documentation correspondant à un module</item>
+          <item>832 fichiers TEI qui définissent un élément, une classe, un type de donnée ou encore une macro : <list>
+            <item>33 types de données (<ident>teidata.xxx</ident>)</item>
+            <item>118 classes de modèle de contenu (xxx.model.xxx)</item>
+            <item>73 classes d’attribut (<ident>att.xxx</ident>)</item>
+            <item>36 macros (<ident>macro.xxx</ident>)</item>
+            <item>567 spécifications d’éléments de <ident>ab.xml</ident> jusqu’à <ident>zone.xml</ident></item>
+            </list></item>
+        </list>
+      </div>
+
+      <div type="slide">
+        <head>Un fichier ODD peut également consister en une personnalisation</head>
+        <p>On utilise le même langage pour spécifier une personnalisation de la TEI.</p>
+        <p>Cette personnalisation peut être spécifiée par rapport à une autre spécification ODD, habituellement une version des <title>Guidelines</title>.</p>
+        <list>
+          <item>en sélectionnant des modules</item>
+          <item>en sélectionnant parmi les objets définis par ces modules (éléments, classes, datatypes, macros)</item>
+          <item>en supprimant ou en modifiant les attributs de ces objets</item>
+          <item>en modifiant ou en remplaçant certaines parties de ces spécifications (p. ex. les valList)</item>
+          <item>éventuellement avec la spécification d’objets nouveaux</item>
+        </list>
+      </div>
+
+      <div type="slide">
+        <head>Comment créer un ODD ?</head>
+        <p>Un ODD est un document TEI comme les autres mais qui utilise le vocabulaire spécifique décrit dans le module <ident>tagdocs</ident>.</p>
+        <p>Il y a plusieurs manières possibles de créer un fichier ODD :
+        <list> <item>avec une interface graphique comme <ref
+          target="http://www.tei-c.org/Roma">Roma</ref></item>
+          <item>par génération automatique avec <ref
+          target="http://teic.github.io/TCW/howtoGenerate-fr.html">ODD By Example</ref></item>
+          <item>En le rédigeant manuellement.</item> </list></p>
+      </div>
+
+      <div type="slide">
+        <head>TP01 – Manipuler un fichier ODD avec Roma</head>
+        <list>
+          <item>Télécharger le fichier ODD <ref target="https://tei-c.org/guidelines/customization/jtei/">jTEI Article</ref></item>
+          <item>Charger le schéma dans <ref target="http://www.tei-c.org/Roma"
+            >Roma</ref></item>
+          <item>Observer les personnalisations</item>
+          <item>Ouvrir le fichier XML</item>
+        </list>
+      </div>
+      
+      <div type="slide">
+        <head>TP02 – Générer un fichier ODD à partir d’un exemple</head>
+        <p target="http://teic.github.io/TCW/howtoGenerate-fr.html"><ref>http://teic.github.io/TCW/howtoGenerate-fr.html</ref></p>
+        <list>
+          <item>Ouvrir un fichier XML-TEI</item>
+          <item>Configurer un scénario de transformation dans Oxygen de la manière suivante :
+          <list>
+            <item>Choisir Transformation -> Configurer le/les scénario(s) de transformation depuis le menu Document</item>
+            <item>Cliquer sur Nouveau et choisissez "XML Transformation with XSLT"</item>
+            <item>Donner un nom à votre scénario (par exemple, oddByExample)</item>
+            <item>Laisser XML URL tel quel.</item>
+          <item>Changer XSL URL pour pointer vers la feuille de style XSLT oddbyexample.xsl dans le répertoire de votre Framework TEI. Entrer <ident>${frameworks}/tei/xml/tei/stylesheet/tools/oddbyexample.xsl</ident></item>
+            <item>Choisir le processeur Saxon-PE >9.4.0.4 comme processeur</item>
+            <item>Cliquer sur l’engrenage près de cette boîte de dialogue pour choisir les Options avancées : vous avez besoin de renseigner la valeur <ident>main</ident> pour Template("-it") puis valider</item>
+          </list></item>
+          <item>Observer les personnalisations</item>
+          <item>Ouvrir le fichier XML</item>
+          <item>Cliquer ensuite sur le bouton Paramètres : vous devez régler le paramètre corpus pour contenir le nom complet du répertoire que vous voulez analyser. Supposant que vous avez ouvert un des fichiers mentionnés à la première étape ci-dessus, vous pouvez seulement donner au paramètre la valeur ${cfd} et cliquer sur OK.</item>
+          <item>Définissez les paramètres voulus dans l’onglet sortie</item>
+          <item>Exécuter la transformation Lancer la transformation en cliquant sur le bouton <ident>Appliquer les scénarios associés</ident></item>
+        </list>
+      </div>
+
+    </body>
+  </text>
+</TEI>
