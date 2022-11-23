@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI pour l’édition critique numérique : niveau deux</title>
+        <author>Lou Burnard</author>
+        <author>Emmanuel Château-Dutier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>École nationale des chartes – Lou Burnard Consulting</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is the master version of an original document.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>2017-02-18</date>
+        <name>Emmanuel Château</name>, relecture et typos</change>
+      <change>
+        <date>2017-02-05</date>
+        <name>Lou Burnard</name>, modification</change>
+      <change>
+        <date>2017-02-17</date>
+        <name>Emmanuel Château</name>, création
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>00-Programme</titlePart>
+        <docImprint>Formation TEI | ENC 27 fév - 2 mars 2017</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
+          <ref target="#jour1">jour1</ref> | <ref target="#jour2">jour2</ref> | <ref target="#jour3">jour3</ref> | <ref target="#jour4">jour4</ref></note>
+      </titlePage>
+      <!--
+        # Programme
+La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. 
+La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de 
+modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI 
+pour l’adapter finement aux objectifs scientifiques de son projet.
+
+Cette formation de niveau avancé (perfectionnement) est principalement destinée à travailler sur la modélisation de son édition critique au moyen d’ODD. 
+Elle s’adresse à des participants ayant déjà des notions minimales sur la TEI et qui souhaitent s’approprier plus avant les moyens offerts par la TEI. 
+Le programme laisse une large place au travail sur les projets des participants sous la forme d’ateliers.
+
+        -->
+      <div type="slide" xml:lang="fr" xml:id="index">
+        <div>
+          <head>Programme d’ensemble</head>
+          <list>
+            <item>Comprendre les enjeux de la modélisation d’une édition critique</item>
+            <item>S’y retrouver dans la TEI</item>
+            <item>Pouvoir personnaliser la TEI pour son projet</item>
+            <item>Apprendre le language ODD</item>
+            <item>Savoir documenter son modèle</item>
+            <item>Identifier l’utilité d’un modèle pour la pérennisation</item>
+          </list>
+        </div>
+      </div>
+    </front>
+    <body>
+      <div type="slide" xml:lang="fr" xml:id="jour1">
+        <div>
+          <head><hi>Première</hi> journée : pourquoi produire un modèle ?</head>
+          <list type="gloss">
+            <label>09h30-10h00</label>
+            <item><ref target="00-programme.html">Introduction de la formation</ref></item>
+            <label>10h-10h45</label>
+            <item><ref target="01-editionNumerique.html">La production d’une édition
+              numérique</ref></item>
+            <label>10h45-11h15</label>
+            <item>pause</item>
+            <label>11h15-12h</label>
+            <item><ref target="02-teiGeneralites.html">Ce que propose la TEI</ref></item>
+            <label>12h-13h30</label>
+            <item>pause déjeuner</item>
+            <label>13h30-14h00</label>
+            <item><ref target="03-organisation.html">Savoir manipuler les <title>Guidelines</title> et les
+              spécifications</ref></item>
+            <label>14h00-15h00</label>
+            <item><ref target="04-commentUtiliser.pdf">Comment utiliser la TEI</ref>
+              
+            </item>
+            
+            <label>15h00 - 15h30</label>
+            <item>TP01 : <ref target="exercice-roma.pdf">Création d’un schéma avec Roma</ref></item>
+            <!--  <item>TP01 : Vérification d’installation correcte d’oXygen</item> 
+        -->   
+            <label>15h30-16h00</label>
+            <item>pause</item>
+            <label>16h00-17h00</label>
+            <item>TP01 : Création du schéma (suite) suivi d’un premier essai d’encodage de votre texte avec oXygen</item> <!-- ?? -->          
+          </list>
+        </div>
+        <div type="notes">
+          <note>Objectifs : Mettre à niveau les participants sur la connaissance de l’organisation
+            des <title>Guidelines</title> et les enjeux d’une modélisation à l’aide d’un schéma.</note>
+        </div>
+      </div>
+      <div type="slide" xml:lang="fr" xml:id="jour2">
+        <div>
+          <head><hi>2<hi rend="superscript">ème</hi></hi> journée</head>
+          <list>
+            <label>09h30-10h30</label>
+            <item>Exposé des projets</item>
+            <label>10h30-11h00</label>
+            <item>Pause</item>
+            <label>11-11h30</label>
+            <item>De quoi a-t-on besoin ?</item>
+            <label>11h30-12h30</label>
+            <item><ref target="05-initODD.html">Mon premier schéma ODD </ref>(création schéma simple, complexifier, ODD)</item>
+            <label>12h30-13h30</label>
+            <item>Pause déjeuner</item>
+            <label>14h-15h30</label>
+            <item><ref target="06-cartes.html">Un cas d’étude : définition automatique d’un schéma pour les cartes postales</ref></item>
+            <label>15h30-16h00</label>
+            <item>Pause</item>
+            <label>16h00-17h00</label>
+            <item><ref target="07-tagdocs.html">TEI sous le capot</ref></item>
+          </list>
+        </div>
+        <div type="notes">
+          <note>Objectifs : Connaître les principes d’un langage de spécification de schéma et apprendre les bases de la syntaxe ODD. Avoir vu la manière dont la TEI utilise ODD.</note>
+          <note>Le cas d’étude n’est pas forcément nécessaire comme car par la suite dans ce format de formation on traite de la modélisation le lendemain. En revanche la partie d’exercice fonctionnait bien. Par ailleurs l’ODD est simple et lisible. D’autant que les exemples présentaient des problèmes différents qui permettaient d’explorer différentes situations : que fournit le schéma produit avec l’ODD pour l’édition du document (choix des valeurs d’attribut, etc.), élément non autorisé dans le schéma, comment ajouter un élément dans le schéma.</note>
+        </div>
+      </div>
+      <div type="slide" xml:lang="fr" xml:id="jour3">
+        <div>
+          <head><hi>3<hi rend="superscript">ème</hi></hi> journée</head>
+          <list>
+            <label>9h30-11h00</label>
+            <item><ref target="08-teiODD.html">Construction d’un ODD </ref></item>
+            <label>11h00-11h30</label>
+            <item>Pause</item>
+            <label>11h30-12h30</label>
+            <item><ref target="atelier.html">Travail en binôme</ref></item>
+            <label>12h30-13h30</label>
+            <item>Pause déjeuner</item>
+            <label>13h30-14h30</label>
+            <item>Présentation des projets</item>
+            <label>14h30-15h00</label>
+            <item>Construction d’un ODD pour votre projet</item>
+            <label>15h00-15h15</label>
+            <item><ref target="focus-figures.html">Focus 1 : les figures</ref></item>
+            <label>15h15-15h45</label>
+            <item>Construction de l’ODD (cont)</item>
+            <label>15h45-16h00</label>
+            <item><ref target="focus-pointing.html">Focus 2 : les pointeurs</ref></item>
+            <label>16h00-16h30</label>
+            <item>Pause</item>
+            <label>16h30-17h00</label>
+            <item>Construction de l’ODD (cont)</item>
+            <label>17h00-17h30</label>
+            <item>Revue des ODD construits</item>
+          </list>
+        </div>
+        <div type="notes">
+          <note><list>
+            <item>Présentation de modules (survol sur tout ce qui est disponible, il y a probablement tout ce qu’il faut)</item>
+            <item>Création de vos propres schémas (exercice d’analyse à partir de vos propres sources = travail en binôme ou en groupe)</item>
+            <item>Travail sur les cas (mise en commun)</item>
+            <item>Créer un premier ODD avec Roma</item>
+            
+          </list></note>
+          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Sélectionner les éléments utiles pour son projet dans Roma. = un premier schéma personnalisé pour son projet (TEI subset). Analyser le ODD et repérer sa syntaxe, comprendre son implication.</note>
+          <note>Définir une liste de focus et les proposer : pointeurs, standoff markup, figures, alignement images/text</note>
+          <note>travail en binôme : (définir quelle est l’unité textuelle, quelle est la macrostructure du texte, quels sont les parties les plus significatives de vos documents, quels sont les objets qui correspondent à des p, quels sont les composants des p) Point de vue sur l’édition, objets d’intérêt.</note>
+        </div>
+      </div>
+      <div type="slide" xml:lang="fr" xml:id="jour4">
+        <div>
+          <head><hi>4<hi rend="superscript">ème</hi></hi> journée</head>
+          <list>
+            <item><ref target="09-advanced.html">ODD : sujets avancées</ref> (documentation, schematron, enchaînement, traitement...)</item>
+            <item>Poursuite du travail sur les projets</item>
+            <item>Produire un ODD avec style</item>
+            <item>Comment fournir des exemples</item>
+            <item>Comment organiser son fichier ODD</item>
+            <item>Take away : pérennisation</item>
+          </list>
+        </div>
+        <div type="notes">
+          <note>Objectifs : Identifier ce qui est déjà dans la TEI, et modéliser sa source. Arriver à une liste des éléments nécessaires pour son schéma, identification des éléments disponibles et des lacunes éventuelles de la TEI. Comprendre l’intérêt du schéma pour assurer la pérennisation de ses sources. Identifier la manière dont peut contribuer à la TEI (exemples groupe).</note>
+          <note>Mettre en pratique chacun des points à partir des acquis de la formation.</note>
+        </div>
+      </div>
+      <div type="slide">
+        <div>
+          <div>
+            <head>S’assurer d’avoir git</head>
+            <list>
+              <item>Ouvrir un terminal</item>
+              <item>Tapez <code>git version</code></item>
+              <item>Sous Linux, si Git est absent tapez <code>apt-get install git</code></item>
+            </list>
+          </div>
+          <div>
+            <head>Se déplacer dans l’arborescence de fichiers</head>
+            <list>
+              <item><code>cd Desktop/formationEnc2017-02/</code></item>
+              <item><code>cd ..</code></item>
+            </list>
+          </div>
+          <div>
+            <head>Mettre à jour les sources</head>
+            <list>
+              <item><code>cd Desktop/formationEnc2017-02/</code></item>
+              <item><code>git pull</code></item>
+            </list>
+          </div>
+        </div>
+      </div>
+      <div type="slide">
+        <div>
+          <head>Télécharger les sources</head>
+          <list>
+            <item>Aller sur https://github.com/tei-fr/formationEnc2017-02</item>
+            <item>Copiez le lien HTTPS</item>
+            <item>Ouvrez le terminal et tapez les commandes magiques suivantes</item>
+          </list>
+          <eg>cd Desktop</eg>
+          <eg>git clone -\-recursive https://github.com/tei-fr/formationEnc2015-05.git</eg>
+        </div>
+      </div>
+      <div type="slide">
+        <div>
+          <head>Organisation du répertoire</head>
+          <list>
+            <item><ident>exemples/</ident> exemples tei</item>
+            <item><ident>exercices/</ident> contient les dossiers de travaux pratiques</item>
+            <item><ident>images/</ident> contenus graphiques</item>
+            <item><ident>pdf/</ident> présentations au format pdf</item>
+            <item><ident>presentations/</ident> présentations au format HTML</item>
+            <item><ident>ressources/</ident> matériel d’accompagnement</item>
+            <item><ident>schemas/</ident> schémas distribués pour la formation</item>
+            <item><ident>sources/</ident> sources tei des présentations</item>
+            <item><ident>xsl/</ident> transformations xslt</item>
+          </list>
+        </div>
+      </div>
+      <div type="slide" xml:lang="fr">
+        <div>
+          <head>Utiliser ces diapositives</head>
+          <list>
+            <item><ident>←</ident>, <ident>↑</ident>, <ident>Pg Up</ident>, <ident>k</ident> : aller
+              à la page précédente</item>
+            <item><ident>→</ident>, <ident>↓</ident>, <ident>Pg Dn</ident>, <ident>Espace</ident>,
+              <ident>j</ident> : aller à la page suivante</item>
+            <item><ident>Home</ident> : aller à la première diapositive</item>
+            <item><ident>End</ident> : aller à la dernière diapositive</item>
+            <item><ident>f</ident> : afficher en plein écran</item>
+            <item><ident>Esc</ident> : quitter le mode plein écran</item>
+            <item><ident>?</ident>, <ident>h</ident> : afficher l’aide</item>
+          </list>
+        </div>
+      </div>
+      <div>
+        <div type="title" xml:lang="fr">
+          <head>Pour <ref target="01-editionNumerique.html">commencer</ref></head>
+          <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
+            >Programme</ref></note>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

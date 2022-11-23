@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="fr">Organisation de la TEI</title>
+        <author>Emmanuel Château-Dutier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>publica.archi</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>From previous talks in Tours, Paris, Barcelona, Paris, Graz... Préparé pour ENC MasterPro 2015, puis formation 2017.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2022-11">Révision et remaniement par emchateau pour HNU6053</change>
+      <change when="2017-02-18">Revised by emchateau for ENC</change>
+      <change who="#LB" when="2014-09-23">Revised for MM14</change>
+      <change who="#LB" when="2014-02-17">Revised for Mutec</change>
+      <change who="#LB" when="2013-10-20">Finalised for SUFCO formation, Oct 2013</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>One Document Does It All</titlePart>
+        <docImprint>HNU6053</docImprint>
+      </titlePage>
+    </front>
+    <body>
+      <div rend="title" xml:lang="fr" xml:id="index">
+        <head>Organisation de la TEI</head>
+      </div>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Un cadre de travail flexible et modulaire</head>
+          <list>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">22 modules</ref>
+              <list>
+                <item>Classement des éléments de la TEI par domaines d’application</item>
+                <item>Chaque module fait l’objet d’un chapitre de la documentation</item>
+              </list></item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-MODEL.html">Classes de modèle</ref></item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html">Classes d’attribut</ref></item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-MACROS.html">Macros et types de données</ref></item>
+          </list>
+        </div>
+        <div rend="notes">
+          <p>Dès l’origine, la TEI a été conçue pour être employée comme un ensemble de briques permettant de construire des schémas spécifiques pour un projet donné.</p>
+          <p>L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en :<list> 
+            <item>vingt-deux modules parmi lesquels sont répartis les nombreux éléments de la TEI qui font l’objet d’une importante documentation textuelle</item>
+            <item>ils sont formellement classés dans des classes de modèle et d’attributs auxquels on peut faire appel pour spécifier un schéma.</item>
+          </list>
+          </p>
+          <p>[cf. <ref target="04-personnalisation.html">Personnalisation de la TEI</ref></p>
+        </div>
+      </div>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Les 22 <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">modules</ref> de la TEI</head>
+          <figure>
+            <graphic url="images/modulesTEI.png"/>
+            <desc>Les modules de la TEI</desc>
+          </figure>
+        </div>
+      </div>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Les 22 <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA">modules</ref> de la TEI</head>
+          <p>Regroupés par domaine d’application, à chaque module correspond un chapitre des
+            <ref target="http://www.tei-c.org/Guidelines/"><title>Guidelines</title></ref></p>
+          <p>Trois modules habituellement requis : <list>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html" ><ident>core</ident></ref> éléments disponibles dans tous les documents TEI</item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html"><ident>header</ident></ref> en-tête TEI</item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html"><ident>textstructure</ident></ref> structure de text par défaut</item>
+          </list>
+          </p>
+          <p>&amp; <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html"
+            ><ident>tei</ident></ref> infrastructure TEI</p>
+          <p>ex d’autres modules spécialisés : <ref
+            target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"
+            ><ident>namesdates</ident></ref> pour les noms et dates, [<ref
+              target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
+              ><ident>transcr</ident></ref> pour la critique textuelle, <ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
+                ><ident>msdescription</ident></ref> pour la description de manuscrits, <ref
+                  target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
+                  ><ident>figure</ident></ref> facsimili, ...</p>
+        </div>
+        <div rend="notes">
+          <p>Les modules constituent avant tout un moyen commode de grouper par domaine d’application les nombreux éléments de la TEI (ils sont actuellement au nombre de 555).</p>
+          <p>Chaque module fait l’objet d’une description littérale dans un chapitre des <title>Guidelines</title>.</p>
+          <p>Trois de ces modules sont habituellement requis lors de la production d’un schéma (<ident>core</ident>, <ident>header</ident>, et <ident>textstructure</ident>, on utilise également <ident>tei</ident> pour RelaxNG).</p>
+          <p>Outre ces trois modules, on fait fréquemment appel aux modules suivants <ident>figures</ident>, <ident>namesdates</ident>, <ident>linking</ident>, <ident>transcr</ident>.</p>
+          <list>
+            <item>Le module <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html"><ident>namesdates</ident></ref> est particulièrement adapté pour la description des entités historiques de type personnes et lieux.</item>
+            <item>Le module <ref
+              target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html"
+              ><ident>figure</ident></ref> est utilisé conjointement avec <ident>transcr</ident> pour traiter la description des facsimili.</item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
+              ><ident>transcr</ident></ref> est destiné à la transcription de manuscrit et à la
+              transcription de sources primaires. Y trouvera par exemple des éléments pour
+              signaler un passage rayé, un ajout dans la marge (glose marginale), une
+              abréviation, etc.</item>
+            <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
+              ><ident>msdescription</ident></ref> sert à la description de manuscrits. Quand fait une édition de texte, besoin de décrire la source que l’on édite, on y trouver les éléments nécessaires.</item>
+            <item>Il est également possible d’utiliser le module <ident>dictionaries</ident> pour le traitement d’un glossaire.</item>
+            <item>Module <ident>drama</ident> pour la transcription du texte oral pas la même chose que texte de base. Composante de temps.</item>
+            <item><ident>textCrit</ident> lorsque l’on a besoin d’encoder un apparat critique, quand étudie un texte qui a plusieurs témoins, plusieurs manuscrits qui constitue plusieurs leçons d’un texte <ident>transcrit</ident> (variantes) critical aparatus</item>
+            <item><ident>linking</ident> qui concerne le modèle de lien</item>
+          </list>
+        </div>
+      </div>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Se repérer sur le site du Consortium</head>
+          <p><ref target="http://www.tei-c.org">http://www.tei-c.org</ref></p>
+          <div>
+            <head>Consortium</head>
+            <list>
+              <item>Actualités</item>
+              <item>Groupes de travail</item>
+              <item>Wiki</item>
+            </list>
+          </div>
+          <div>
+            <head><title>Guidelines</title></head>
+            <list>
+              <item>Consultation des chapitres</item>
+              <item>Description des éléments</item>
+              <item>Classes</item>
+            </list>
+          </div>
+        </div>
+        <div rend="notes">
+          <div>
+            <head>Le site du consortium</head>
+            <p>Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’<ref target="https://jtei.revues.org"><title>Journal of the TEI</title></ref> dans le menu activités.</p>
+            <p>Vous disposez également d’un WIKI sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.</p>
+            <p>Une partie du WIKI est consacrée aux outils. Si vous deviez démarrer un gros projet, c’est une bonne page pour déterminer les outils existants pour faire l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est évidemment pas exhaustif.</p>
+            <p>Les <title>Guidelines</title>, mais aussi <title>About</title> avec une rubrique sur l’histoire du projet.</p>
+            <p>La liste de discussion : il vous suffit de fournir votre nom et votre adresse courriel pour être abonné.</p>
+          </div>
+          <div>
+            <head>Détail des <title>Guidelines</title></head>
+            <list>
+              <item>Consultation des chapitres</item>
+              <item>Navigation par élément</item>
+              <item>Consultation des classes</item>
+              <item>Outils</item>
+            </list>
+            <p>Les parties concernant les spécifications formelles des <title>Guidelines</title> ont fait l’objet de traduction par le groupe Afnor. Des exemples correspondants à la pratique française ont été introduits.</p>
+            <p>En revanche le corps principal des <title>Guidelines</title> n’existe qu’en une seule langue. Si vous commencez un projet, rien ne vaudra une lecture attentive des chapitres qui vous intéressent. Il s’agit d’une recommandation de base. Ici c’est même un préalable, car si EAD par exemple est souple et facile à comprendre et cerner, TEI l’est beaucoup moins. Pour commencer à travailler avec TEI, la première consigne est de commencer à lire la documentation.</p>
+          </div>
+        </div>
+      </div>
+      <div rend="slide">
+        <div>
+          <head><title>Guidelines</title></head>
+          <list>
+            <item>23 chapitres par ordre d’intérêt</item>
+            <item>5 premiers chapitres généralistes</item>
+            <item>7 suivants discutent de type de textes en particulier</item>
+            <item>9 chapitres spécialisés</item>
+            <item>2 derniers chapitres sur la conformance</item>
+          </list>
+        </div>
+        <div rend="notes">
+          <p>Le corps de l’édition actuelle des <title>Guidelines</title> contient vingt-trois chapitres arrangés dans un ordre croissant d’intérêt spécial. Les cinq premiers chapitres abordent en détail les questions importantes pour les personnes envisageant d’employer la TEI pour n’importe quel type de texte. Les sept chapitres suivants focalisent sur des genres de textes particuliers : versifiés, dramatiques, textes oraux, dictionnaires, et manuscrits. Les neuf derniers chapitres s’occupent de sujets variés concernant plutôt des applications spécialisées. Enfin, les deux derniers chapitres s’occupent de l’utilisation de ODD qui sert à déclarer son utilisation de la TEI, et les questions de conformance et d’interopérabilité.</p>
+          <p>Bien évidemment, ces <title>Guidelines</title> ne sont pas faites pour être lues de bout en bout (même si vous pouvez le faire !). Il s’agit plutôt d’une documentation de référence.</p>
+          <p>Généralement, les chapitres suivent tous une organisation similaire. Ils débutent par des considérations générales sur le sujet traité. Repérer les navigations hypertextuelles (renvois), les tables de descriptions d’éléments et d’attributs, les exemples, et à la fin des chapitres le récapitulatif des éléments contenus dans les modules décrits par les chapitres.</p>
+        </div>
+      </div>
+      
+      <div type="slide">
+        <head>Rappels terminologiques</head>
+        <p>La TEI définit plusieurs éléments de la manière suivante :</p>
+        <list>
+          <head>Une définition d’élément peut contenir</head>
+          <item>un nom canonique <gi>gi</gi> pour l’élément et optionnellement d’autres noms dans d’autres langues</item>
+          <item>une description canonique, optionnellement traduire</item>
+          <item>une déclaration d’appartenance à une classe</item>
+          <item>la définition de chacun de ses attributs</item>
+          <item>une définition de son modèle de contenu (ce qui peut apparaître où)</item>
+          <item>des exemples d’utilisation et des notes</item>
+        </list>
+        
+        <div>
+          <head>Les modules</head>
+          <p>Les modules sont utilisés pour grouper un ensembles d’éléments par domaine</p>
+        </div>
+        <div>
+          <head>Les classes</head>
+          <p>Les classes de modèle de contenu ou les classes d’attributs réunissent des éléments qui partagent les mêmes modèles de contenus ou les mêmes attributs</p>
+        </div>
+      </div>
+      
+      <div type="slide">
+        <head>Le système de module</head>
+        <p>Par commodité, les éléments sont regroupés par domaine d’application qui correspondent aux chapitres de la TEI.</p>
+        <list>
+          <label>analysis</label>
+          <item>Simple analytic mechanism</item>
+          <label>certainty</label>
+          <item>Certainty and uncertainty</item>
+          <label>core</label>
+          <item>Elements common in many TEI document</item>
+          <label>corpus</label>
+          <item>Corpus  texts</item>
+          <label>dictionaries</label>
+          <item>Dictionaries</item>
+          <label>drama</label>
+          <item>Performance texts</item>
+          <label>...</label>
+          <item>...</item>
+        </list>
+        <p>On peut créer un schéma TEI en sélectionnant des modules et en désignant les éléments à inclure ou exclure.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Comment choisir ?</head>
+        <p>Tout choisir (TEI all), n’est pas vraiment une bonne idée.</p>
+        <p>La TEI propose plusieurs sous-ensembles d’usage courant<list> <item>TEI Lite</item>
+          <item>TEI Bare</item> <item>TEI Simple</item> <item>jTEI Article</item> </list></p>
+        <p>Il est également possible de spécifier son schéma de diverses manières.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Le système de classe</head>
+        <p>La TEI distingue plus de 540 éléments.</p>
+        <p>Ces éléments sont organisés dans des classes pour faciliter la compréhension du modèle, sa modularité et sa modification.</p>
+        <list>
+          <label>Les classes d’attribut (Attribute class)</label>
+          <item>regroupe les éléments qui partagent les mêmes attributs</item>
+          <label>Les classes de model (Model class)</label>
+          <item>Regroupent les éléments qui peuvent apparaître dans les mêmes contextes (et qui sont souvent sémantiquement en rapport)</item>
+        </list>
+        <p>Les classes peuvent contenir d’autres classes.</p>
+        <p>Un élément peut être membre d’un nombre indéterminé de classe, indépendamment du module auquel il appartient.</p>
+      </div>
+      
+      <div type="slide">
+        <head>Les classes d’attribut (Attribute class)</head>
+        <p>Les classes d’attribut reçoivent généralement des noms adjectivaux et commencent par le préfixe <value>att</value> : p. ex. <ident>att.naming</ident>, <ident>att.typed</ident></p>
+        <p>Tous les membres de la classe héritent des attributs de cette classe</p>
+        <list>
+          <item>Tous les membres de <ident>att.canonical</ident> héritent de ses attributs <att>key</att> et <att>ref</att></item>
+          <item>Tous les membres de <ident>att.typed</ident> héritent des attributs <att>type</att> et <att>subtype</att></item>
+        </list>
+        <p>Si l’on souhaite qu’un élément porte l’attribut <att>type</att>, il suffit d’ajouter cet élément à la classe <ident>att.typed</ident> plutôt que de définir ses attributs spécifiquements sur cet élément.</p>
+      </div>
+      
+      <div type="slide">
+        <head>L’exemple de la classe <ident>att.global</ident></head>
+        <p>La classe d’attribut <ident>att.global</ident> est définie par <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html</ref></p>
+        <list>
+          <label><att>xml:id</att></label>
+          <item>un identifiant unique</item>
+          <label><att>xml:lang</att></label>
+          <item>la langue du contenu de l’élément</item>
+          <label><att>n</att></label>
+          <item>un nombre ou un nom pour un élément</item>
+          <label><att>rend</att></label>
+          <item>la manière dont l’élément en question est rendu ou présenté dans la source</item>
+        </list>
+      </div>
+      
+      <div type="slide">
+        <head>Les classes de modèles de contenu (Model Classes)</head>
+        <p>Les classes de modèles de contenu regroupent les éléments qui sont autorisés dans les mêmes contextes.</p>
+        <p>Par exemple, si vous ajouté un élément qui est attendu partout où un élément <gi>bibl</gi> est autorisé, il suffit de l’ajouter à la classe <ident>model.biblLike</ident></p>
+        <list>
+          <item>les classes de modèles de contenu ont habituellement un sufixe Like ou Part</item>
+          <item>les membres de <ident>model.pLike</ident> sont toutes les choses qui se comportent de manière similaire aux paragraphes et sont permis au même endroit que les paragraphes</item>
+          <item>les membres de <ident>model.pPart.edit</ident> sont des éléments pour des interventions éditoriales simples comme <gi>corr</gi> ou <gi>del</gi></item>
+          <item>les éléments de <ident>model.pPart.data</ident> sont les éléments de données tels que <gi>name</gi>, <gi>num</gi>, <gi>date</gi>, …</item>
+        </list>
+      </div>
+      
+      <div type="slide">
+        <head>Structure de base des modèles</head>
+        <p>On reconnaît généralement trois classes d’éléments</p>
+        <list>
+          <label>divisions</label>
+          <item>divisions de haut niveau d’un texte</item>
+          <label>chunks</label>
+          <item>éléments tels que les paragraphes qui apparaissent dans des textes ou des divisions mais pas dans d’autres chunks</item>
+          <label>phrase-level element</label>
+          <item>des éléments tels que les mises en exergues, qui peuvent seulement intervenir au sein de chunks</item>
+          <label>inter-level element</label>
+          <item>tels que les listes qui peuvent apparaître soit dans ou entre les chunks</item>
+          <label>components elements</label>
+          <item>qui peuvent apparaître directement dans des textes ou des divisions</item>
+        </list>
+      </div>
+      
+      <div rend="slide">
+        <div>
+          <head>Conventions de nommage</head>
+          <div>
+            <head>Identifiants génériques</head>
+            <p>Les noms d’éléments sont les identifiants génériques</p>
+            <p>ex : <code>&lt;name&gt;</code> correspond à <ident>name</ident></p>
+          </div>
+          <div>
+            <head>Référence aux attributs</head>
+            <p>prennent la forme <ident>@attname</ident>, où "attname" est le nom de l’attribut</p>
+            <p>ex : <code>@name</code> correspond à <ident>name</ident></p>
+            
+          </div>
+          <div>
+            <p>Les noms TEI ressemblent à des mots anglais ... mais on peut les modifier</p>
+            <p>Par convention, on se sert du <q>camelCase</q></p>
+          </div>
+        </div>
+      </div>
+      <div rend="slide">
+        <div>
+          <head>Conventions de nommage (<hi>suite</hi>)</head>
+          <div>
+            <head>Références aux classes</head>
+            <p>de la forme <ident>model.divLike</ident> pour les classes de modèle</p>
+            <p>de la forme <ident>att.global</ident> pour les classes d’attribut.</p>
+          </div>
+          <div>
+            <head>Macros et types de données</head>
+            <p>de la forme <ident>macro.paraContent</ident> pour les macros</p>
+            <p>de la forme <ident>teidata.pointer</ident> pour les types de données.</p>
+          </div>
+          <div>
+            <p>suffixes <ident>Part</ident>, <ident>Like</ident></p>
+            <p>racine <ident>global</ident> pour indiquer que les membres de la classe sont
+              permis n’importe où dans un document TEI</p>
+            <p>suffixes additionnels préfixés par <ident>.</ident></p>
+            <p>ex : <ident>model.divPart</ident>, <ident>model.divPart.spoken</ident></p>
+          </div>
+        </div>
+        <div rend="notes">
+          <p>Introduire la notion d’héritage à partir des conventions de nommage des classes :</p>
+          <p>Le premier suffixe "Part" si les membres de la classe sont tous fils de l’élément racine, ou "Like" les membres de la classe sont tous enfant de l’élément racine.</p>
+          <p>La racine de nom "global" est utilisée pour indiquer que les membres de la classe sont permis partout dans un document TEI</p>
+          <p>Il est possible d’ajouter des suffixes additionnels, préfixés par un "." pour distinguer des sous-classes sémantiques ou structurelles.</p>
+          <p>Par exemple la classe des éléments qui font partie de div est appelée <ident>model.divPart</ident>. Cette classe inclue dans une sous-classe les éléments qui peuvent faire partie d’une division dans un texte oral, qui est alors nommée <ident>model.divPart.spoken</ident></p>
+        </div>
+      </div>
+      <div rend="slide">
+        <div>
+          <head>Déclaration du contenu d’un élément</head>
+          <list>
+            <item><gi>sequence</gi> Indique une séquence</item>
+            <item><gi>alternate</gi> Indique un choix</item>
+            <item><att>minOccurs</att> Indique le nombre minimal de répétitions (par défaut 1)</item>
+            <item><att>maxOccurs</att>Indique le nombre maximal de répétitions (par défaut 1)</item>
+            <item><gi>elementRef</gi> Indique la présence d’un élément</item>
+            <item><gi>classRef</gi> Indique la présence d’un ou de plusieurs éléments d’une classe spécifique</item>
+          </list>
+        </div>
+        <div rend="notes">
+          <head>Déclaration du contenu d’élément</head>
+          <list>
+            <item><gi>sequence</gi> Indique une séquence, c’est-à-dire que les composants 
+              sont présentés dans l'ordre où il faut les trouver.</item>
+            <item><gi>alternate</gi>Indique un choix, c’est-à-dire que l’on choisit entre tous
+              les composants.</item>
+            <item><att>minOccurs</att> et <att>maxOccurs</att> sont d’habitude utilisés ensemble pour indiquer la cardinalité d’un composant.  Si absent, ils ont tout les deux une valeur de 1.</item>
+            <item><gi>elementRef</gi> Indique un élément par son attribut <att>key</att></item>
+            <item><gi>classRef</gi> Indique une classe d'éléments par son attribut <att>key</att>. La signification varie selon la valeur de son attribut <att>expand</att>. Par défaut, il correspond à un élément (n’importe lequel) de la classe indiquée.</item>
+          </list>
+        </div>
+      </div>
+      
+    </body>
+  </text>
+</TEI>

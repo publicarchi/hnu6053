@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Atelier modélisation</title>
+        <author>Lou Burnard</author>
+        <author>Emmanuel Chateau</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>École nationale des chartes</publisher>
+        <date from="2015" to="2017">2015 à 2017</date>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Document nativement numérique</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2017-02-18"><name>Emmanuel Château-Dutier</name> mise à jour du fichier</change>
+      <change when="2015-11-18"><name>Emmanuel Château-Dutier</name> création du fichier</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>06 – Atelier modélisation</titlePart>
+        <docImprint>Formation TEI | ENC 27 février au 2 mars 2017</docImprint>
+        <note><ref target="https://github.com/tei-fr/formationEnc2017-02">Répertoire GitHub</ref> |
+            <ref target="00-programme.html">Programme</ref></note>
+      </titlePage>
+    </front>
+    <body>
+      <div rend="slide" xml:lang="fr">
+        <div>
+          <head>Travail en binôme 1</head>
+          <p><hi>Travailler successivement sur le projet de votre binôme. 11h30-12h30</hi></p>
+          <div>
+            <head>Définir les objets d’intérêt de votre édition, qu’est-ce qu’un texte pour vous ?</head>
+          </div>
+          <div>
+            <head>Quelle est l’unité textuelle ?</head>
+          </div>
+          <div>
+            <head>Quelle est la macrostructure du texte ?</head>
+          </div>
+          <div>
+            <head>Quels sont les parties les plus significatives de vos documents ?</head>
+          </div>
+          <div>
+            <head>Quels sont les objets qui correspondent à des <gi>p</gi> ?</head>
+          </div>
+          <div>
+            <head>Quels sont les sous-composants de <gi>p</gi> ?</head>
+          </div>
+        </div>
+        <div rend="slide" xml:lang="fr">
+          <div>
+            <head>Travail en binôme 2</head>
+            <p><hi>Travailler successivement sur le projet de votre binôme. 11h30-12h30</hi></p>
+            <div>
+              <head>Indentifier dans la TEI les éléments nécessaires à votre projet</head>
+              <p>Recherchez dans les <title>Guidelines</title> de la TEI les éléments dont vous pourriez avoir besoin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div rend="title" xml:lang="fr">
+          <head>...</head>
+          <note><ref target="#index">Revenir au début</ref> | <ref target="00-programme.html"
+              >Programme</ref></note>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

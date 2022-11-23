@@ -61,7 +61,7 @@
            A text node may be of any length, including zero. </p>
         <p>More usually, an element has what is known as <term>element content</term>. In this case,
           the <gi>content</gi> element will contain references to one or more other elements, each
-          represented by an <gi>elementRef</gi> element. If there is only one such child element it
+          represented by an <gi>elementRef</gi> element. If there is only one such child element it 
           can be given directly:
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <elementSpec ident="oneElement">

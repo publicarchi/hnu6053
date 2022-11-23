@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Bibliographie</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>public.archi</publisher>
+            <date from="2022">2022</date>
+            <idno type="URI">http://www.public.archi/hnu6052/plan-de-cours</idno>
+         </publicationStmt>
+         <seriesStmt>
+            <title type="main"
+               >HNU3052/HNU6052, Utilisation avancée de la Text Encoding Initiative (TEI)</title>
+            <title type="sub">Approfondissements (ODD, exploitation des documents)</title>
+            <idno type="uri">http://www.public.archi/hnu6053</idno>
+         </seriesStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2022-11-09">Création du fichier</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>Bibliographie</head>
+            <listBibl>
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <persName>
+                           <forename>Lou</forename>
+                           <surname>Burnard</surname>
+                        </persName>
+                     </author>
+                     <title>Qu’est-ce que la TEI ? Encyclopédie numérique</title>
+                     <idno type="doi">10.4000/books.oep.1237</idno>
+                     <imprint>
+                        <publisher>OpenEdition Press</publisher>
+                        <date when="2015">2015</date>
+                     </imprint>
+                  </monogr>
+                  <!-- 
+                  Burnard, Lou. « What Is TEI Conformance, and Why Should You Care? » Journal of the Text Encoding Initiative 12 (2019). http://journals.openedition.org/jtei/1777.
+Burnard, Lou. « Comment maîtriser le tigre TEI », atelier de formation annuel du consortium Cahier, Montpellier, 26-29 juin 2018. https://cahier.hypotheses.org/files/2018/08/ODD-diapos.pdf
+Rahtz, Sebastian, et Lou Burnard. « Reviewing the TEI ODD System ». In Proceedings of the 2013 ACM Symposium on Document Engineering - DocEng ’13, 193. Florence, Italy: ACM Press, 2013. https://doi.org/10.1145/2494266.2494321.
+Camps, Jean-Baptiste. « Personnaliser la TEI : One Document Does it all », support de cours pour le M2 Technologies numériques appliquées à l’histoire, Ecole Nationale des Chartes, 2017. https://halshs.archives-ouvertes.fr/cel-01706530/file/06_TEI_ODD_Camps_20170202.pdf
+TEI Consortium, eds. Tei P5 : Guidelines for Electronic Text Encoding and Interchange », « Getting started with P5 ODDs » [version 4.2.0, dernière modification : 2021-02-25], https://tei-c.org/release/doc/tei-p5-doc/en/html/USE.html
+TEI Consortium, eds. « 23.3 Customization » [dernière modification : 2006-10-29], https://tei-c.org/guidelines/customization/getting-started-with-p5-odds/
+TEI Consortium, eds. « Customizing the TEI with Roma » [dernière modification : 2006-10-29], https://tei-c.org/guidelines/customization/customizing-the-tei-with-roma/
+Viglianti, Raffaele. « One Document Does-it-all (ODD): a language for documentation, schema generation, and customization from the Text Encoding Initiative. » Presented at Symposium on Markup Vocabulary Customization, Washington, DC, July 29, 2019. In Proceedings of the Symposium on Markup Vocabulary Customization. Balisage Series on Markup Technologies 24 (2019). https://doi.org/10.4242/BalisageVol24.Viglianti01.
+-->
+               </biblStruct>
+            </listBibl>
+         </div>
+         <div>
+            <head>Divers</head>
+            <p>https://xsltfiddle-beta.liberty-development.net</p>
+            <p>https://dixit.uni-koeln.de</p>
+            <p>https://slides.com/magdalenaturska/deck/#/</p>
+         </div>
+         <div>
+            <head>Outils</head>
+            <p>http://teicat.huma-num.fr/</p>
+         </div>
+         <divGen type="toc" />
+      </body>
+   </text>
+</TEI>

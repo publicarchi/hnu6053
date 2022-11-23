@@ -1,0 +1,542 @@
+<?xml version="1.0"?>
+<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Pointing, Linking, and Stand Off Markup</title>
+        </titleStmt>
+      <editionStmt>
+        <edition>
+          <date>January 2010</date>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>University of Oxford</publisher>
+        <availability>
+          <p>Freely available for use and derivative works under a Creative
+            Commons Attribution license.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Various previous talks, TEI Guidelines, etc.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>$LastChangedDate: $.</date>
+        <name>$LastChangedBy: jamesc $</name>
+        <note>$LastChangedRevision: $</note>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <div>
+        <head>Linking, segmentation and alignment</head>
+        <p>This module provides additional features which allow us 
+          <list>
+          <!--  <item>to link disparate elements without using the
+                <att>xml:id</att> attribute;</item>
+       -->     <item>to label arbitrary <emph>segment</emph>s and arbitrary points of interest within our documents </item>
+            <item>to represent <hi>correspondence</hi> or
+                <hi>alignment</hi> among groups of text elements</item>
+            <item>to <hi>synchronize</hi> elements of a text, representing
+              temporal correspondences and alignments among text
+              elements</item>
+            <item>to specify that one text element is
+                <emph>identical</emph> to, a <emph>copy</emph> of, or <emph>corresponding</emph> 
+in some way to              another</item>
+            <item>to <emph>aggregate</emph> possibly noncontinguous
+              elements</item>
+            <item>to specify that different elements are
+                <emph>alternatives</emph> to one another and to express
+                <emph>preferences</emph> among the alternatives</item>
+            <item>to store markup separately from the the data it
+              describes</item>
+          </list>
+        </p>
+
+      </div>
+
+
+      <div>
+        <head>Underlying assumptions</head>
+        <list>
+          <item>Use W3C identifying, pointing and linking mechanisms where
+            possible</item>
+          <item>Use <att>xml:id</att> to identify an element
+            directly</item>
+          <item>Use XPointer to point to elements that do not have an
+              <att>xml:id</att></item>
+        </list>
+      </div>
+
+
+      <div>
+        <head>Complex pointing </head>
+        <p>The standard URI scheme allows for pointing <list>
+            <item> to documents other than the current document</item>
+            <item> to a particular element in a document other than the
+              current document using its xml:id;</item>
+          </list> but we also need to point <list>
+            <item> to a particular element using its position in the XML
+              element tree (standard XPointer schemes)</item>
+            <item> at arbitrary content in any XML document using
+              TEI-defined XPointer schemes</item>
+          </list>
+        </p>
+      </div>
+<!--
+      <div>
+        <head>Some W3C XPointer schemes (1)</head>
+<p><list>
+            <label>element</label>
+            <item>Identify elements by position within parent,
+            recursively.</item>
+  <label>left</label>
+            <item>Locates the point immediately preceding its argument. The argument may return a node,
+              node set, range, or point. (TEI Submitted)</item>
+<label>range</label>
+            <item>Locates a range between two points in an XML information
+              set. Takes two pointer arguments which locate the boundaries
+              of the range by two points, and are interpreted as fragment
+              identifiers. (TEI Submitted)</item>
+          </list>
+</p>        </div>
+
+      <div>
+        <head>Some W3C XPointer schemes (2)</head>
+        <list type="gloss">
+          <label>right</label>
+          <item>Locates the point immediately following its argument. The
+            sole argument is a pointer, which is treated as if it were a
+            fragment identifier itself. (TEI Submitted)</item>
+<label> string-range</label>
+          <item>Locates a range based on character positions. Takes three
+            arguments: a pointer, an offset, and a length. (TEI Submitted)</item>
+<label>xmlns</label>
+          <item>Bind a prefix for use in subsequent pointer parts e.g.
+            xmlns(xs=http://www.w3.org/2001/XMLSchema)</item>
+</list>
+      </div>
+
+      <div>
+        <head>Some W3C XPointer schemes (3)</head>
+        <list type="gloss">
+          <label>xpath1</label>
+          <item>Locates a node or node set within an XML Information Set.
+            The single argument is an XPath path as defined in the W3C
+            XPath 1 Recommendation. </item>
+
+          <label>xpath2</label>
+          <item>Locates a node or node set within an XML Information Set.
+            The single argument is an XPath path as defined in the W3C
+            XPath 2 Recommendation. </item>
+
+          <label>xpointer</label>
+          <item>The rich scheme including XPaths and ranges described in
+            the XPointer Recommendation</item>
+        </list>
+
+      </div>
+
+      <div>
+        <head>Test document for XPointer schemes</head>
+        <p>
+          <graphic height="80%" url="../Graphics/structure.png"/>
+        </p>
+      </div>
+      <div>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+	      <text>
+		<body>
+		  <!-\- seven divs here -\->
+		  <div xml:id="lastterm">
+		    <p>… </p>
+		    <p>… </p>
+		    <p><emph>'But'</emph>, said 
+<name key="Stalky">Stalky</name>, 
+‘come to think of it, we've done more giddy 
+jesting with  the Sixth since we've been 
+passed over  than any one else in the last
+seven years.’</p>
+		  </div>
+		</body>
+	      </text>
+	  </egXML>
+      </div>
+
+
+      <div>
+        <head>Examples for XPointer schemes</head>
+        <p><list>
+          <item>element(): 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	    <ptr target="stalky.xml#element(lastterm)"/>
+	    <ptr target="stalky.xml#element(1/1/8)"/>
+	  </egXML>
+          </item>
+          <item>xpointer() and xmlns():  
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<ptr target="stalky.xml#xmlns(t=http://www.tei-c.org/ns/1.0) 
+ xpointer(/t:TEI/t:text/t:body/t:div[8])"/>
+	  </egXML>
+          </item>
+        </list></p>
+      </div>
+
+      <div>
+        <head/>
+        <list>
+          <item>range(): 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<ptr target="stalky.xml#xmlns(t=http://www.tei-c.org/ns/1.0) 
+  range(xpath1(/t:TEI/t:text/t:body/t:div[8]/t:p[3]), 
+  xpath1(/t:TEI/t:text/t:body/t:div[8]/t:p[5]))"/>
+	     </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<ptr target="stalky.xml#xmlns(t=http://www.tei-c.org/ns/1.0)
+  xpointer(/t:TEI/t:text//t:p[t:name[.='Stalky']])"/></egXML>
+          </item>
+        </list>
+        <p>Note that the last expression returns multiple nodes.</p>
+      </div>
+
+      <div>
+        <head>A daily use for XPointer</head>
+        <p>The W3C XInclude specification is a good way to write composite
+          documents; the <gi>include</gi> element's <att>href</att>
+          attribute allows for XPointers: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	  
+<div xmlns:xi="http://www.w3.org/2001/XInclude">
+   <![CDATA[<xi:include href="stalky.xml#
+   xmlns(t=http://www.tei-c.org/ns/1.0)
+   xpointer(/t:TEI/t:text//t:p[t:name[.='Beetle']])"/>]]>
+</div>
+</egXML>
+        </p>
+
+      </div>-->
+
+      <div>
+        <head>Generic linking </head>
+        <p>
+          <ref target="../Graphics/cat.avi">
+            <graphic width="60px" rend="right" url="../images/cat.jpg"
+            />
+          </ref> The core TEI <gi>ptr</gi> and <gi>ref</gi> elements let
+          you do the point to point linking we are used to on web pages,
+          relying on XML IDs for internal links:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	<p>Wikipedia has a a good starter page on 
+<ref target="http://en.wikipedia.org/wiki/Maneki_Neko">
+waving cats</ref>, with links to more esoteric 
+resources; our own pictures are in 
+section <ref target="#cats">3</ref></p>
+	</egXML>
+        </p>
+
+      </div>
+
+      <div>
+        <head><q>linking</q> Module</head>
+        <p> The <hi>linking</hi> module adds <gi>link</gi> to let you
+          specify a point to point relationship between two or more
+          elements:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	  <p xml:id="beetle1">You're a despondin' brute, Beetle</p>
+	  <p xml:id="beetle2">An' who the dooce is this 
+Raymond Martin, M.P.?’ demanded Beetle</p>
+	  <link targets="#beetle1 #beetle2"/>
+	</egXML>
+          Note that this is establishing a connection, not a direction.
+        </p>
+      </div>
+
+      <div>
+        <head>Groups of links</head>
+        <p><gi>linkGrp</gi> is provided to group together sets of
+            <gi>link</gi>s. In the following example, it allows for
+          stand-off notes, and characterisation of those notes:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	    <l xml:id="l2.79">A place there is, betwixt earth, 
+air and seas</l>
+	    <l xml:id="l2.80">Where from Ambrosia, Jove 
+retires for ease.</l>
+<l xml:id="l2.88">Sign'd with that Ichor which from Gods distills.</l>
+	    <note xml:id="n2.79">
+	      <bibl>Ovid Met. 12.</bibl>
+	      <quote xml:lang="la">        
+		<l>Orbe locus media est, inter terrasq; fretumq;</l>
+		<l>Cœlestesq; plagas —</l>
+	      </quote>
+	    </note>
+	    <note xml:id="n2.88">
+Alludes to <bibl>Homer, Iliad 5</bibl> 
+	      </note> 
+	      <linkGrp type="imitationnotes">
+		<link targets="#n2.79 #l2.79"/>
+		<link targets="#n2.88 #l2.88"/>
+	      </linkGrp>
+	    </egXML>
+        </p>
+      </div>
+
+      <div>
+        <head>Segmenting text, and marking arbitrary points within
+          documents</head>
+        <p>This module adds three useful new elements: <list type="gloss">
+            <label>
+              <gi>ab</gi>
+            </label>
+            <item>marks an block of text with no special semantic
+              interpretation</item>
+            <label>
+              <gi>seg</gi>
+            </label>
+            <item>marks a range of text with no special semantic
+              interpretation</item>
+            <label>
+              <gi>anchor</gi>
+            </label>
+            <item>marks an arbitrary point in the text</item>
+          </list> The first two have helpful <att>type</att> and
+            <att>subtype</att> attributes. </p>
+      </div>
+
+      <div>
+        <head>Marking points</head>
+        <p><gi>anchor</gi> is comparable to HTML anchors:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<p>He was merely working up to a peroration, and the 
+boys knew it; but McTurk cut through the frothing 
+sentence, the others echoing:</p>
+
+<p>‘<anchor xml:id="MTa"/>I appeal to the Head, sir.’</p>
+
+<p>‘<anchor xml:id="Ba"/>I appeal to the head, sir.’</p>
+
+<p>‘<anchor xml:id="Sa"/>I appeal to the Head, sir.’</p>
+
+<p>It was their unquestioned right. Drunkenness meant 
+expulsion  after a public flogging. They had been 
+accused of it. The case  was the Head's, and the 
+Head's alone.</p>
+	  </egXML>
+        </p>
+      </div>
+
+      <div>
+        <head>Anonymous blocks</head>
+        <p>In this inscription, there are separate lines, but they are not
+          poetry, or paragraphs, so we isolate them with <gi>ab</gi> (or if we didn't want to encapsulate them we could use <gi>lb</gi>):
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <div>
+        <ab>JOSEPH STORY</ab>
+        <ab>ONLY SON OF</ab>
+        <ab>WILLILAM W. AND EMELYN STORY</ab>
+        <ab>BORN MAY 3rd 1847</ab>
+        <ab>AT BOSTON U.S.A</ab>
+        <ab>DIED NOV. 23rd 1853</ab>
+        <ab>AT ROME</ab>
+      </div>
+	  </egXML>
+        </p>
+      </div>
+
+      <div>
+        <head>Segments</head>
+        <p>There are more specific elements elsewhere in the TEI for
+          marking sentences, words and characters, but sometimes we need to
+          mark an arbitrary span, using <gi>seg</gi>:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+  <q>Don't say <q><seg type="stutter">I-I-I</seg>'m afraid,</q>
+Melvin, just say <q>I'm afraid.</q></q>
+</egXML>
+        </p>
+      </div>
+
+      <div>
+        <head>Correspondence and alignment</head>
+        <p>First, consider the representation of a manuscript page:</p>
+            <p><graphic xml:id="N-f2r" url="../images/page.jpg"/></p>
+      </div>
+      
+      <div>
+        <head>Manuscript Text</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+<ab xml:id="N6"><lb/>and hat hire 
+don  in obedience ðe cnoweð hire manere 
+<lb/>and hire strencðe. he mai ðe vttre 
+riwle chaungen efter <lb/>wisdom alse he 
+isihð te inre mai beon best iholden. 
+<anchor xml:id="N_6"/><lb/>Non ancre bi 
+mine rede  ne schal makien professiun. 
+<lb/>þet is.  bihoten ase hest.</ab></egXML> 
+      </div>
+
+      <div>
+        <head>Correspondence and alignment (cont.)</head>
+        <p>Now lets look at an edited version and a translation:
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+<p xml:id="edited_6">
+Nan ancre bi mi read ne schal
+makien professiun—þet is, bihaten
+ase heast—bute þreo þinges,
+þet beoð obedience, chastete, ant
+stude-steaðeluestnesse <!-- ... --></p>
+            </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+<p xml:id="translated_6">My advice
+is that no anchoress should make
+profession—that is, bind herself to
+a vow—of more than three things,
+which are obedience, chastity, and
+stability of abode <!-- ... --></p></egXML></p>
+          </div>
+
+      <div>
+        <head>Correspondence and alignment (cont.)</head>
+        <p>We can express a relationship between the texts as follows:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+    <linkGrp type="translations">
+      <link targets="#edited_6 #translated_6"/>
+      <!-- … -->
+    </linkGrp>
+    <linkGrp type="editions">
+      <link targets="#N-f2r #N6"/>
+      <!-- … -->
+    </linkGrp>
+  </egXML>
+          meaning <q>this paragraph in the translated edition corresponds
+            to text at that anchor in the original</q>. </p>
+        <p>
+          <hi>There are many other ways of dealing with material like
+            this!</hi>
+        </p>
+      </div>
+
+
+      <div>
+        <head>Synchronizing time-based material</head>
+        <p>If you are linking together sequences which are aligned by time,
+          there is a special stand-off linking element <gi>when</gi>,
+          grouped inside a <gi>timeline</gi>. It has attributes: <list
+            type="gloss">
+            <label>absolute</label>
+            <item>an absolute time for the event</item>
+            <label>interval</label>
+            <item>the length of the gap since the last event</item>
+            <label>unit</label>
+            <item>the unit of time in which the interval value is
+              expressed</item>
+            <label>since</label>
+            <item>a link to the previous event</item>
+          </list>
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+  <timeline xml:id="tl1" origin="#w0" unit="ms">
+   <when xml:id="w0" absolute="11:30:00"/>
+   <when xml:id="w1" interval="unknown" since="#w0"/>
+   <when xml:id="w2" interval="100" since="#w1"/>
+   <when xml:id="w3" interval="200" since="#w2"/>
+   <when xml:id="w4" interval="150" since="#w3"/>
+  </timeline>
+  </egXML>
+        <p>These when objects can be used in a <gi>link</gi> to relate time
+          events to points in the text.</p>
+      </div>
+
+      <div>
+        <head>Aggregating non-continguous elements</head>
+        <p>The <gi>join</gi> element is used like <gi>link</gi>, pointing
+          to 2 or more identified fragments of text. It claims that they
+          could be joined to create a new virtual element (the
+            <att>result</att> attribute). <gi>joinGroup</gi> is provided to
+          aggregate <gi>join</gi>s.
+        </p></div>
+      
+      <div><head><gi>join</gi> example source</head><p>
+ <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><lg><l><seg xml:id="L1">E</seg>lizabeth it is in vain you say</l>
+<l>"<seg xml:id="L2">L</seg>ove not" — thou sayest it in so sweet a way:</l>
+<l><seg xml:id="L3">I</seg>n vain those words from thee or L.E.L.</l>
+<l><seg xml:id="L4">Z</seg>antippe's talents had enforced so well:</l>
+<l><seg xml:id="L5">A</seg>h! if that language from thy heart arise,</l>
+<l><seg xml:id="L6">B</seg>reath it less gently forth — and veil thine eyes.</l>
+<l><seg xml:id="L7">E</seg>ndymion, recollect, when Luna tried</l>
+<l><seg xml:id="L8">T</seg>o cure his love — was cured of all beside —</l>
+<l><seg xml:id="L9">H</seg>is follie — pride — and passion — for he died.</l></lg>
+ </egXML></p></div>
+      
+      <div><head><gi>join</gi> example</head><p><egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+<p>
+<join targets="#L1 #L2 #L3 #L4 #L5 #L6 #L7 #L8 #L9" result="name">
+<desc>The beloved's name</desc>
+</join>
+</p>
+  </egXML>
+          (from Edgar Allan Poe). </p>
+      </div>
+
+      <div>
+        <head>Elements as alternatives to one another</head>
+        <p>The <gi>alt</gi> element is used to indicate that two elements
+          are mutually exclusive. <gi>altGroup</gi> is provided to
+          aggregate <gi>alt</gi>s.</p>
+        <p>Example: the first time we transcribed this text, we saw
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+        <ab>WILLILAM W. AND EMELYN STORY</ab>
+  </egXML>
+          but on another look it says
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+        <ab>WILLIAM W. AND EMELYN STORY</ab>
+  </egXML>
+          Can this be a genuine change since our first visit? or just a
+          mistake? Let's keep both: <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+    <ab xml:id="W1">WILLILAM W. AND EMELYN STORY</ab>
+    <ab xml:id="W2">WILLIAM W. AND EMELYN STORY</ab>
+    <alt mode="excl" targets="#W1 #W2"/>
+  </egXML>
+          <att>weights</att> and <att>mode</att> assign weight to the
+          judgement, and allow for relationships other than
+          mutually-exclusive. </p>
+      </div>
+
+      <div>
+        <head>Another way to express alternation</head>
+        <p>The global <att>exclude</att> attribute can be used by any
+          element to indicate another element to which it is allergic:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">	  
+    <ab exclude="#W4" xml:id="W3">WILLILAM W. AND EMELYN STORY</ab>
+    <ab exclude="#W3" xml:id="W4">WILLIAM W. AND EMELYN STORY</ab>
+  </egXML>
+        </p>
+      </div>
+
+      <div>
+        <head>Conclusions</head>
+        <p>The linking module provides a wide range of tools to let you
+          describe relationships between parts of your text. If you need
+          these, remember: <list>
+            <item>You should work out a naming scheme to assign ID
+              attributes. You will need a lot of them</item>
+            <item>There are often several ways to do things; use the more
+              specialized markup when you can to make it easier for others
+              to read. Don't rely on <att>type</att> attributes with
+              undefined meanings everywhere</item>
+            <item>Control your vocabulary for token attributes like
+                <att>type</att></item>
+            <item>The TEI only takes you as far as <emph>markup</emph>.
+              Implementing all this to make a fancy interactive text
+              exploration web site may be a lot of work.</item>
+          </list>
+        </p>
+      </div>
+
+
+    </body>
+  </text>
+</TEI>
