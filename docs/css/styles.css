@@ -1,0 +1,45 @@
+/*
+  @author emchateau
+  @since 2020-05
+  @version 1.0
+  @source allLayouts
+*/
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: calc(1rem + 0.5vw);
+}
+
+[class^='stack'] > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: 1.5rem;
+}
+
+.stack-large > * + * {
+  margin-top: 3rem;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.0em
+}
+
+h2 {
+  /* ↓ 2.5 × the root font-size */
+  font-size: 2.5rem;
+}
+
+@media (min-width: 960px) {
+  :root {
+    /* ↓ Upscale by 25% at 960px */
+    font-size: 125%;
+  }
+}
