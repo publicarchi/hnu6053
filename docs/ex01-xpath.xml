@@ -28,7 +28,7 @@
     </front>
     <body>
       <div>
-        <p>Téléchargez le répertoire <ref target="exercice/xpathex">à cette adresse</ref> sur votre ordinateur et ouvrir le fichier TEI qu’il contient dans XML Oxygen editor.</p>
+        <p>Téléchargez le répertoire <ref target="exercices/xpathex.zip">à cette adresse</ref> sur votre ordinateur et ouvrir le fichier TEI qu’il contient dans XML Oxygen editor.</p>
         <p>Explorez le fichier avec XPath dans la fenêtre d’exécution de XPath qui se trouve en haut de votre barre d’outils.</p>
         <list>
           <item>Sélectionner le nœud racine du document</item>
