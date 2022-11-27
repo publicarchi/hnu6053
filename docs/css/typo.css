@@ -1,0 +1,512 @@
+/*
+  @author emchateau
+  @since 2018-11
+  @version 1.0
+*/
+
+/* flex tuto https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+/* grid tuto https://css-tricks.com/snippets/css/complete-guide-grid/ */
+/* grid tuto https://medium.freecodecamp.org/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431 */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Color theme
+ * #3f51b5; bleu
+ * #fff; blanc
+ * #ffff00; jaune
+ * #E73E0D; rouge corail
+ */
+
+/* corail theme */
+/*
+:root {
+  --colorMain: #fff;
+  --colorSub: !* #3f51b5; *! #E73E0D;
+  --colorAccent: !* #3f51b5; *! #E73E0D;
+  --baseline: 1.5; !* 1.5 * 18 = 27px*!
+  font-size: 1.125em; !* 18px *!
+  line-height: var(--baseline);
+}
+*/
+
+/* indigo theme */
+:root {
+  --colorMain: #fdfdfe;
+  --colorSub: #3f51b5; /* #E73E0D */;
+  --colorAccent: #3f51b5; /* #E73E0D */;
+  --baseline: 1.5; /* 1.5 * 18 = 27px*/
+  font-size: 1.125em; /* 18px */
+  line-height: var(--baseline);
+}
+
+/*
+https://css-tricks.com/dark-modes-with-css/
+@media (prefers-color-scheme: dark) {
+}
+*/
+
+
+/*
+ * Structure
+ */
+body {
+  background-color: var(--colorSub);
+  color: var(--colorMain);
+}
+
+section {
+  background-color: var(--colorMain);
+  color: var(--colorSub);
+}
+
+header, footer, .alternate {
+  background-color: var(--colorSub);
+  color: var(--colorMain);
+}
+
+header {
+  // background-image: url(https://images.unsplash.com/photo-1536228891610-d27ef66f7110);
+  background-image: url(../images/tetra.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-bottom: calc(700px + (474 - 700) * (100vw - 600px) / (1200 - 600));
+  mix-blend-mode: screen;
+  filter: grayscale(100%) contrast(230%) invert(1);
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-bottom: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    padding-bottom: 40%;
+  }
+}
+
+header::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  content: '';
+  background-color: var(--colorSub) 1;
+  z-index:0;
+}
+
+header>div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  z-index:1;
+  color: var(--colorSub);
+}
+
+h1 {
+  max-width: 47rem;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: calc( var(--baseline) * 2rem);
+}
+
+section {
+  width: 100%;
+}
+
+article {
+  max-width: 47rem;
+  margin: auto;
+  margin-bottom: calc( var(--baseline) * 3rem);
+}
+
+article.col {
+  columns: 22.3rem;
+  column-gap: 1.3rem;
+}
+
+h2 {
+  -moz-column-span: all;
+  column-span: all;
+  // @todo not working in Firefox
+}
+
+/* sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+  width: 100%;
+  margin: auto;
+}
+footer {
+  flex-shrink: 0;
+}
+
+/*
+ * Typography
+ */
+/*
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'IBM Plex Mono', monospace;
+*/
+
+body {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: normal;
+  letter-spacing: 0.0em
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+/* typographic scale https://drewish.com/tools/vertical-rhythm/ */
+h1 {
+  font-size: 2.2222em; /* 40px */
+  line-height: 1.3500; /* 54px */
+
+}
+
+h2 {
+  font-size: 1.7222em; /* 31px */
+  line-height: 1.7419em; /* 54px */
+  margin-top: auto;
+  margin-bottom: calc( var(--baseline) * 1rem);
+}
+
+h2::before {
+  content: '';
+  display: block;
+  // height: 100%;
+  width: 100%;
+  border-bottom: calc( var(--baseline) * 0.2rem) solid ;
+  margin-bottom: calc( var(--baseline) * 0.8rem);
+}
+
+h3 {
+  font-size: 1.334em; /* 18 * 1.334em = 24px */
+  line-height: 1.125; /* 24 * 1.125 = 27px*/
+  margin-bottom: calc( var(--baseline) * 1rem);
+}
+
+h3::before {
+  content: '';
+  display: block;
+  // height: 100%;
+  width: 15%;
+  border-bottom: calc( var(--baseline) * 0.1rem) solid ;
+  margin-bottom: calc( var(--baseline) * 0.9rem);
+}
+
+h4 {
+  font-size: 1.2222em; /* 22px */
+  line-height: 1.2273; /* 27px */
+  margin: auto;
+}
+
+h5 {
+  font-size: 1.1111em; /* 20px */
+  line-height: 1.350; /* 27px */
+  margin: auto;
+}
+
+h6 {
+  font-size: 1em;
+  margin: auto;
+}
+
+p {
+  margin-top: auto;
+  margin-bottom: calc(var(--baseline) * 1rem);
+}
+
+sup {
+  vertical-align: middle;
+  font-size: smaller;
+}
+
+sup.note {
+  font-size: 0.7em;
+}
+
+/* @todo to rework */
+@media (max-width: 684px) {
+  body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 382px) {
+  body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/*
+ * Liens
+ */
+/*a {
+  background:
+    linear-gradient(
+      to bottom, var(--colorAccent) 0%,
+      var(--colorAccent) 100%
+    );
+  background-position: 0 100%;
+  padding-bottom: .075em;
+  background-repeat: repeat-x;
+  background-size: .015em .1em;
+  color: var(--colorAccent);
+  text-decoration: none;
+  transition: background-size .45s;
+ }
+
+a:hover {
+  color: var(--colorMain);
+  opacity: 0.75;
+  background-size: 1.4em 1.4em;
+ }*/
+
+:target > :first-child {
+  background-color: #ff6;
+}
+
+a {
+  color: var(--colorAccent);
+  text-decoration: none;
+  box-shadow: inset 0 -0.05em 0 var(--colorAccent);
+  transition: color 45ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
+}
+
+a:hover {
+  box-shadow: inset 0 0 0 var(--colorAccent), 0 0.15em 0 var(--colorAccent);
+}
+
+
+/*
+ * Navigation
+ */
+
+nav {
+  width: 100%;
+  line-height: calc(var(--baseline) * 1.5rem);
+  background: var(--colorSub);
+  text-align: center;
+  margin:0;
+  padding:0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    max-width: 47em;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav ul a {
+  display: block;
+  padding: 0.02rem 1.4rem;
+  font-weight: bolder;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
+
+/* applied after scroll height reached */
+.fixed-nav nav {
+  position: fixed;
+  top:0;
+  z-index: 1;
+  //box-shadow: 0 0.005em 0.5em 0.01em var(--colorSub);
+}
+
+nav>ul>li>a {
+  color: var(--colorMain);
+  text-decoration: none;
+  transition: background-size .45s;
+}
+
+nav>ul>li>a:hover {
+  color: var(--colorMain);
+  opacity: .7;
+  background-size: 0.35em 0.35em;
+ }
+
+/*
+ * Footer
+ */
+
+footer h2 {
+  margin: auto;
+  font-size: 1.5em;
+  // border-bottom: calc( var(--baseline) * 2rem);
+}
+
+footer h2::before{
+  display: none;
+}
+
+footer ul {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+footer a {
+  color: var(--colorMain);
+  text-decoration: none;
+  transition: background-size .45s;
+}
+
+footer li>a {
+  padding: 0.4em;
+}
+
+footer a:hover {
+  color: var(--colorMain);
+  background-size: 0.35em 0.35em;
+  // opacity: 1;
+ }
+
+.social i {
+  font-size: 2em;
+  line-height: 2;
+}
+
+.colophon {
+  opacity: .7;
+  font-size: 0.7em;
+  line-height: 1.2 ;
+}
+
+
+
+/*
+ * Stylage des images
+ */
+
+.filtered, .inverted {
+   background: var(--colorSub);
+}
+
+.filtered img {
+  mix-blend-mode: screen;
+  -webkit-filter: grayscale(100%) contrast(230%);
+  filter: grayscale(100%) contrast(230%) ;
+  opacity: 1;
+}
+
+.inverted img {
+  mix-blend-mode: screen;
+  -webkit-filter: grayscale(100%) contrast(230%);
+  filter: grayscale(100%) contrast(230%) invert(1);
+  opacity: 1;
+}
+
+.filtered,
+.not-filtered, .inverted {
+  // float: left;
+  max-width: 100%;
+  border: 0.15em solid var(--colorSub);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Scroll it
+ * @source https://www.nxworld.net/tips/css-scroll-down-button.html
+ */
+
+header div.scroll {
+  margin: auto;
+  margin-top: 15em;
+  display: inline-block;
+
+}
+
+header div.scroll>a {
+  padding-top: 1em;
+  display: inline-block;
+  margin: auto;
+}
+
+header div.scroll {
+  position: absolute;
+  //top: 0;
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 0.2rem solid var(--colorSub);
+  border-radius: 2em;
+  box-sizing: border-box;
+}
+
+header div.scroll::before {
+  position: absolute;
+  top: 0.3rem;
+  left: 40%;
+  content: '';
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: var(--colorSub);
+  border-radius: 100%;
+  animation: sdb 2.5s infinite;
+  box-sizing: border-box;
+}
+
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 1.2em);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+.scroll-down {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0 0.3rem;
+  border-left: 0.2rem solid var(--colorMain);
+  border-bottom: 0.2rem solid var(--colorMain);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: scrollDown 2s infinite;
+  animation: scrollDown 2s infinite;
+}
+*/

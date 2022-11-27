@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-model href="../schemas/teiSlides.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-stylesheet type="text/xsl" href="./xsl/tei2html.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="fr">Exercice d’initiation à XPath</title>
+        <author>Emmanuel Château-Dutier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>publica.archi</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Nativement numérique</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2022-11">Création du fichier pour HNU6053</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage xml:lang="fr">
+        <titlePart>Exercice d’initiation à XPath</titlePart>
+        <docImprint>HNU6053</docImprint>
+      </titlePage>
+    </front>
+    <body>
+      <div>
+        <p>Téléchargez le répertoire <ref target="exercice/xpathex">à cette adresse</ref> sur votre ordinateur et ouvrir le fichier TEI qu’il contient dans XML Oxygen editor.</p>
+        <p>Explorez le fichier avec XPath dans la fenêtre d’exécution de XPath qui se trouve en haut de votre barre d’outils.</p>
+        <list>
+          <item>Sélectionner le nœud racine du document</item>
+          <item>Sélectionner le premier élément <gi>title</gi> dans <gi>titleDesc</gi></item>
+          <item>Sélectionner tous les titres (<gi>head</gi>) du document</item>
+          <item>Sélectionner tous les <gi>fw</gi> qui ont l’attribut <att>type</att> avec la valeur <val>pageNum</val></item>
+          <item>Sélectionner tous les <gi>persName</gi> qui se trouvent dans les descendants de <gi>front</gi></item>
+          <item>Sélectionner les éléments <gi>persName</gi> qui contiennent la chaîne de caractère "Poussin"</item>
+          <item>Sélectionner les éléments <gi>fw</gi> qui sont vides</item>
+        </list>
+      </div>
+    </body>
+  </text>
+</TEI>
