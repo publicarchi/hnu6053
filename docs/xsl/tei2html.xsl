@@ -15,6 +15,7 @@
       <head>
         <title><xsl:value-of select="normalize-space($title)"/></title>
         <meta name="author" content="Emmanuel Chateau-Dutier" />
+        <link href="css/normalize.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
       </head>
       <body>
