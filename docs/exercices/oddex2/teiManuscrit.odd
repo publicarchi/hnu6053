@@ -1,0 +1,63 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI-manuscript</title>
+        <author>Emmanuel Chateau</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>public.archi</publisher>
+        <availability status="free">
+          <licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a Creative Commons
+            Attribution-ShareAlike 3.0 Unported License </licence>
+          <licence target="http://www.opensource.org/licenses/BSD-2-Clause">
+            <p>Copyright 2013 TEI Consortium.</p>
+            <p>All rights reserved.</p>
+            <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+              the following conditions are met:</p>
+            <list>
+              <item>Redistributions of source code must retain the above copyright notice, this list of conditions and the
+                following disclaimer.</item>
+              <item>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
+                the following disclaimer in the documentation and/or other materials provided with the
+                distribution.</item>
+            </list>
+            <p>This software is provided by the copyright holders and contributors "as is" and any express or implied
+              warranties, including, but not limited to, the implied warranties of merchantability and fitness for a
+              particular purpose are disclaimed. In no event shall the copyright holder or contributors be liable for any
+              direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to,
+              procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however
+              caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence
+              or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such
+              damage.</p>
+          </licence>
+          <p>TEI material can be licensed differently depending on the use you intend to make of it. Hence it is made
+            available under both the CC+BY and BSD-2 licences. The CC+BY licence is generally appropriate for usages which
+            treat TEI content as data or documentation. The BSD-2 licence is generally appropriate for usage of TEI content
+            in a software environment. For further information or clarification, please contact the <ref target="mailto:info@tei-c.org">TEI Consortium</ref>. </p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>A Manuscript Customization</head>
+      
+      <schemaSpec ident="tei_manuscrit" start="TEI" prefix="tei_" targetLang="en" docLang="fr">
+        <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc authority handNote idno normalization notesStmt principal profileDesc projectDesc revisionDesc change listChange interpretation encodingDesc creation editorialDecl appInfo application samplingDecl"/>
+        <moduleRef key="core" include="p title add abbr address addrLine author choice corr date del desc editor email expan head hi index label lb list name note num publisher ref reg resp respStmt rs textLang orig"/>
+        <moduleRef key="textstructure" include="TEI text body div signed front back docDate"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="analysis" include="interp interpGrp"/><moduleRef key="dictionaries" include="lang"/>
+        <moduleRef key="gaiji" include="charDecl char glyph g"/>
+        <moduleRef key="linking" include="alt link when timeline"/>
+        <moduleRef key="msdescription" include="additional handDesc layout layoutDesc material msContents msDesc msIdentifier msItem msItemStruct physDesc repository scriptDesc signatures stamp summary supportDesc support typeDesc institution objectDesc"/>
+        <moduleRef key="namesdates" include="age country forename listPlace listPerson listOrg nameLink org orgName persName person place placeName roleName sex settlement state surname"/>
+        <moduleRef key="transcr" include="handNotes sourceDoc subst"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

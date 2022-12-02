@@ -1,28 +1,6 @@
 ## HNU3052/HNU6052 Humanités numériques : introduction à la TEI
 
-# Rétro-ingénierie d’une XSLT simple
-
----
-
-## Introduction
-
-???
-
-Transformation simple tei2html.
-
-Ceci n’est pas une formation complète! son objectif est de ...
-
-* vous donner un avant-goût des possibilités offertes par les normes XSLT et XPath
-* surtout dans le domaine de traitement des documents « XML-TEI », principalement donc sortis des sciences humaines
-* aborder les concepts fondamentaux et les usages les plus répandus du norme XSLT
-
-Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
-
-Une des caractéristiques essentielles du langage XPath, est qu’il s’appuie sur un modèle de données (le XML Data Model à partir de la version 2.0) dont la connaissance est essentielle pour une bonne compréhension du langage.
-
-Il s’agit d’un véritable langage fonctionnel typé. Ainsi, l’utilisateur manipule des expressions et non des instructions, et l’évaluation de ces expressions produit des valeurs appartenant à des types définis dans un système de types. La version 2.0 langage intègre le riche système de types de XML Schema. Parmi de nombreux ajouts très utiles, la version 3.0 a principalement introduit les fonctions de haut niveau ainsi que de nouveaux types de contenus, les objets maps et les tableaux.
-
-Au cours de cette première présentation, nous commencerons par examiner le modèle de données XML, puis nous aborderons les diverses expressions XPath et de leur types, avant de nous concentrer sur des expressions servant à décrire des chemins pour sélectionner des ensembles de nœuds dans un arbre XML.
+# Introduction à XSLT
 
 ---
 
@@ -132,8 +110,48 @@ Le résultat est une fonction de l’entrée.
 
 ---
 
-### Qu’est-ce que XSLT ?
-## processus de traitement (en bref)
+## Qu’est-ce que XSLT ?
+
+Une transformation est exprimée sous la forme d’une feuile de style (stylesheet). Une feuille de style est constituée d’un ou plusieurs documents XML bien formés ses conformant à la spécification sur les espaces de noms.
+
+- un mélange d’éléments définis par XSLT (dans l’espace de nom `http://www.w3.org/1999/XSL/Transform` )
+- un mélange d’autres éléments XML
+
+Une transformation décrit des règles pour transformer les données en entrée en données de sortie. 
+
+- arbre source (source tree)
+- arbre résultat (result tree)
+
+La transformation est réalisée au moyen d’un ensemble de **règles modèles (template rules)**. Un règle modèle associe un **motif (pattern)** qui correspond typiquement à des nœuds dans le document sources, avec un **constructeur de séquence (sequence constructor)**. 
+
+???
+
+## Qu’est-ce que XSLT ?
+
+[librement adapté de la spécification]
+
+**Une transformation est exprimée sous la forme d’une feuile de style (stylesheet). Une feuille de style est constituée d’un ou plusieurs documents XML bien formés ses conformant à la spécification sur les espaces de noms.**
+
+Une feuille de style, inclue généralement un mélange d’éléments définis par XSLT placés dans l’espace de nom de XSLT `http://www.w3.org/1999/XSL/Transform` et un mélange d’autres éléments.
+
+Le terme feuille de style reflète le fait que XSLT est destiné à ajouter des informations de stylage à des documents sources XML en les transformant en un document consistant de XSL formating objects (XSL-FO) ou dans un autre format de présentation comme HTML, XHTML, ou SVG. Cependant XSLT est également employé pour toutes sortes de tâche de transformation, et pas seulement dans des buts de formattage ou d’applications de présentation.
+
+**Une transformation exprimée en XSLT décrit des règles pour transformer les données en entrée en données de sortie.** Ces données seront toute des instances du XDM data model. Dans le cas le plus simple et le plus commun, l’entrée est un document XML désigné **arbre source (source tree)**, la sortie est un document XML appelé **arbre résultat (result tree)**. Il est également possible de traiter plusieurs documents sources ou de générer plusieurs documents résultats et de traiter d’autres formats que XML.
+
+La transformation est réalisée au moyen d’un ensemble de **règles modèles (template rules)**. Un règle modèle associe un **motif (pattern)** qui correspond typiquement à des nœuds dans le document sources, avec un **constructeur de séquence (sequence constructor)**. Dans la plupart des cas, le constructeur de séquence provoquera la cosnrtuction de nouveaux nœuds qui peuvent faire partie d’un **arbre résultat (result tree)**. La structure de l’arbre résulatt peut être complètement différente de la structure des arbres sources. Lors de la construction d’un abre résultat, les nœuds des arbres sources peuvent être filtrés et réordonnés, et des structures arbritraires peuvent être ajoutées. Ce mécanisme permet à une feuille de style d’être applicable à une large classe de documents qui présentent des structures sources similaires.
+
+Les **feuilles de style (stylesheets)** on une structure modulaire ; elles peuvent contenir plusierus package développés indépendamment les uns des autres, et chaque package peut cosntitué en plusieurs modules de feuilles de style.
+
+- [Definition: un **motif (pattern)** spécifie un ensemble de conditions sur un item. Un item qui satisfie les conditions matche le motif ; un item qui ne satisfait pas les conditions ne matche pas.]
+  Il existe deux types de motifs :
+  - Un **motif de prédicat (predicate pattern)** est écrit sous la forme d’un point `.` suivi par un ou plusieurs prédicats entre crochets et matche n’importe quel item pour lesquels chaque prédicat est évalué vrai `true`.
+    Cette construction peut être employée pour matcher des items de n’importe quel type (nœud, valeur atomique, ou un item de fonction).
+  - un **motif de sélection (selection pattern)** utilise un sous-ensemble de la syntaxe des expressions de chemin (path expressions), et il est défini pour matcher un nœud dans l’expression de chemin correspondante qui sélectionne le nœud. Les motifs de sélection peuvent aussi être formés en combinaison d’autres motifs utilisant l’union, l’intersection et différents opérateurs.
+- [Definition: un **constructeur de séquence (sequence constructor)** est une séquence de zéro ou plusieurs nœuds adjascents dans la feuille de style qui peuvent être évalués pour retourenr une séquence de nœuds, des valeurs atomiques, ou des items de fonction.
+
+---
+
+## Le processus de traitement (en bref)
 XSLT est **une application XML pour la spécification de règles permettant de transformer un document XML en un autre document XML**
 
 - un document XSLT contient des règles modèles
@@ -157,18 +175,33 @@ Une fois le processus terminé, il sérialise l’arbre de sortie en un autre do
 
 ---
 
+![](images/whatXsltCanDo.png)
+
+---
+
 ### Qu’est-ce que XSLT ?
+
 ## Le point sur les versions
 
-- à qqs différences près, on peut considérer XPath et XSLT 1.0 comme des sous-ensembles de XPath 2.0 et XSLT 2.0
-- problèmes de compatibilité de XSLT 2.0 avec l’environnement PHP5 (en passe d’être résolus)
-- de nombreuses choses plus simples à traiter en XSLT 2.0, mais une plus grande complexité du langage
+- [XSLT 1.0](https://www.w3.org/TR/xslt/) (1999)
+
+- [XSLT 2.0](https://www.w3.org/TR/xslt20/), (2007)
+  Group by, Améliorations XPath 2.0
+  Inclue dans une série de 8 documents : XPath 2.0, XQuery 1.0, XQueryX 1.0, XSLT 2.0, Data Model (XDM), Functions and Operators, Formal Semantics, Serialization.
+
+- [XSLT 3.0](https://www.w3.org/TR/xslt-30/) (2017)
+
+  Streaming, packaging, sérialisations, JSON, améliorations syntaxiques, améliorations introduites par XPath 3.1, nouveaux types `map` et `array`, higher order functions
+
+- [XSLT 4.0](https://www.saxonica.com/qt4specs/XT/Overview-diff.html) (en préparation)
+
+cf. [XSLT cover page](https://www.w3.org/TR/xslt/)
 
 ???
 
 À quelques différences près, on peut considérer XPath et XSLT1 comme des sous-ensembles de XSLT2 et XPath 2.
 
-On abordera aujourd’hui XPath 2.0 et XSLT 2.0 pour plus de facilité
+On abordera aujourd’hui XPath 3.1 et XSLT 3.0 pour plus de facilité
 
 Pendant longtemps problème de compatibilité XPath 2.0 avec environnement PHP.
 En passe d’être réglé par le portage du processeur Saxon en C++.
@@ -179,7 +212,7 @@ Une partie seulement de la version 3 est supportée par les processeurs libres. 
 
 ---
 
-![](images/whatXsltCanDo.png)
+[XPath and XQuery Functions and Operators 3.1](https://www.w3.org/TR/xpath-functions-31/)
 
 ---
 
@@ -202,37 +235,6 @@ Besoin
 
 ---
 
-## Associer un document à une XSLT avec Oxygen
-
-### faire une transformation avec Oxygen
-
-Pour mémoire, cf. le guide suivant :
-
-[http://dh.obdurodon.org/transformation-scenario.html](http://dh.obdurodon.org/transformation-scenario.html)
-
-### transformation
-
-- document XML en entrée : [../exemples/exercice-Angouleme.xml](../exemples/)
-- programme XSLT [../xslt/tei2html.xsl](../xsl/)
-
----
-
-## Que s’est-il passé ?
-
-- parsing du document source et création en mémoire d’une représentation arborescente
-- recherche dans le programme XSLT d’une règle s’appliquant à la racine du document XML, si elle existe : exécution de l’instruction et création d’un morceau de l’arbre résultat
-- sauf si la règle commande de sélectionner un autre nœud, retour à l’arbre source et parcours de cet arbre dans l’ordre du document (du haut vers le bas, de gauche à droite) en cherchant à chaque fois une règle dédiée
-- s’il y a plusieurs règles applicables à un même nœud des règles de priorité s’appliquent ; s’il n’y a pas de règle applicable pour un nœud à traiter, alors le processeur applique les instructions par défaut
-- à la fin du processus sérialisation de l’arbre résultat pour produire en sortie un flux textuel selon les instructions spécifiées en tête de programme (en HTML, en XML, etc.)
-
-???
-
-Bien comprendre la notion d’arbre : vous comprenez maintenant sans doute mieux pour quelle raison il était si important de bien comprendre la notion d’arbre se fondant sur le modèle abstrait de XML.
-
-Celui-ci est mobilisé par le processeur dans l’ordre de parcours du document et appliqué au produit de la transformation. Ce modèle abstrait a l’avantage de décrire de façon non ambiguë la structure et le contenu d’un document XML.
-
----
-
 ## Généralités sur XSLT
 
 ### Structure d’un programme XSLT
@@ -245,17 +247,18 @@ Celui-ci est mobilisé par le processeur dans l’ordre de parcours du document 
 
 ### Structure d’un programme
 
+- **`xsl:stylesheet`** est l’élément racine, l’attribut mandataire **`@version`** déclare la version du langage utilisée
+- **`xsl:template`** permet de déclarer des règles
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  exclude-result-prefixes="xs"
-  xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-  xmlns="http://www.w3.org/1999/xhtml"
-  version="2.0">
-  <xsl:output method="xml" omit-xml-declaration="no"
-     encoding="UTF-8" indent="yes" />
+  xmlns="http://www.tei-c.org/ns/1.0"
+  version="3.0">
+  <xsl:template match="/">
+    <!-- ... -->
+  </xsl:template>
 </xsl:stylesheet>
 ```
 
@@ -265,10 +268,69 @@ Celui-ci est mobilisé par le processeur dans l’ordre de parcours du document 
 
 Les instructions de transformation sont englobées dans des éléments `xsl:template` qui constituent des **règles**
 
-Chaque règle a obligatoirement :
+Chaque règle porte obligatoirement :
 
-- soit un attribut `match` qui indique au moyen d’une expression XPath le motif ou pattern auquel un nœud XML doit répondre pour que la transformation soit réalisée
-- soit un attribut `name` qui fait appel à une règle nommée qui peut être utilisée en l’appelant par son nom. Dispositif similaire à une macro.
+- soit un attribut **`@match`** qui indique au moyen d’une expression XPath le motif ou pattern auquel un nœud XML doit répondre pour que la transformation soit réalisée
+- soit un attribut **`@name`** pour créer une règle nommée qui porura être utilisée en l’appelant par son nom (dispositif similaire à une macro)
+
+```xml
+<xsl:template match="/">
+  <!-- ... -->
+</xsl:template>
+```
+
+```xml
+<xsl:template name="getIds">
+  <!-- ... -->
+</xsl:template>
+```
+
+---
+
+### La déclaration des espaces de noms
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+  xmlns="http://www.w3.org/1999/xhtml"
+  version="3.0">
+	<!-- ... -->
+</xsl:stylesheet>
+```
+
+???
+
+L’élément ** `xsl:stylesheet`** permet de déclarer les espaces de noms de la transformation
+
+- Il est possible de déclarer autant de préfixe que de besoin, on déclare habituellement l’espace de nom des éléments xsl avec un préfixe
+- L’attribut `@xmlns`permet de définir un espace de nom par défaut qui peut être celui du document résultat ou du document source
+- L’attribut `@xpath-default-namespace` permet de définir un espace de nom par défaut qui peut être distinct de l’espace de nom par défaut du document résultat
+
+---
+
+### Contrôle de la sortie
+
+- **`xsl:output`** est un élément mandataire. Premier firs de `xsl:stylesheet`, `xsl:output` permet de déclarer la sérialisation du document résultat avec les attributs : **`@method`**, `@omit-xml-declaration`, `@encoding`, `@indent`, etc.
+- `xsl:strip-space` ou `xsl:preserve-space` sont des éléments de premier niveau optionnels  pour la gestion des espaces, les valeurs de l’attribut mandataire **`@elements`** définissent l’ensemble des éléments concernés.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+  xmlns="http://www.w3.org/1999/xhtml"
+  version="3.0">
+  <xsl:output method="xml" omit-xml-declaration="no"
+     encoding="UTF-8" indent="yes" />
+  <xsl:strip-space elements="*"/>
+</xsl:stylesheet>
+```
+
+???
+
+Par défaut, les espaces sont automatiquement normalisés lors du traitement des documents XML.   Une combinaison de `xsl:strip-space`et de `xsl:preserve-space` permet de gérer individuellement le traitement des espaces en cas de besoin avec la valeur de l’attribut `@elements` qui définissent l’ensemble des éléments concernés.
 
 ---
 
@@ -281,19 +343,20 @@ Ces instructions sont exprimées à l’aide des éléments XML définis par le 
 - `xsl:apply-templates` applique les règles en descendant en profondeur
 - `xsl:value-of` évalue la contenu textuel d’un nœud
 - `xsl:copy` copie la valeur d’un nœud
-
+- des constructeurs
 
 ---
 
-### Corps des règles (suite)
+### Contructeurs
 
-Éléments XML définis par le langage XSLT (suite) :
-- `xsl:if` instruction conditionnelle
-- `xsl:choose` exécution d’une série de tests exprimés par une série de sous éléments `xsl:when`
-- `xsl:sort` tri de la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
-- `xsl:foreach-group` avec les attributs `select` et `group-by`
-- `xsl:variable` déclaration d’une variable
-- `xsl:param` déclaration d’un paramètre
+- `xsl:element` génère un nœud élément
+- `xsl:attribute` génère un nœud attribut
+- `xsl:sequence` génère une séquence
+- `xsl:text` génère un nœud textuel
+
+---
+
+- 
 
 ---
 
@@ -302,6 +365,7 @@ Ces instructions sont exprimées à l’aide des éléments XML définis par le 
 ---
 
 ### Règles internes ou par défaut
+
 Lorsque le processeur trouve un nœud qui ne correspond à aucun motif, il applique les instructions de transformation par défaut suivantes :
 
 - pour un nœud élément ou pour le nœud document : il passe aux nœuds enfants
@@ -313,6 +377,7 @@ voir les [/xsl/instructionsParDefaut.xsl](/xsl/instructionsParDefaut.xsl)
 ???
 
 ### Que faut-il faire
+
 On a donc toujours besoin d’écrire ce genre de choses
 `<xsl:template match="div"/>` pour sortir un élément du flux textuel.
 
@@ -332,6 +397,7 @@ On a donc toujours besoin d’écrire ce genre de choses
         </xsl:copy>
     </xsl:template>
 ```
+
 voir le fichier  [/xsl/01CopieIdentique.xsl](/xsl/01CopieIdentique.xsl)
 
 
@@ -339,6 +405,7 @@ voir le fichier  [/xsl/01CopieIdentique.xsl](/xsl/01CopieIdentique.xsl)
 
 Lorsque l’on transforme un document, on a souvent besoin de recopier le contenu initial d’un document.
 Une telle règle s’avère très utile dans deux cas de figures :
+
 - lorsque l’on démarre un travail d’écriture de programme et que l’on n’a pas écrit toutes les instructions
 - dans le cas où l’on voudrait agir précisément sur certains nœuds, ou en ajouter, tout en gardant l’essentiel du document initial
 
@@ -353,22 +420,30 @@ Conjointement avec l’instruction par défaut, cette règle créée donc une co
 
 ---
 
-## Ex 03, modifier un fichier
+## Ex 03, Suppression
+
+En utilisant des instructions `xsl:template` comment peut-on supprimer un élément du flux au cours de la copie du document ?
 
 - supprimer les commentaires dans le fichier résultat ;
 - supprimer les attributs `@xml-id` de `p` ;
 
 ---
 
-## Production d’une page XHTML à partir d’un fichier XML-TEI
+## Utilisation des règles modèles
+
+Les règles modèles `xsl:template` s’appliquent au motif (*pattern*) défini par l’attribut **`@match`**. Ce motif est exprimé sous la forme d’une expression XPath.
+
+- Les règles sont instantiées selon l’ordre de traitement du document.
+- On instantie habituellement la transformation avec un `xsl:apply-template avec un attribut `@match="/"` qui part du nœud document
+- Il est possible de définir l’ordre de traitement du document en utilisant les instructions `xsl:apply-template` avec l’attribut `@select`
 
 ---
 
-## Ex 01
+### Ex. 01 générer une structure XHTML
 
-### générer une structure XHTML
+On souhaite créer une page HTML à partir d’un document XML-TEI.
 
-- En partant de [/xsl/02tei2html00.xsl](/xsl/02tei2html00.xsl) Écrire une XSLT pour générer une structure en HTML à partir du fichier [/corriges/acteRoyalFinal.tei.xml](/corriges/acteRoyalFinal.tei.xml)
+- En partant de [/xsl/02tei2html00.xsl](/xsl/02tei2html00.xsl) Écrire une XSLT pour générer une structure en HTML à partir du fichier [/exercices/tei.zip](/exercices/tei.zip)
 - Configurer un scénario de transformation qui enregistre le résultat sous le nom "test.html" dans le répertoire `html` et l’ouvre dans le navigateur par défaut
 
 Solution : [/xsl/02tei2html01.xsl](/xsl/02tei2html01.xsl)
@@ -378,28 +453,65 @@ Solution : [/xsl/02tei2html01.xsl](/xsl/02tei2html01.xsl)
 
 ## Ex 02
 
-### Écrire une règle (de type pull) pour créer titre de la page
+### Écrire une règle (de type pull) pour créer le titre de la page
+
+En utilisant une règle-modèle, créer un titre HTML pour le document résultat.
 
 Solution : [/xsl/02tei2html02.xsl](/xsl/02tei2html02.xsl)
+
+???
+
+Comment sélectionner titre principal ? Comment travailler sur les deux titres. 
 
 
 ---
 
 ## Ex 03
-### traiter le front de chaque texte
+
+### Définir un ordre de traitement du document
+
+- traiter l’entête TEI du document
+- préparer le traiter les différentes parties du document de `body` et `back`dans des `section` HTML distinctes.
 
 Solution : [/xsl/02tei2html03.xsl](/xsl/02tei2html03.xsl)
 
+---
+
+## Boucles et récursions
+
+- l’utilisation de règles `xsl:template` permet de traiter la récursion en XSLT
+- `xsl:for-each` exécution d’instructions en bouclant sur chacun des nœuds désignés par l’attribut `select`.
+  - les nœuds sont traités successivement chacun leur tour (le nœud contexte `.` change)
+  - `xsl:sort` tri de la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
+- `xsl:foreach-group` avec les attributs `select` et `group-by`
+
+---
+
+## Instructions conditionnelles
+
+- `xsl:if` instruction conditionnelle
+- `xsl:choose` exécution d’une série de tests exprimés par une série de sous éléments `xsl:when`
 
 ---
 
 ## Ex 04
-### écrire une règle avec une instruction conditionnelle (xsl:if) pour le sous-titre
 
-Renseigner les informations sur l’édition en utilisant les données du teiHeader
+### Traiter l’entête du document
 
-Solution : [/xsl/02tei2html04.xsl](/xsl/02tei2html04.xsl)
+Fournir au début de la page HTML une notice du document.
 
+- Traiter les titres avec une instruction conditionnelle `xsl:if` pour les sous-titre
+- Traiter les contributeurs
+- Traiter la description de la source
+
+Solution : [/xsl/02tei2html04.xsl](/xsl/02tei2html04.xsl)
+
+---
+
+## Variables
+
+- `xsl:variable` déclaration d’une variable
+- `xsl:param` déclaration d’un paramètre
 
 ---
 
@@ -441,3 +553,9 @@ Solution : [/xsl/02tei2html06.xsl](/xsl/02tei2html06.xsl)
 - [Jeni’s XSLT Pages](http://www.jenitennison.com/xslt/index.html)
 - [Zvon XSLT](http://zvon.org/comp/m/xslt.html)
 - [XML Please](http://www.xmlplease.com)
+
+---
+
+Cours en ligne
+
+- Beshero-Bondar, Elisa. s. d. « NewtFire DH Courses and Workshops ». Consulté le 1 décembre 2022. https://newtfire.org/courses/.
