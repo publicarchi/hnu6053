@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:tei="http://www.tei-c.org/ns/1.0"
+         xmlns:teix="http://www.tei-c.org/ns/Examples"
+         xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         ns=""><!--
+Schema generated from ODD source 2022-12-02T14:56:33Z. .
+TEI Edition: Version 4.3.0. Last updated on
+        31st August 2021, revision b4f72b1ff
+TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
+  
+--><!---->
+   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+           prefix="tei"
+           uri="http://www.tei-c.org/ns/1.0"/>
+   <define name="book">
+      <element name="book">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Élément racine d’un schéma simplissime pour encoder les livres</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="para"/>
+               <ref name="image"/>
+            </choice>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="para">
+      <element name="para">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">un paragraphe de text</a:documentation>
+         <text/>
+      </element>
+   </define>
+   <define name="image">
+      <element name="image">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">un élément vide qui pointe sur un fichier graphique</a:documentation>
+         <empty/>
+         <optional>
+            <attribute name="href">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">fournit l’URI de l’objet ciblé</a:documentation>
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <start>
+      <choice>
+         <ref name="book"/>
+      </choice>
+   </start>
+</grammar>

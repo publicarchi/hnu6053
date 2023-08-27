@@ -1,0 +1,55 @@
+default namespace = ""
+namespace sch = "http://purl.oclc.org/dsdl/schematron"
+namespace tei = "http://www.tei-c.org/ns/1.0"
+namespace teix = "http://www.tei-c.org/ns/Examples"
+namespace xlink = "http://www.w3.org/1999/xlink"
+
+# Schema generated from ODD source 2022-12-02T15:14:21Z. .
+# TEI Edition: Version 4.3.0. Last updated on
+#         31st August 2021, revision b4f72b1ff
+# TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
+#
+
+#
+
+sch:ns [ prefix = "tei" uri = "http://www.tei-c.org/ns/1.0" ]
+bookPart = para | image
+book =
+  
+  ## Elément racine d'un schéma simplissime pour encoder les livres
+  element book { bookPart+ }
+para =
+  
+  ## une paragraph de text 
+  element para { text, bookAtts.attributes, empty }
+image =
+  
+  ## un élément vide qui pointe sur un fichier graphique
+  element image {
+    empty,
+    
+    ## fournit l' URI de l'objet ciblé
+    attribute href { xsd:anyURI }?,
+    empty
+  }
+bookAtts.attributes =
+  bookAtts.attribute.xmlid, bookAtts.attribute.status
+bookAtts.attribute.xmlid =
+  
+  ## fournit un identifiant unique pour le composant
+  attribute xml:id { xsd:ID }?
+bookAtts.attribute.status =
+  
+  ## indique le statut de l'élément 
+  attribute status {
+    
+    ##
+    "red"
+    | 
+      ##
+      "green"
+    | 
+      ##
+      "unknown"
+  }?
+start = book

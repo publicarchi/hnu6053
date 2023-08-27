@@ -483,7 +483,7 @@ Solution : [/xsl/02tei2html02.xsl](/xsl/02tei2html02.xsl)
 
 ???
 
-Comment sélectionner titre principal ? Comment travailler sur les deux titres. 
+Comment sélectionner titre principal ? Comment travailler avec deux titres ?
 
 
 ---
@@ -503,16 +503,34 @@ Solution : [/xsl/02tei2html03.xsl](/xsl/02tei2html03.xsl)
 
 - l’utilisation de règles `xsl:template` permet de traiter la récursion en XSLT
 - `xsl:for-each` exécution d’instructions en bouclant sur chacun des nœuds désignés par l’attribut `select`.
-  - les nœuds sont traités successivement chacun leur tour (le nœud contexte `.` change)
-  - `xsl:sort` tri de la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
-- `xsl:foreach-group` avec les attributs `select` et `group-by`
+  - le processuer traite les items dans la séquence définie par l’attribut mandataire **`@select`** successivement, chacun leur tour dans l’ordre du document (le nœud contexte `.` change)
+  - `xsl:sort` trie la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
+- `xsl:foreach-group` avec les attributs `select` et `group-by` permet de travailler sur des groupes d’éléments (nous ne couvrirons pas son utilisation)
 
 ---
 
 ## Instructions conditionnelles
 
 - `xsl:if` instruction conditionnelle
+
+```xml
+<xsl:if test="@type">
+  <!-- do something -->
+</xsl:if>
+```
+
 - `xsl:choose` exécution d’une série de tests exprimés par une série de sous éléments `xsl:when`
+
+```xml
+<xsl:choose>
+  <xsl:when test="@ref[starts-with(., '#')]">
+      <!-- do something -->
+  </xsl:when>
+  <xsl:otherwise>
+      <!-- do something -->
+  </xsl:otherwise>
+</xsl:choose>
+```
 
 ---
 
