@@ -115,7 +115,7 @@ header ul, footer ul {
 
 
 [aria-current="page"] {
-	//font-weight: bold;
+	font-weight: bold;
 	text-decoration: wavy underline;
 }
 

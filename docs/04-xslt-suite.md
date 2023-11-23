@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Title</title>
-    <meta charset="utf-8">
-    <link href="themes/remark-dark.css" rel="stylesheet" media="all" type="text/css">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    </style>
-  </head>
-  <body><textarea id="source">title: Usage avancé de la TEI
+title: Usage avancé de la TEI
 description: Emmanuel Château-Dutier,
 theme: theme/remark-dark-em.css
 name: inverse
@@ -599,12 +580,3 @@ Solution : [/xsl/02tei2html06.xsl](/xsl/02tei2html06.xsl)
 Cours en ligne
 
 - Beshero-Bondar, Elisa. s. d. « NewtFire DH Courses and Workshops ». Consulté le 1 décembre 2022. https://newtfire.org/courses/.
-</textarea><script src="js/remark-0.6.5.min.js" type="text/javascript"></script><script type="text/javascript">
-      var hljs = remark.highlighter.engine;
-    </script><script src="remark.language.js" type="text/javascript"></script><script type="text/javascript">
-      var slideshow = remark.create({
-      highlightStyle: 'monokai',
-      highlightLanguage: 'remark'
-      }) ;
-    </script></body>
-</html>
