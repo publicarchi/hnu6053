@@ -6,31 +6,62 @@ layout: true
 class: inverse
 
 ---
+template: inverse
+class: center middle
+name: index
 
-# Introduction à XSLT
+# Rétro-ingénierie d’une XSLT simple
 
-## HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
+
+---
+laytout: false
+
+## Introduction
 
 ???
-
-Transformation simple tei2html.
-
-Ceci n’est pas une formation complète! son objectif est de ...
-
-* vous donner un avant-goût des possibilités offertes par les normes XSLT et XPath
-* surtout dans le domaine de traitement des documents « XML-TEI », principalement donc sortis des sciences humaines
-* aborder les concepts fondamentaux et les usages les plus répandus du norme XSLT
-
-Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
-
-Une des caractéristiques essentielles du langage XPath, est qu’il s’appuie sur un modèle de données (le XML Data Model à partir de la version 2.0) dont la connaissance est essentielle pour une bonne compréhension du langage.
-
-Il s’agit d’un véritable langage fonctionnel typé. Ainsi, l’utilisateur manipule des expressions et non des instructions, et l’évaluation de ces expressions produit des valeurs appartenant à des types définis dans un système de types. La version 2.0 langage intègre le riche système de types de XML Schema. Parmi de nombreux ajouts très utiles, la version 3.0 a principalement introduit les fonctions de haut niveau ainsi que de nouveaux types de contenus, les objets maps et les tableaux.
 
 Au cours de cette première présentation, nous commencerons par examiner le modèle de données XML, puis nous aborderons les diverses expressions XPath et de leur types, avant de nous concentrer sur des expressions servant à décrire des chemins pour sélectionner des ensembles de nœuds dans un arbre XML.
 
 ---
-layout:false
+
+## Qu’est-ce que XSLT ?
+
+Un langage informatique, certes !
+
+- XSL e**X**tensible **S**tylesheet **L**anguage
+- un langage informatique dont les spécifications ont été publiées par le W3C en novembre 1999, en même temps que celles du langage XPath (XML Path) pour sa première version
+- XSL se compose de deux parties XSL**T** pour **Transformations** et XSL**-FO** pour **Formating Object**
+- la [seconde version du langage XSLT](http://www.w3.org/TR/xslt20/) a été publiée en 2007 en même temps que [XPath 2.0](http://www.w3.org/TR/xpath20/)
+- une version 3.0 publiée en 2017.
+
+
+---
+
+## Cahier des charges de XSLT
+
+- langage de transformation de XML
+- capable de générer d’autres formats à partir du document source
+- écrit en XML
+- qui permet la réutilisation d’instructions
+- sans ordre de traitement
+- extensible
+
+XSLT est un **langage déclaratif**, basé sur des instructions (ou règles) non ordonnées
+
+Depuis sa version 2, XSLT est **langage fonctionnel, Turing complet**
+
+???
+
+Un langage déclaratif, basé sur des instructions (ou règles) non ordonnées : (comme CSS) mais dont les fonctionnalités sont bien plus avancées.
+
+Cela donne un langage déclaratif basé sur des instructions (on dit des règles) non ordonnées, comme CSS, mais dont les fonctionnalités sont beaucoup plus puissantes.
+
+XSLT 2.0 est langage fonctionnel, turing complet : on peut dire que c’est un langage fonctionnel car il est sans effets de bords (il n’y a pas de modifications de l’environnement ou du document source au cours du traitement)
+
+---
+
+## XSLT est un langage hôte de XPath
 
 > XPath is a language for addressing parts of an XML document, designed to be used by both XSLT and XPointer
 >
@@ -57,7 +88,7 @@ Plusieurs utilisations de XPath sont donc possibles
 
 ---
 
-## Historique XPath
+## Historique XSLT/XPath
 
 - première version du langage publiée en 1999
 - immédiatement utilisée par **XSLT 1.0**
@@ -82,46 +113,6 @@ La version 3 a été développée en même temps que XSLT et XQuery 3 et publié
 
 ---
 
-## Qu’est-ce que XSLT ?
-
-Un langage informatique, certes !
-
-- XSL e**X**tensible **S**tylesheet **L**anguage
-- un langage informatique dont les spécifications ont été publiées par le W3C en novembre 1999, en même temps que celles du langage XPath (XML Path) pour sa première version
-- XSL se compose de deux parties XSL**T** pour **Transformations** et XSL**-FO** pour **Formating Object**
-- la [seconde version du langage XSLT](http://www.w3.org/TR/xslt20/) a été publiée en 2007 en même temps que [XPath 2.0](http://www.w3.org/TR/xpath20/)
-- une version 3.0 publiée en 2017 et 3.1 en 2018.
-
-
----
-
-### Qu’est-ce que XSLT ?
-## Historique
-
-Le cahier des charges
-
-- langage de transformation de XML
-- capable de générer d’autres formats à partir du document source
-- écrit en XML
-- qui permet la réutilisation d’instructions
-- sans ordre de traitement
-- extensible
-
-= un **langage déclaratif**, basé sur des instructions (ou règles) non ordonnées
-
-= XSLT 2.0 est **langage fonctionnel**, Turing complet
-
-???
-
-Un langage déclaratif, basé sur des instructions (ou règles) non ordonnées : (comme CSS) mais dont les fonctionnalités sont bien plus avancées.
-
-Cela donne un langage déclaratif basé sur des instructions (on dit des règles) non ordonnées, comme CSS, mais dont les fonctionnalités sont beaucoup plus puissantes.
-
-XSLT 2.0 est langage fonctionnel, turing complet : on peut dire que c’est un langage fonctionnel car il est sans effets de bords (il n’y a pas de modifications de l’environnement ou du document source au cours du traitement)
-
----
-
-### Qu’est-ce que XSLT ?
 ## Processus de transformation **XSLT**
 
 ![xsltProcessing](images/xsltProcessing.svg)
@@ -138,8 +129,7 @@ Le résultat est une fonction de l’entrée.
 
 ---
 
-### Qu’est-ce que XSLT ?
-## processus de traitement (en bref)
+## Processus de traitement (en bref)
 XSLT est **une application XML pour la spécification de règles permettant de transformer un document XML en un autre document XML**
 
 - un document XSLT contient des règles modèles
@@ -163,33 +153,22 @@ Une fois le processus terminé, il sérialise l’arbre de sortie en un autre do
 
 ---
 
-### Qu’est-ce que XSLT ?
-## Le point sur les versions
-
-- à qqs différences près, on peut considérer XPath et XSLT 1.0 comme des sous-ensembles de XPath 2.0 et XSLT 2.0
-- problèmes de compatibilité de XSLT 2.0 avec l’environnement PHP5 (en passe d’être résolus)
-- de nombreuses choses plus simples à traiter en XSLT 2.0, mais une plus grande complexité du langage
-
-???
-
-À quelques différences près, on peut considérer XPath et XSLT1 comme des sous-ensembles de XSLT2 et XPath 2.
-
-On abordera aujourd’hui XPath 2.0 et XSLT 2.0 pour plus de facilité
-
-Pendant longtemps problème de compatibilité XPath 2.0 avec environnement PHP.
-En passe d’être réglé par le portage du processeur Saxon en C++.
-
-Certaines choses plus simples à faire en XPath 2.0 qu’avec XPath 1.0. Mais plus grande complexité du langage.
-
-Une partie seulement de la version 3 est supportée par les processeurs libres. La couverture la plus complète du standard est offerte par Saxon qui propose également un processeur en JavaScript. Dans le domaine de XQuery, on travaille habituellement avec la version 3.1.
-
----
-
 ![](images/whatXsltCanDo.png)
 
 ---
 
 ## Cas d’utilisation
+
+- passage d’un modèle à l’autre
+- transformation pour un site statique
+- transformation dynamique (framework XML)
+- base de données XML-native (XQuery + XSLT)
+
+Besoins
+
+- un ou plusieurs documents XML bien formés
+- un programme XSLT
+- un processeur
 
 ???
 
@@ -225,7 +204,7 @@ Pour mémoire, cf. le guide suivant :
 
 ## Que s’est-il passé ?
 
-- parsing du document source et création en mémoire d’une représentation arborescente
+- **parsing** du document source et création en mémoire d’une représentation arborescente
 - recherche dans le programme XSLT d’une règle s’appliquant à la racine du document XML, si elle existe : exécution de l’instruction et création d’un morceau de l’arbre résultat
 - sauf si la règle commande de sélectionner un autre nœud, retour à l’arbre source et parcours de cet arbre dans l’ordre du document (du haut vers le bas, de gauche à droite) en cherchant à chaque fois une règle dédiée
 - s’il y a plusieurs règles applicables à un même nœud des règles de priorité s’appliquent ; s’il n’y a pas de règle applicable pour un nœud à traiter, alors le processeur applique les instructions par défaut
@@ -239,67 +218,71 @@ Celui-ci est mobilisé par le processeur dans l’ordre de parcours du document 
 
 ---
 
-## Généralités sur XSLT
-
-### Structure d’un programme XSLT
+## Structure d’un programme XSLT
 
 - Un programme XSLT est un fichier XML
-- L’**élément racine** est `xsl:stylesheet` (ou `xsl:transform`) qui a deux attributs obligatoires `version` pour spécifier la version du langage et `xmlns` pour déclarer l’espace de nom
+- L’**élément racine** est `xsl:stylesheet` (ou `xsl:transform`) avec un attribut `@version` pour spécifier la version du langage et une déclaration d’espace de nom `xmlns`
 - Un des **éléments de haut niveau**, `xsl:output` spécifie un format de sortie.
+- Les **règles** sont spécifiées avec `xsl:template`
 
 ---
 
-### Structure d’un programme
+## Structure d’un programme
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  exclude-result-prefixes="xs"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   xmlns="http://www.w3.org/1999/xhtml"
   version="2.0">
-  <xsl:output method="xml" omit-xml-declaration="no"
-     encoding="UTF-8" indent="yes" />
+  <xsl:output method="xml" encoding="UTF-8" indent="yes" />
 </xsl:stylesheet>
 ```
 
 ---
 
-### Les règles
+## Les règles
 
-Les instructions de transformation sont englobées dans des éléments `xsl:template` qui constituent des **règles**
+Les instructions de transformation sont englobées dans des éléments `xsl:template` qui constituent des **règles**. Ces règles possèdent obligatoirement :
 
-Chaque règle a obligatoirement :
+- soit un attribut `match` qui indique au moyen d’une expression XPath le motif (*pattern*) auquel un nœud XML doit répondre pour que la règle soit exécutée
 
-- soit un attribut `match` qui indique au moyen d’une expression XPath le motif ou pattern auquel un nœud XML doit répondre pour que la transformation soit réalisée
-- soit un attribut `name` qui fait appel à une règle nommée qui peut être utilisée en l’appelant par son nom. Dispositif similaire à une macro.
+```xml
+<xsl:template match="hi">
+  <!-- corps de règle -->
+</xsl:template>
+```
 
----
+- soit un attribut `@name` pour créer une règle nommée qui pourra être utilisée ailleurs en l’appelant par son nom. Un dispositif similaire à celui d’une macro.
 
-### Corps des règles
-
-Le **corps d’une règle** contenue dans `xsl:template` comporte les instructions qui s’appliquent aux nœuds correspondant au motif indiqué dans l’attribut `match`
-
-Ces instructions sont exprimées à l’aide des éléments XML définis par le langage XSLT.
-
-- `xsl:apply-templates` applique les règles en descendant en profondeur
-- `xsl:value-of` évalue la contenu textuel d’un nœud
-- `xsl:copy` copie la valeur d’un nœud
-
+```xml
+<xsl:template name="regleNommee">
+  <!-- corps de règle -->
+<xsl:teplate
+```
 
 ---
 
-### Corps des règles (suite)
+## Corps des règles
 
-Éléments XML définis par le langage XSLT (suite) :
-- `xsl:if` instruction conditionnelle
-- `xsl:choose` exécution d’une série de tests exprimés par une série de sous éléments `xsl:when`
-- `xsl:sort` tri de la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
-- `xsl:foreach-group` avec les attributs `select` et `group-by`
-- `xsl:variable` déclaration d’une variable
-- `xsl:param` déclaration d’un paramètre
+Le **corps d’une règle** contenue dans `xsl:template` comporte les instructions qui s’appliquent aux nœuds correspondant au motif indiqué dans l’attribut `@match`
+
+- Ces **instructions** sont exprimées à l’aide des éléments XML définis par le langage XSLT.
+
+  - `xsl:apply-templates` applique les règles en descendant en profondeur
+  - `xsl:value-of` évalue la contenu textuel d’un nœud
+  - `xsl:copy` copie la valeur d’un nœud
+  - des constructeurs
+
+---
+
+## Contructeurs
+
+- `xsl:element` génère un nœud élément
+- `xsl:attribute` génère un nœud attribut
+- `xsl:sequence` génère une séquence
+- `xsl:text` génère un nœud textuel
 
 ---
 
@@ -307,7 +290,7 @@ Ces instructions sont exprimées à l’aide des éléments XML définis par le 
 
 ---
 
-### Règles internes ou par défaut
+## Règles internes ou par défaut
 Lorsque le processeur trouve un nœud qui ne correspond à aucun motif, il applique les instructions de transformation par défaut suivantes :
 
 - pour un nœud élément ou pour le nœud document : il passe aux nœuds enfants
@@ -349,7 +332,9 @@ Une telle règle s’avère très utile dans deux cas de figures :
 - dans le cas où l’on voudrait agir précisément sur certains nœuds, ou en ajouter, tout en gardant l’essentiel du document initial
 
 Cette règle est instanciée pour tous les nœuds, et pour les nœud attributs quels que soient leur nom.
+
 Elle copie le nœud courant, puis applique les règles en descendant dans l’ordre de parcours du document en sélectionnant les nœud attributs.
+
 Ou bien elle se contente d’indiquer au processeur de descendre dans l’ordre de parcours du document en appliquant les règles.
 
 Comme vous l’aurez compris, cette règle est récursive. S’il y a un attribut, la même règle s’applique et copie le nœud attribut.
@@ -405,26 +390,6 @@ Solution : [/xsl/02tei2html03.xsl](/xsl/02tei2html03.xsl)
 Renseigner les informations sur l’édition en utilisant les données du teiHeader
 
 Solution : [/xsl/02tei2html04.xsl](/xsl/02tei2html04.xsl)
-
-
----
-
-## Ex 05
-### Traiter Les items de la table des matières
-
-Solution : [/xsl/02tei2html05.xsl](/xsl/02tei2html05.xsl)
-
----
-
-## Ex 06
-### Générer les notes de commentaire
-
-Solution : [/xsl/02tei2html06.xsl](/xsl/02tei2html06.xsl)
-
----
-
-## Ex 07
-### Générer les notes d’apparat critique
 
 ---
 

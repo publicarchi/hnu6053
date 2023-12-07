@@ -15,7 +15,7 @@ name: index
 # Comment la TEI utilise ODD
 
 ---
-lauout:false
+layout:false
 
 # TEI ODD sous le capot
 

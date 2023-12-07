@@ -34,19 +34,19 @@ name: index
 # ODD comme système de documentation
 
 ODD est un langage conçu pour faciliter la documentation systématique. Il fournit donc des balises spécialisées pour distinguer&nbsp;:
-* `&lt;code&gt;`&nbsp;: un morceau de code exprimé dans n’importe quel langage formel
+* `<code>`&nbsp;: un morceau de code exprimé dans n’importe quel langage formel
 ```xml
 <code  lang="C">count += 56;</code>
 ```
 
 
-* `&lt;att&gt;`&nbsp;: un nom d’attribut
+* `<att>`&nbsp;: un nom d’attribut
 ```xml
 <att  scheme="TEI">target</att>
 ```
 
 
-* `&lt;gi&gt;`&nbsp;: un nom d’élément
+* `<gi>`&nbsp;: un nom d’élément
 ```xml
 <gi >table</gi>
 ```
@@ -54,19 +54,19 @@ ODD est un langage conçu pour faciliter la documentation systématique. Il four
 
 # ODD comme système de documentation (suite)
 
-* `&lt;ident&gt;`&nbsp;: identifiant ou nom d’un objet en n’importe quel langage formel
+* `<ident>`&nbsp;: identifiant ou nom d’un objet en n’importe quel langage formel
 ```xml
 <ident  type="class">model.biblLike</ident>
 ```
 
 
-* `&lt;val&gt;`&nbsp;: valeur d’attribut
+* `<val>`&nbsp;: valeur d’attribut
 ```xml
 <val >unknown</val>
 ```
 
 
-* `&lt;tag&gt;`&nbsp;: balise XML
+* `<tag>`&nbsp;: balise XML
 ```xml
 <tag >ptr target="http://www.bbc.co.uk"/</tag>
 ```
@@ -77,11 +77,11 @@ ODD est un langage conçu pour faciliter la documentation systématique. Il four
 
 # Structuration d’un ODD
 
-Mis à part le `&lt;schemaSpec&gt;` qui définit le schéma, on peut organiser le document comme tout autre document TEI, utilisant `&lt;div&gt;`, `&lt;list&gt;`, etc.
+Mis à part le `<schemaSpec>` qui définit le schéma, on peut organiser le document comme tout autre document TEI, utilisant `<div>`, `<list>`, etc.
 
-Au sein de ce document, des éléments supplémentaires sont prévus pour le regroupement des déclarations à l’extérieur du `&lt;schemaSpec&gt;`&nbsp;:
+Au sein de ce document, des éléments supplémentaires sont prévus pour le regroupement des déclarations à l’extérieur du `<schemaSpec>`&nbsp;:
 
-* `&lt;specGrp&gt;`&nbsp;: un regroupement de déclarations identifiable
+* `<specGrp>`&nbsp;: un regroupement de déclarations identifiable
 ```xml
 <p >Nous n’utilisons que ces éléments du module <ident>linking</ident>&nbsp;:
   <specGrp xml:id="linkingElts">
@@ -91,7 +91,7 @@ Au sein de ce document, des éléments supplémentaires sont prévus pour le reg
 ```
 
 
-* `&lt;specGrpRef&gt;`&nbsp;: indique où on souhaite intégrer les déclarations précisées par un `&lt;specGrp&gt;`
+* `<specGrpRef>`&nbsp;: indique où on souhaite intégrer les déclarations précisées par un `<specGrp>`
 ```xml
   <specGrpRef  target="#linkingElts"/>
 ```
@@ -104,7 +104,7 @@ Au sein de ce document, des éléments supplémentaires sont prévus pour le reg
 
 Ouvrir le fichier `tei_bare.odd` avec oXygen
 
-Retrouvez l’élément `&lt;schemaSpec&gt;`
+Retrouvez l’élément `<schemaSpec>`
 
 Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire` de oXygen)
 
@@ -115,7 +115,7 @@ Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire`
 
 Ouvrir le fichier `tei_simplePrint.odd` avec oXygen
 
-Retrouvez l'élément `&lt;schemaSpec&gt;`
+Retrouvez l'élément `<schemaSpec>`
 
 Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire` de oXygen)
 
@@ -124,7 +124,7 @@ Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire`
 
 # Contraintes de données avec Schematron
 
-* Une spécification d’élément peut proposer des contraintes supplémentaires sur son contenu en utilisant un ou plusieurs éléments `&lt;constraintSpec&gt;`
+* Une spécification d’élément peut proposer des contraintes supplémentaires sur son contenu en utilisant un ou plusieurs éléments `<constraintSpec>`
 
 * Ces règles sont exprimées (typiquement) en utilisant le langage [ISO Schematron ](http://schematron.com/)
 
@@ -143,26 +143,26 @@ Examiner la structuration du fichier (utiliser la perspective `Outline/Sommaire`
 ---
 
 
-# L’élément `&lt;constraintSpec&gt;`
+# L’élément `<constraintSpec>`
 
 Il définit une contrainte qui s’applique au sein de l’élément dans lequel il est déclaré
 
 * L’attribut `@ident` est obligatoire&nbsp;: il fournit un identifiant unique
 
-* Il rassemble un ou plusieurs `&lt;constraint&gt;`
+* Il rassemble un ou plusieurs `<constraint>`
 
-* L’élément `&lt;constraint&gt;` contient (typiquement) un `&lt;assert&gt;` ou un `&lt;report&gt;`, éléments de l’espace de nommage `http://purl.oclc.org/dsdl/schematron`
+* L’élément `<constraint>` contient (typiquement) un `<assert>` ou un `<report>`, éléments de l’espace de nommage `http://purl.oclc.org/dsdl/schematron`
 
 ---
 
 
 # Fonctionnement des règles Schematron
 
-* Le contenu de l’élément `&lt;assert&gt;` est affiché si le test est .red[false]
+* Le contenu de l’élément `<assert>` est affiché si le test est .red[false]
 
-* Le contenu de l’élément `&lt;report&gt;` est affiché si le test est .red[true]
+* Le contenu de l’élément `<report>` est affiché si le test est .red[true]
 
-* Astuce&nbsp;: plusieurs éléments schematron sont disponibles pour enrichir le texte du message affiché, notamment `&lt;name&gt;` (context) et `&lt;value-of&gt;` (valeur)
+* Astuce&nbsp;: plusieurs éléments schematron sont disponibles pour enrichir le texte du message affiché, notamment `<name>` (context) et `<value-of>` (valeur)
 
 Un schéma RNG intégrant ces règles sera auto-généré si l’on utilise le logiciel oXygen pour traiter son ODD
 
@@ -173,9 +173,9 @@ Un schéma RNG intégrant ces règles sera auto-généré si l’on utilise le l
 
 * Contraintes de co-occurrence&nbsp;: « si l’attribut X a la valeur A, l’élément qui le porte doit contenir un Y »
 
-* Contraintes arithmétique contextuelles&nbsp;: « au sein d’un `&lt;titleStmt&gt;`, on ne permet qu’un seul `&lt;title&gt;` »
+* Contraintes arithmétique contextuelles&nbsp;: « au sein d’un `<titleStmt>`, on ne permet qu’un seul `<title>` »
 
-* Contraintes textuelles&nbsp;: « Les caractères ' et “ ne sont pas permis au sein d’un `&lt;p&gt;` apparaissant dans le `&lt;body&gt;` »
+* Contraintes textuelles&nbsp;: « Les caractères ' et “ ne sont pas permis au sein d’un `<p>` apparaissant dans le `<body>` »
 
 * Contraintes contextuelles&nbsp;: « mots en français (`@xml:lang`='fr') ne sont pas permis au sein d’un élément latin (`@xml:lang`='la') »
 
@@ -245,7 +245,7 @@ Un schéma RNG intégrant ces règles sera auto-généré si l’on utilise le l
 
 * `starts-with($t,'#')`&nbsp;: ne considérer que les pointeurs locaux
 
-* `not(id(substring($t,2)))`: y-a-t il un attribut `@xml:id` dont la valeur correspond à la valeur indiquée en sélectionnant ce qui suit son 2&lt;sup&gt;ème&lt;/sup&gt; caractère
+* `not(id(substring($t,2)))`: y-a-t il un attribut `@xml:id` dont la valeur correspond à la valeur indiquée en sélectionnant ce qui suit son 2<sup>ème</sup> caractère
 
 * `some $x in $results satisfies $x`&nbsp;: expression XPath permettant la validation d’une séquence de valeurs booléennes (vraies/fausses)
 
@@ -279,7 +279,7 @@ L’attribut `@source` sert à spécifier la source des déclarations qu’on so
   <!-- ensemble de déclarations maison --></schemaSpec>
 ```
 
-`@source` peut être utilisé sur `&lt;classRef&gt;`, `&lt;elementRef&gt;`, `&lt;macroRef&gt;`, et `&lt;moduleRef&gt;`&nbsp;: il doit pointer vers un ODD compilé
+`@source` peut être utilisé sur `<classRef>`, `<elementRef>`, `<macroRef>`, et `<moduleRef>`&nbsp;: il doit pointer vers un ODD compilé
 
 ---
 
@@ -290,7 +290,7 @@ L’attribut `@source` sert à spécifier la source des déclarations qu’on so
 
 * Regardez rapidement la sortie en profitant de l’affichage Outline
 
-* Tous ces `&lt;classSpec&gt;` et `&lt;dataSpec&gt;` sont fournis par le module `tei`&nbsp;: ils sont constitutifs de l’infrastructure TEI.
+* Tous ces `<classSpec>` et `<dataSpec>` sont fournis par le module `tei`&nbsp;: ils sont constitutifs de l’infrastructure TEI.
 
 * Enregistrez cette version sous le nom `tei_bare.compiled.odd`
 
@@ -299,7 +299,7 @@ L’attribut `@source` sert à spécifier la source des déclarations qu’on so
 
 # Usage d’un ODD compilé
 
-Nous allons réutiliser TEI_bare, mais nous souhaitons supprimer l’élément `&lt;head&gt;`
+Nous allons réutiliser TEI_bare, mais nous souhaitons supprimer l’élément `<head>`
 
 ```xml
 <schemaSpec  ident="Bare-minus" source="tei_bare.compiled.odd"
@@ -331,14 +331,14 @@ Nous allons réutiliser TEI_bare, mais nous souhaitons ajouter le module `gaiji`
 </schemaSpec>
 ```
 
-Le `&lt;moduleRef&gt;` qui va fournir le module `gaiji` utilise son propre attribut `@source` pour spécifier où aller cherche les déclarations de ce module.
+Le `<moduleRef>` qui va fournir le module `gaiji` utilise son propre attribut `@source` pour spécifier où aller cherche les déclarations de ce module.
 
 ---
 
 
 # Rétablir un élément supprimé
 
-Nous allons ramener l'élément `&lt;q&gt;` qui a été effacé du schéma compilé&nbsp;:
+Nous allons ramener l'élément `<q>` qui a été effacé du schéma compilé&nbsp;:
 
 ```xml
 <schemaSpec  ident="Bare-plus" source="tei_bare.compiled.odd"
@@ -355,17 +355,17 @@ Nous allons ramener l'élément `&lt;q&gt;` qui a été effacé du schéma compi
 
 # Addition des composants d’une schéma nonTEI
 
-On souhaite utiliser l’élément TEI `&lt;formula&gt;` et y insérer du contenu exprimé en MathML
+On souhaite utiliser l’élément TEI `<formula>` et y insérer du contenu exprimé en MathML
 
 Il nous faut donc&nbsp;:
 1. inclure les composants du schéma MathML
 
-1. modifier le modèle de contenu de l’élément `&lt;formula&gt;`
+1. modifier le modèle de contenu de l’élément `<formula>`
 
 1. générer un schéma qui résout les conflits de nommage
 
 
-ATTENTION&nbsp;: il y a un élément `&lt;list&gt;` dans TEI mais également dans MathML&nbsp;!
+ATTENTION&nbsp;: il y a un élément `<list>` dans TEI mais également dans MathML&nbsp;!
 
 ---
 
@@ -409,9 +409,9 @@ L’attribut `@prefix` nous permet de désambiguïser les identifiants ressortan
         <mo>.</mo>
         <mn>0</mn>
         <mn>1</mn>
-        <mo>&lt;</mo>
+        <mo><</mo>
         <mi>κ</mi>
-        <mo>&lt;</mo>
+        <mo><</mo>
         <mn>1</mn>
         <mn>0</mn>
      </math>
@@ -426,7 +426,7 @@ Vous pouvez également enrichir votre documentation avec des déclarations plus 
 
 Cela est complémentaire aux fonctionnalités offertes avec `@rend` et `@style` qui décrivent la manière dont la source originale (non-digitale) a été formattée.
 
-Les nouveaux éléments `&lt;model&gt;`, `&lt;modelGrp&gt;`, `&lt;param&gt;`, `&lt;outputRendition&gt;`
+Les nouveaux éléments `<model>`, `<modelGrp>`, `<param>`, `<outputRendition>`
 
 Le concept de `behaviour` est introduit pour définir des concepts de formattage employés communément, par exemple, « block », « inline », « pointer », etc.
 
@@ -436,7 +436,7 @@ Le concept de `behaviour` est introduit pour définir des concepts de formattage
     <model predicate="not(ancestor::p)" behaviour="block"/>
   </elementSpec>
 ```
-« Process a `&lt;quote&gt;` inside a `&lt;p&gt;` as an inline; elsewhere as a block »
+« Process a `<quote>` inside a `<p>` as an inline; elsewhere as a block »
 ---
 
 
@@ -500,7 +500,7 @@ L’objet de ces règles est de simplifier le « blind interchange » des docume
 
 # Les limites de la modification
 
-* Est-ce que l’on peut supprimer n’importe quoi&nbsp;? par ex. `&lt;title&gt;`&nbsp;?
+* Est-ce que l’on peut supprimer n’importe quoi&nbsp;? par ex. `<title>`&nbsp;?
 
 * A quoi servent les classes vides ?
 

@@ -5,7 +5,15 @@ name: inverse
 layout: true
 class: inverse
 
+---
+
+template: inverse
+class: center middle
+name: index
+
 # Le langage XPath
+
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ???
 Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
@@ -961,48 +969,48 @@ layout: false
 
 ## Sérialisation arborescente de [phares.tei.xml](./exemplesTEI/phares.tei.xml)
 
-![question](./images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `/body/div/lg` ?
-![question](./images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `/body/div/@type` ?
 rappel : @ = attribute
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `/body/div/lg/l` ?
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `l/@n`
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `ancestor::lg` ?
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `descendant::l`?
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `//lg` ?
-![question](.images/diagram.svg)
+![question](./images/diagram01.svg)
 
 ---
 ## `//lg/../@type` ?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)
 
 ---
 ## `//lg/following-sibling::l` ?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)
 
 ---
 ## `//lg/following::l` ?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)
 
 ---
 template: inverse
@@ -1011,13 +1019,13 @@ template: inverse
 
 ---
 ## `/body/div/lg/l[@n="2"]`?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)
 
 ---
 ## `/body/div[@type="shortPoem"]/head`?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)
 
 
 ---
 ## `//l[3]` ?
-![question](.images/diagram.svg)
+![question](./images/diagram.svg)

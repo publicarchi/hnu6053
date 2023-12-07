@@ -6,11 +6,13 @@ layout: true
 class: inverse
 
 ---
+template: inverse
 class: center middle
 name: index
 
-
 # La syntaxe ODD
+
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ---
 layout: false

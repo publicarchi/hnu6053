@@ -7,13 +7,13 @@ layout: true
 class: inverse
 
 ---
+template: inverse
 class: center middle
-
-
+name: index
 
 # One Document Does It All (ODD), Introduction
 
-## HNU6053
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 
 ---

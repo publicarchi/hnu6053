@@ -11,8 +11,9 @@ template: inverse
 class: center middle
 name: index
 
+# ODD Un exemple très simple
 
-# Un exemple très simple
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ---
 layout: false
