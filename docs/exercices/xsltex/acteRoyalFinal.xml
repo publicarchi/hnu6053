@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="./out/teiManuscrit.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-stylesheet type="text/xsl" href="./xsl/tei2html04.xsl"?>
+<?xml-stylesheet type="text/xsl" href="./xsl/tei2html01.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <!-- teiHeader est obligatoire dans un document TEI, et les éléments title, publisher et sourceDesc dans fileDesc le sont aussi -->
