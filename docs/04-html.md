@@ -15,7 +15,7 @@ name: index
 ### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ---
-laytout: false
+layout: false
 
 ## Introduction
 

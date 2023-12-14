@@ -15,7 +15,7 @@ name: index
 ### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ---
-laytout: false
+layout: false
 
 ## Introduction
 
@@ -153,7 +153,7 @@ Une fois le processus terminé, il sérialise l’arbre de sortie en un autre do
 
 ---
 
-![](images/whatXsltCanDo.png)
+background-image: url(images/whatXsltCanDo.png)
 
 ---
 

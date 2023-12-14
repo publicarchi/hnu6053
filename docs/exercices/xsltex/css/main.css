@@ -1,0 +1,281 @@
+/*
+  @author emchateau
+  @since 2023-11
+  @version 1.0
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* indigo theme */
+:root {
+  --colorMain: #fdfdfe;
+  --colorSub: #3f51b5; /* #E73E0D */;
+  --colorAccent: #3f51b5; /* #E73E0D */;
+  --baseline: 1.5; /* 1.5 * 18 = 27px*/
+  font-size: 1.125em; /* 18px */
+  line-height: var(--baseline);
+}
+
+/*
+ * Structure
+ */
+body {
+  background-color: var(--colorSub);
+  color: var(--colorMain);
+}
+
+section {
+  background-color: var(--colorMain);
+  color: var(--colorSub);
+}
+
+h1 {
+  max-width: 47rem;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: calc( var(--baseline) * 2rem);
+}
+
+section {
+  width: 100%;
+}
+
+article {
+  max-width: 47rem;
+  margin: auto;
+  margin-bottom: calc( var(--baseline) * 3rem);
+}
+
+article.col {
+  columns: 22.3rem;
+  column-gap: 1.3rem;
+}
+
+h2 {
+  -moz-column-span: all;
+  column-span: all;
+  /* @todo not working in Firefox */
+}
+
+/* sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+  width: 100%;
+  margin: auto;
+}
+footer {
+  flex-shrink: 0;
+}
+
+/*
+ * Typography
+ */
+/*
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'IBM Plex Mono', monospace;
+*/
+
+body {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: normal;
+  letter-spacing: 0.0em
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+/* typographic scale https://drewish.com/tools/vertical-rhythm/ */
+h1 {
+  font-size: 2.2222em; /* 40px */
+  line-height: 1.3500; /* 54px */
+
+}
+
+h2 {
+  font-size: 1.7222em; /* 31px */
+  line-height: 1.7419em; /* 54px */
+  margin-top: auto;
+  margin-bottom: calc( var(--baseline) * 1rem);
+}
+
+h3 {
+  font-size: 1.334em; /* 18 * 1.334em = 24px */
+  line-height: 1.125; /* 24 * 1.125 = 27px*/
+  margin-bottom: calc( var(--baseline) * 1rem);
+}
+
+h4 {
+  font-size: 1.2222em; /* 22px */
+  line-height: 1.2273; /* 27px */
+  margin: auto;
+}
+
+h5 {
+  font-size: 1.1111em; /* 20px */
+  line-height: 1.350; /* 27px */
+  margin: auto;
+}
+
+h6 {
+  font-size: 1em;
+  margin: auto;
+}
+
+p {
+  margin-top: auto;
+  margin-bottom: calc(var(--baseline) * 1rem);
+}
+
+sup {
+  vertical-align: middle;
+  font-size: smaller;
+}
+
+sup.note {
+  font-size: 0.7em;
+}
+
+/* @todo to rework */
+@media (max-width: 684px) {
+  body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 382px) {
+  body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/*
+ * Liens
+ */
+
+:target > :first-child {
+  background-color: #ff6;
+}
+
+a {
+  color: var(--colorAccent);
+  text-decoration: none;
+  box-shadow: inset 0 -0.05em 0 var(--colorAccent);
+  transition: color 45ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
+}
+
+a:hover {
+  box-shadow: inset 0 0 0 var(--colorAccent), 0 0.15em 0 var(--colorAccent);
+}
+
+/*
+ * Navigation
+ */
+
+nav {
+  width: 100%;
+  line-height: calc(var(--baseline) * 1.5rem);
+  background: var(--colorSub);
+  text-align: center;
+  margin:0;
+  padding:0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    max-width: 47em;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav ul a {
+  display: block;
+  padding: 0.02rem 1.4rem;
+  font-weight: bolder;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
+}
+
+/* applied after scroll height reached */
+.fixed-nav nav {
+  position: fixed;
+  top:0;
+  z-index: 1;
+}
+
+nav>ul>li>a {
+  color: var(--colorMain);
+  text-decoration: none;
+  transition: background-size .45s;
+}
+
+nav>ul>li>a:hover {
+  color: var(--colorMain);
+  opacity: .7;
+  background-size: 0.35em 0.35em;
+ }
+
+/*
+ * Footer
+ */
+
+footer h2 {
+  margin: auto;
+  font-size: 1.5em;
+  // border-bottom: calc( var(--baseline) * 2rem);
+}
+
+footer h2::before{
+  display: none;
+}
+
+footer ul {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+footer a {
+  color: var(--colorMain);
+  text-decoration: none;
+  transition: background-size .45s;
+}
+
+footer li>a {
+  padding: 0.4em;
+}
+
+footer a:hover {
+  color: var(--colorMain);
+  background-size: 0.35em 0.35em;
+  // opacity: 1;
+ }
+
+.social i {
+  font-size: 2em;
+  line-height: 2;
+}
+
+.colophon {
+  opacity: .7;
+  font-size: 0.7em;
+  line-height: 1.2 ;
+}

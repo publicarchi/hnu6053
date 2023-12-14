@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="./out/teiManuscrit.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="./xsl/tei2html04.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
     <!-- teiHeader est obligatoire dans un document TEI, et les éléments title, publisher et sourceDesc dans fileDesc le sont aussi -->
@@ -8,7 +9,8 @@
       <!-- titleStmt : la mention de titre et de responsabilité (une des zones dans la norme de description bibliographique ISBD)-->
       <titleStmt>
         <!-- le titre du document TEI ; les Guidelines recommandent d’y spécifier le caractère spécifique de l’édition réalisée : elle est électronique, se différencie ainsi d’autres éditions -->
-        <title>Le confort du courtisan : ordres royaux pour le logement à Marly</title>
+        <title type="main">Le confort du courtisan</title>
+        <title type="sub">ordres royaux pour le logement à Marly</title>
         <!-- <title type="complement">une édition électronique</title>-->
         <!-- title est répétable ; on pourrait donc ici ajouter d’autres éléments title, pour entrer des sous-titres, titres parallèles dans d’autres langues, etc. Dans ce cas on utiliserait les attributs type et xml:lang -->
         <!-- encodage des différentes mentions de responsabilité. Ici la source primaire n’est pas une oeuvre, c’est un document d'archives. On ne peut donc pas dire qu’il y a un ou des auteurs. Par contre il y a un éditeur scientifique, qui a transcrit et critiqué le texte, et préparé des commentaires, etc. Il y a aussi des responsables secondaires, qui ont aidé à ce travail. On utilise principal et respStmt. On peut si besoin est affecter un identifiant à chacune des personnes responsables -->

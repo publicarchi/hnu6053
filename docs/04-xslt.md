@@ -358,6 +358,10 @@ Ces **instructions** sont exprimées à l’aide des éléments XML définis par
 - `xsl:sequence` génère une séquence
 - `xsl:text` génère un nœud textuel
 
+### Constructeurs littéraux
+
+Il est possible
+
 ---
 
 ## Ex 01 : règle vide
@@ -372,7 +376,7 @@ Lorsque le processeur trouve un nœud qui ne correspond à aucun motif, il appli
 - pour un nœud texte : il sort la valeur textuelle
 - pour un nœud attribut : il sort la valeur textuelle
 
-voir les [/xsl/instructionsParDefaut.xsl](/xsl/instructionsParDefaut.xsl)
+voir les [../xsl/instructionsParDefaut.xsl](../xsl/instructionsParDefaut.xsl)
 
 ???
 
@@ -410,7 +414,7 @@ Supprime tous les éléments div.
     </xsl:template>
 ```
 
-voir le fichier  [/xsl/01CopieIdentique.xsl](/xsl/01CopieIdentique.xsl)
+voir le fichier  [../xsl/01CopieIdentique.xsl](../xsl/01CopieIdentique.xsl)
 
 
 ???
@@ -455,10 +459,10 @@ Les règles modèles `xsl:template` s’appliquent au motif (*pattern*) défini 
 
 On souhaite créer une page HTML à partir d’un document XML-TEI.
 
-- En partant de [/xsl/02tei2html00.xsl](/xsl/02tei2html00.xsl) Écrire une XSLT pour générer une structure en HTML à partir du fichier [/exercices/tei.zip](/exercices/tei.zip)
+- En partant de [../xsl/02tei2html00.xsl](../xsl/02tei2html00.xsl) Écrire une XSLT pour générer une structure en HTML à partir du fichier [../exercices/tei.zip](/exercices/tei.zip)
 - Configurer un scénario de transformation qui enregistre le résultat sous le nom "test.html" dans le répertoire `html` et l’ouvre dans le navigateur par défaut
 
-Solution : [/xsl/02tei2html01.xsl](/xsl/02tei2html01.xsl)
+Solution : [../xsl/02tei2html01.xsl](../xsl/02tei2html01.xsl)
 
 
 ---
@@ -469,7 +473,7 @@ Solution : [/xsl/02tei2html01.xsl](/xsl/02tei2html01.xsl)
 
 En utilisant une règle-modèle, créer un titre HTML pour le document résultat.
 
-Solution : [/xsl/02tei2html02.xsl](/xsl/02tei2html02.xsl)
+Solution : [..xsl/02tei2html02.xsl](../xsl/02tei2html02.xsl)
 
 ???
 
@@ -485,7 +489,7 @@ Comment sélectionner titre principal ? Comment travailler avec deux titres ?
 - traiter l’entête TEI du document
 - préparer le traiter les différentes parties du document de `body` et `back`dans des `section` HTML distinctes.
 
-Solution : [/xsl/02tei2html03.xsl](/xsl/02tei2html03.xsl)
+Solution : [../xsl/02tei2html03.xsl](../xsl/02tei2html03.xsl)
 
 ---
 
@@ -493,9 +497,9 @@ Solution : [/xsl/02tei2html03.xsl](/xsl/02tei2html03.xsl)
 
 - l’utilisation de règles `xsl:template` permet de traiter la récursion en XSLT
 - `xsl:for-each` exécution d’instructions en bouclant sur chacun des nœuds désignés par l’attribut `select`.
-  - le processuer traite les items dans la séquence définie par l’attribut mandataire **`@select`** successivement, chacun leur tour dans l’ordre du document (le nœud contexte `.` change)
+  - le processuer traite les items dans la séquence définie par l’attribut mandataire `@select` successivement, chacun leur tour dans l’ordre du document (le nœud contexte `.` change)
   - `xsl:sort` trie la séquence de nœuds sélectionnés par `xsl:for-each` ou `xsl:apply-templates`
-- `xsl:foreach-group` avec les attributs `select` et `group-by` permet de travailler sur des groupes d’éléments (nous ne couvrirons pas son utilisation)
+- `xsl:foreach-group` avec les attributs `@select` et `@group-by` permet de travailler sur des groupes d’éléments (nous ne couvrirons pas son utilisation)
 
 ---
 
@@ -534,7 +538,7 @@ Fournir au début de la page HTML une notice du document.
 - Traiter les contributeurs
 - Traiter la description de la source
 
-Solution : [/xsl/02tei2html04.xsl](/xsl/02tei2html04.xsl)
+Solution : [../xsl/02tei2html04.xsl](../xsl/02tei2html04.xsl)
 
 ---
 
@@ -543,19 +547,21 @@ Solution : [/xsl/02tei2html04.xsl](/xsl/02tei2html04.xsl)
 - `xsl:variable` déclaration d’une variable
 - `xsl:param` déclaration d’un paramètre
 
+Notion de portée de la variable.
+
 ---
 
 ## Ex 05
 ### Traiter Les items de la table des matières
 
-Solution : [/xsl/02tei2html05.xsl](/xsl/02tei2html05.xsl)
+Solution : [../xsl/02tei2html05.xsl](../xsl/02tei2html05.xsl)
 
 ---
 
 ## Ex 06
 ### Générer les notes de commentaire
 
-Solution : [/xsl/02tei2html06.xsl](/xsl/02tei2html06.xsl)
+Solution : [../xsl/02tei2html06.xsl](../xsl/02tei2html06.xsl)
 
 ---
 
