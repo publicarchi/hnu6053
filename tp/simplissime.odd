@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Mon schéma simplissime</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Information about the source</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="simplissime" start="book">
+        
+        <elementSpec ident="book">
+          <desc>Élément racine de mon schéma simplissime pour décrire des livres</desc>
+          <content>
+            <elementRef key="para"/>
+            <elementRef key="image"/>
+          </content>
+        </elementSpec>
+        
+        <elementSpec ident="para">
+          <desc>Paragraphe d’un livre</desc>
+          <content>
+            <textNode/>
+          </content>
+        </elementSpec>
+                
+        <elementSpec ident="image">
+          <desc>Image dans un livre</desc>
+        </elementSpec>
+        
+        
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

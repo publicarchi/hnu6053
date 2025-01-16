@@ -1,6 +1,6 @@
 title: Initiation XPath
 description: Emmanuel Château-Dutier,
-theme: theme/remark-dark-em.css
+theme: theme/remark-dark.css
 name: inverse
 layout: true
 class: inverse
