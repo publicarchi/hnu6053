@@ -1,0 +1,84 @@
+/**
+ * Overused Grotesk
+ * https://github.com/RandomMaerks/Overused-Grotesk/
+*/
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-Roman.woff2') format('woff2'),
+       url('OverusedGrotesk-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-Italic.woff2') format('woff2'),
+       url('OverusedGrotesk-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-Medium.woff2') format('woff2'),
+       url('OverusedGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-MediumItalic.woff2') format('woff2'),
+       url('OverusedGrotesk-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-SemiBold.woff2') format('woff2'),
+       url('OverusedGrotesk-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-SemiBoldItalic.woff2') format('woff2'),
+       url('OverusedGrotesk-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-Bold.woff2') format('woff2'),
+       url('OverusedGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-BoldItalic.woff2') format('woff2'),
+       url('OverusedGrotesk-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-ExtraBold.woff2') format('woff2'),
+       url('OverusedGrotesk-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overused-grotesk';
+  src: url('OverusedGrotesk-ExtraBoldItalic.woff2') format('woff2'),
+       url('OverusedGrotesk-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+}

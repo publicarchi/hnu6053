@@ -1,0 +1,65 @@
+/**
+ * Index layout
+ */
+.page-layout {
+  --page-couleur-fond: var(--couleur-fond);
+  --page-couleur-texte: var(--couleur-texte);
+  --page-largeur-infra: 10rem; /* espace libre à gauche */
+  --page-largeur-extra: 18rem; /* espace libre à droite */
+  --pages-colonnes: 1fr;
+  --page-zones:
+    "infra"
+    "contenu"
+    "extra"
+  ;
+  --page-largeur-maximale: 90rem;
+
+  min-height: 100vh;
+
+  background-color: var(--page-couleur-fond);
+  color: var(--page-couleur-texte);
+}
+@media (min-width: 60rem) {
+  .page-layout {
+    --page-colonnes: [infra] var(--page-largeur-infra) [contenu] 1fr [extra] var(--page-largeur-extra);
+    --page-zones: "infra contenu extra";
+  }
+}
+@media (min-width: 90rem) {
+  .page-layout {
+    --page-largeur-extra: 24rem;
+  }
+}
+
+/* Disposition du contenu principal (colonnes) */
+.page-layout__main {
+  display: grid;
+  grid-template-columns: var(--page-colonnes);
+  grid-template-areas: var(--page-zones);
+  gap: .75rem;
+  align-items: baseline;
+  max-width: var(--page-largeur-maximale);
+  margin-inline: auto;
+  padding-inline: calc(1.5rem + 1vw);
+  padding-block: 1.5rem;
+}
+
+.page-layout__content {
+  grid-area: contenu;
+}
+
+.page-layout__infra {
+  grid-area: infra;
+
+  padding: .75rem;
+  min-height: 6rem;
+
+  border-radius: .75rem;
+  font-size: .8125rem;
+  background-color: var(--jaune-galliano-50);
+  color: var(--jaune-galliano-600);
+}
+
+.page-layout__extra {
+  grid-area: extra;
+}

@@ -1,0 +1,13 @@
+/**
+ * À moins de rares exceptions, ce fichier ne devrait contenir aucune règle.
+ * Chaque règle ajoutée devrait être justifiée (expliquée) en commentaire.
+ */
+
+ /* Couleur de sélection */
+/* ::selection {} */
+
+/* Typo et sa graisse par défaut */
+html {
+  font-family: var(--police-corps);
+  font-weight: var(--graisse-corps);
+}

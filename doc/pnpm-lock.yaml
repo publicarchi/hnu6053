@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  reveal.js:
+    specifier: ^5.0.3
+    version: 5.0.3
+
+packages:
+
+  /reveal.js@5.0.3:
+    resolution: {integrity: sha512-OR3mXl2E0GviJbi2p21VWD/j6CQbEQj2WU6jaS1RZRzah9CHmPpJR32uvUh7EtckMLOZfuFYGjYA5zImcgwOoA==}
+    engines: {node: '>=18.0.0'}
+    dev: false

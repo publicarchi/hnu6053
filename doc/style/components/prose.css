@@ -1,0 +1,194 @@
+/**
+ * Prose
+ * Contenu principal: texte, images, contenus de forme longue.
+ * Toutes les règles sont imbriquées dans le sélecteur `.prose`.
+ */
+
+.prose {
+  --prose-espacement-elements: 1.5rem;
+  --prose-espacement-elements-extra: 2.5rem;
+  --prose-taille-police: var(--taille-police-corps);
+  --prose-interlignage: 1.375;
+  --prose-couleur-ancres: var(--couleur-ancres);
+  --prose-couleur-ancres-survol: var(--couleur-ancres-survol);
+  --prose-couleur-puce: var(--bleu-royal-500);
+
+  /* typo générale */
+  font-family: var(--police-corps);
+  font-size: var(--prose-taille-police);
+  font-weight: var(--graisse-corps);
+  line-height: var(--prose-interlignage);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  /* marge du haut semi-proportionnelle */
+  margin-block-start: calc(1rem + .5em);
+  /* marge du bas fixe */
+  margin-block-end: .75rem;
+
+  font-family: var(--police-entetes);
+  font-weight: var(--graisse-entetes, 700);
+  line-height: var(--interlignag-entetes);
+}
+
+.prose h1 {
+  font-size: var(--taille-police-h1);
+}
+
+.prose h2 {
+  font-size: var(--taille-police-h2);
+}
+
+.prose h3 {
+  font-size: var(--taille-police-h3);
+}
+
+.prose h4 {
+  font-size: var(--taille-police-h4);
+}
+
+.prose h5 {
+  font-size: var(--taille-police-h5);
+}
+
+.prose h6 {
+  font-size: var(--taille-police-h6);
+}
+
+.prose p {
+  margin-block: var(--prose-espacement-elements);
+}
+
+.prose a {
+  color: var(--prose-couleur-ancres);
+  text-decoration: underline;
+  transition: color .15s;
+}
+.prose a:hover {
+  color: var(--prose-couleur-ancres-survol);
+  text-decoration: none;
+}
+
+.prose b,
+.prose strong {
+  font-weight: var(--graisse-corps-gras, 700);
+}
+
+.prose blockquote {
+  margin-block: var(--prose-espacement-elements);
+}
+
+/* règle horizontale */
+.prose hr {
+  --hr-espacement-vertical: var(--prose-espacement-elements);
+  --hr-epaisseur-bordure: 2px;
+  --hr-couleur-bordure: currentColor; /* la couleur pourrait changer selon le contexte */
+
+  display: block;
+  margin-block: var(--hr-espacement-vertical);
+
+  color: inherit;
+  border: 0;
+  border-top: var(--hr-epaisseur-bordure) solid var(--hr-couleur-bordure);
+}
+
+.prose mark {
+  background-color: var(--couleur-fond-subrillance);
+  color: inherit;
+}
+
+.prose ul {
+  list-style: none outside none; /* nous stylons avec li::before */
+  padding-inline: 0;
+  margin-inline-start: 0;
+}
+.prose ul li {
+  position: relative;
+  padding-inline-start: 2.5rem; /* faire place à la puce */
+  margin-inline-start: 0;
+}
+.prose ul li::before {
+  content: '';
+
+  display: inline-block;
+  position: absolute;
+  left: 1.25rem;
+  top: calc(var(--interlignage-corps) * 1em / 3); /* relatif à la taille de police et à l'interlignage */
+  width: .625rem; /* 16px => 10px */
+  aspect-ratio: 1 / 1;
+
+  background-color: var(--prose-couleur-puce);
+  border-radius: 50%;
+}
+
+.prose ol li::marker {
+  color: var(--prose-couleur-puce, currentColor);
+}
+
+.prose pre {
+  overflow-x: auto;
+}
+
+.prose code {
+  padding: .125rem .25rem;
+  font-size: 81.25%; /* 16px => 14px */
+  line-height: 1; /* réduire l'espace vertical */
+  border-radius: .25rem; /* accorder avec padding-inline */
+  color: var(--couleur-code);
+  background-color: var(--couleur-fond-code);
+  letter-spacing: 0.025em; /* aider à bien distinguer caractères monochasse */
+}
+
+/* Images et figures */
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* gérer les images enfant comme des figures */
+.prose > img {
+  margin-block: var(--prose-espacement-elements-extra);
+  margin-inline: auto;
+  display: flex;
+}
+
+.prose figure {
+  margin-block: var(--prose-espacement-elements-extra);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* Espacement éventuel de la légende */
+  gap: .5rem;
+}
+
+.prose figure img {
+  /* block: éviter espacements (traité comme image inline, avec blancs typographiques) */
+  display: block;
+}
+
+.prose figcaption {
+  /* espacement appliqué par le gap de l'élément flex*/
+  margin: 0;
+
+  font-size: 0.875rem;
+}
+
+/* Diapositives */
+
+/*
+Bloc qui devrait figurer dans les diapositives, mais qui ne devrait pas
+apparaître dans le document comme tel.
+Doit être en *enfant direct* de `.prose`.
+*/
+.prose > [data-diapositive] {
+  display: contents;
+}
+.prose > [data-diapositive="seulement"] {
+  display: none;
+}

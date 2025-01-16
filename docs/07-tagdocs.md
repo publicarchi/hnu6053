@@ -36,6 +36,8 @@ La source TEI P5 (disponible [ici](https://tei-c.org/guidelines/p5/using-the-tei
 
 Nous allons regarder cela de plus près…
 
+<!-- voir slide début -->
+
 ---
 
 

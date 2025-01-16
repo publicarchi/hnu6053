@@ -1,4 +1,4 @@
-title: Usage avancé de la TEI
+title: HTML en abrégé
 description: Emmanuel Château-Dutier,
 theme: theme/remark-dark-em.css
 name: inverse

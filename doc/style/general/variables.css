@@ -1,0 +1,134 @@
+:root {
+  /* Couleurs */
+  /* Bleu royal (comme le bleu des dessins d'architectes) */
+  --bleu-royal:     #2F76E0; /*base */
+  --bleu-royal-50:  #BBD9F5;
+  --bleu-royal-100: #A7CCF2;
+  --bleu-royal-200: #7FB2EC;
+  --bleu-royal-300: #5795E6;
+  --bleu-royal-400: #2F76E0; /*base */
+  --bleu-royal-500: #1D58BF;
+  --bleu-royal-600: #164093;
+  --bleu-royal-700: #0F2A67;
+  --bleu-royal-800: #09163A;
+  --bleu-royal-900: #02050E;
+  --bleu-royal-950: #000000;
+
+  /* Cyber jaune */
+  --cyber-jaune:     #D1A30C; /* base */
+  --cyber-jaune-50:  #FBEEC2;
+  --cyber-jaune-100: #FAE9AF;
+  --cyber-jaune-200: #F8DE88;
+  --cyber-jaune-300: #F6D361;
+  --cyber-jaune-400: #F4C93B;
+  --cyber-jaune-500: #F2BE14;
+  --cyber-jaune-600: #D1A30C; /* base */
+  --cyber-jaune-700: #9C7A09;
+  --cyber-jaune-800: #675006;
+  --cyber-jaune-900: #322703;
+  --cyber-jaune-950: #171201;
+
+  /* Ocr roug */
+  --ocre-rouge:     #D12A0C; /* base */
+  --ocre-rouge-50:  #FBCBC2;
+  --ocre-rouge-100: #FABAAF;
+  --ocre-rouge-200: #F89988;
+  --ocre-rouge-300: #F67861;
+  --ocre-rouge-400: #F4573B;
+  --ocre-rouge-500: #F23614;
+  --ocre-rouge-600: #D12A0C; /* base */
+  --ocre-rouge-700: #9C1F09;
+  --ocre-rouge-800: #671506;
+  --ocre-rouge-900: #320A03;
+  --ocre-rouge-950: #170501;
+
+  /* Vert de mante (comme la mante religieuse) */
+  --vert-mante:     #7CC871; /* base */
+  --vert-mante-50:  #DBF0D8;
+  --vert-mante-100: #CDEAC9;
+  --vert-mante-200: #B2DFAC;
+  --vert-mante-300: #97D38E;
+  --vert-mante-400: #7CC871; /* base */
+  --vert-mante-500: #57B849;
+  --vert-mante-600: #439138;
+  --vert-mante-700: #306828;
+  --vert-mante-800: #1E4019;
+  --vert-mante-900: #0B1709;
+  --vert-mante-950: #010301;
+
+  /* Malachite */
+  --vert-malachite:     #0CD12A; /* base */
+  --vert-malachite-50:  #9BF9AA;
+  --vert-malachite-100: #88F899;
+  --vert-malachite-200: #61F678;
+  --vert-malachite-300: #3BF457;
+  --vert-malachite-400: #14F236;
+  --vert-malachite-500: #0CD12A; /* base */
+  --vert-malachite-600: #0AA621;
+  --vert-malachite-700: #077A19;
+  --vert-malachite-800: #054F10;
+  --vert-malachite-900: #022307;
+  --vert-malachite-950: #010E03;
+
+  /* Violet améthyste */
+  --violet-amethyste:     #A185CF; /* base */
+  --violet-amethyste-50:  #F0EBF7;
+  --violet-amethyste-100: #E5DDF2;
+  --violet-amethyste-200: #CEC0E6;
+  --violet-amethyste-300: #B8A2DB;
+  --violet-amethyste-400: #A185CF; /* base */
+  --violet-amethyste-500: #825DBF;
+  --violet-amethyste-600: #6640A3;
+  --violet-amethyste-700: #4D307B;
+  --violet-amethyste-800: #342153;
+  --violet-amethyste-900: #1B112B;
+  --violet-amethyste-950: #0E0917;
+
+  /* Gris d'athènes (nuancier de gris) */
+  --gris-athenes:     #EDEEF2; /* base */
+  --gris-athenes-50:  #F9F9FA;
+  --gris-athenes-100: #EDEEF2; /* base */
+  --gris-athenes-200: #CDD0DA;
+  --gris-athenes-300: #ADB1C2;
+  --gris-athenes-400: #8C93AA;
+  --gris-athenes-500: #6C7592;
+  --gris-athenes-600: #545B72;
+  --gris-athenes-700: #3D4152;
+  --gris-athenes-800: #252732;
+  --gris-athenes-900: #0D0E11;
+  --gris-athenes-950: #010101;
+
+  /* Polices */
+  --police-sans: 'overused-grotesk', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --police-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --police-corps: var(--police-sans);
+  --police-entetes: var(--police-sans);
+  --graisse-corps: 500; /* Overused Grotesk medium */
+  --graisse-entetes: 800; /* Overused Grotesk extra bold */;
+  --graisse-corps-gras: 800; /* Overused Grotesk extra bold */;
+  --interlignage-corps: 1.375;
+  --interlignage-entetes: 1.15;
+
+  /* Échelle typographique */
+  --talile-police-titres: 3rem;    /* 48px */
+  --taille-police-sous-titres: 2.25rem; /* 36px */
+  --taille-police-h1: 2.5rem;      /* 40px */
+  --taille-police-h2: 2rem;        /* 32px */
+  --taille-police-h3: 1.75rem;     /* 28px */
+  --taille-police-h4: 1.44rem;     /* 23.04px */
+  --taille-police-h5: 1.25rem;     /* 20px */
+  --taille-police-h6: 1.125rem;    /* 18px */
+
+  --taille-police-corps: 1.25rem; /* 20px */
+
+  /* Réglages généraux */
+  --couleur-texte: #000;
+  --couleur-fond: #fff;
+  --couleur-ancres: var(--bleu-royal-600);
+  --couleur-ancres-survol: var(--bleu-royal-500);
+  --couleur-ancres-clic: var(--bleu-royal-700);
+  --couleur-fond-subrillance: var(--cyber-jaune-400);
+  --couleur-texte-surbrillance: #000;
+  --couleur-code: var(--bleu-royal-500);
+  --couleur-fond-code: var(--bleu-royal-50);
+}

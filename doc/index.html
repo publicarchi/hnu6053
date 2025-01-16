@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>HNU3053/HNU6053 Humanités numériques&nbsp;: Utilisation avancée de la TEI</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Métadonnées -->
+    <meta name="description" content="" />
+    
+    <!-- Gif transparent le plus petit qui soit, évite une requête inutile vers le serveur (et une erreur dans la console). -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- Feuilles de style -->
+    <!-- Général -->
+    <link rel="stylesheet" href="style/general/reset.css" />
+    <link rel="stylesheet" href="style/general/variables.css" />
+    <link rel="stylesheet" href="style/general/global.css" />
+    <!-- Polices -->
+    <link rel="stylesheet" href="fonts/overused-grotesk/overused-grotesk.css" />
+    <!-- Dispositions de page -->
+    <link rel="stylesheet" href="style/layout/page-layout.css" />
+    <!-- Composants -->
+    <link rel="stylesheet" href="style/components/prose.css" />
+    <link rel="stylesheet" href="style/components/conteneur-diapositives.css" />
+
+    <!-- Styleguide (demo only) -->
+    <link rel="stylesheet" href="style/components/styleguide.css" />
+
+    <link rel="stylesheet" href="lib/reveal.js-5.0.3/dist/reveal.css" />
+    <link rel="stylesheet" href="style/components/theme.reveal.css" />
+
+  </head>
+  <body>
+    <!-- .page-layout pourrait être appliqué sur le body (ici c'est pour le guide) -->
+    <div class="page-layout">
+        
+      <header>
+        <!-- Logo etc. -->
+      </header>
+
+      <main class="page-layout__main">
+        <div class="page-layout__infra">&nbsp;</div>
+        
+        <article class="page-layout__content">
+          <div class="prose">
+            <!-- -->
+
+            <h1>HNU3053/HNU6053 Humanités numériques&nbsp;: Utilisation avancée de la TEI</h1>
+            <p>Bienvenue sur la page de l’atelier consacré à l’utilisation avancée de la TEI.</p>
+
+            <div data-diapositive="seulement" data-state="centered">
+              <h1 id="bienvenue">Bienvenue</h1>
+
+              <p>Ceci est une documentation bimodale <br>(prose + diapositives)</p>
+            </div>
+
+            <h2>Description</h2>
+            <p>La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI pour l’adapter finement aux objectifs scientifiques de son projet. Par ailleurs, l’utilisation de technologies XML permet de bénéficier d’un important outillage technique qui permet de publier ou requêter son édition.</p>
+
+            <!-- <details open class="conteneur-diapositives">
+              <summary class="conteneur-diapositives-etiquette">Diapositives</summary>
+            
+              <div class="reveal" style="width: 100%; aspect-ratio: 16 / 9">
+                <div class="slides">
+                  <!-/- Diapositives insérées ici -/->
+                </div>
+              </div>
+            </details> -->
+
+            <h2>Objectifs de l’atelier</h2>
+            <ul>
+              <li>Comprendre les enjeux de la modélisation d’une édition critique</li>
+              <li>Apprendre le langage ODD et savoir documenter son modèle</li>
+              <li>Se familiariser avec les langages XML (XPath et XSLT) pour manipuler ses documents</li>
+              <li>Développer des stratégies de publication et d’exploitation des documents encodés</li>
+            </ul>
+            <p>Cette formation de niveau avancé (perfectionnement) est principalement destinée à travailler sur la modélisation de son édition critique au moyen d’ODD et l’exploitation des éditions structurées avec XSLT. Elle s’adresse à des participants ayant déjà des notions minimales sur la TEI et qui souhaitent s’approprier plus avant les moyens offerts par la TEI. Le programme laisse une large place au travail sur les projets des participants sous la forme d’ateliers.</p>
+
+            <h2>Programme des séances</h2>
+            <p><a href="odd-introduction.html">ODD Introduction</a></p>
+            <p><a href="odd-simplissime.html">ODD Simplissime</a></p>
+            <p><a href="odd-syntaxe.html">ODD Syntaxe</a></p>
+            <p><a href="xml-data-model.html">Le XMD Data-Model</a></p>
+            <p><a href="xpath.html">XPath, une introduction</a></p>
+            <p><a href="xslt-introduction.html">XSLT, un premier aperçu</a></p>
+          </div>
+        </article>
+        
+        <div class="page-layout__extra">
+          &nbsp;
+        </div>
+      </main>
+
+      <footer>
+        <!-- Mentions légales, liens, etc. -->
+      </footer>
+
+      <!-- Scripts -->
+      <script src="lib/reveal.js-5.0.3/dist/reveal.js"></script>
+      <script src="scripts/diapositives.js"></script>
+      <script src="lib/reveal.js-5.0.3/plugin/highlight/highlight.js"></script>
+      <script src="lib/reveal.js-5.0.3/plugin/markdown/markdown.js"></script>
+      <script>
+        Reveal.initialize({
+        plugins: [RevealMarkdown, RevealHighlight],
+        });
+      </script>
+
+    </div>
+  </body>
+</html>

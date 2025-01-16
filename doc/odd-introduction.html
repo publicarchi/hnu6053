@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>ODD, introduction</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Métadonnées -->
+    <meta name="description" content="" />
+    
+    <!-- Gif transparent le plus petit qui soit, évite une requête inutile vers le serveur (et une erreur dans la console). -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- Feuilles de style -->
+    <!-- Général -->
+    <link rel="stylesheet" href="style/general/reset.css" />
+    <link rel="stylesheet" href="style/general/variables.css" />
+    <link rel="stylesheet" href="style/general/global.css" />
+    <!-- Polices -->
+    <link rel="stylesheet" href="fonts/overused-grotesk/overused-grotesk.css" />
+    <!-- Dispositions de page -->
+    <link rel="stylesheet" href="style/layout/page-layout.css" />
+    <!-- Composants -->
+    <link rel="stylesheet" href="style/components/prose.css" />
+    <link rel="stylesheet" href="style/components/conteneur-diapositives.css" />
+
+    <!-- Styleguide (demo only) -->
+    <link rel="stylesheet" href="style/components/styleguide.css" />
+
+    <link rel="stylesheet" href="lib/reveal.js-5.0.3/dist/reveal.css" />
+    <link rel="stylesheet" href="style/components/theme.reveal.css" />
+
+  </head>
+  <body>
+    
+                <div class="reveal" style="width: 100%; aspect-ratio: 16 / 9">
+                    <div class="slides">
+                        <section data-markdown="../md/odd-introduction.md"
+                                 data-separator="~~~"
+                                 data-separator-vertical="~e~e~e"
+                                 data-separator-notes="^Note:"
+                                 data-charset="utf-8">
+                        <!--
+                          Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
+                          For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
+                        -->
+                        </section>
+                    </div>
+
+            
+            
+          </div>
+        </article>
+        
+        <div class="page-layout__extra">
+          <p>&nbsp;</p>
+        </div>
+      </main>
+
+      <footer>
+        <!-- Mentions légales, liens, etc. -->
+      </footer>
+
+      <!-- Scripts -->
+      <script src="lib/reveal.js-5.0.3/dist/reveal.js"></script>
+      <script src="scripts/diapositives.js"></script>
+      <script src="lib/reveal.js-5.0.3/plugin/highlight/highlight.js"></script>
+      <script src="lib/reveal.js-5.0.3/plugin/markdown/markdown.js"></script>
+      <script>
+        Reveal.initialize({
+        plugins: [RevealMarkdown, RevealHighlight],
+        });
+      </script>
+
+    </div>
+  </body>
+</html>

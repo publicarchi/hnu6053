@@ -19,9 +19,8 @@ layout: false
 
 ## Un cadre de travail flexible et modulaire
 
-Les modules de la TEI
+Les [22 modules](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA) de la TEI
 
-* [22 modules](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA)
 * Classement des éléments de la TEI par domaines d’application
 
 * Chaque module fait l’objet d’un chapitre de la documentation
@@ -43,8 +42,6 @@ L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en&nbsp;:
 * vingt-deux modules parmi lesquels sont répartis les nombreux éléments de la TEI qui font l’objet d’une importante documentation textuelle
 
 * ils sont formellement classés dans des classes de modèle et d’attributs auxquels on peut faire appel pour spécifier un schéma.
-
-[cf. [Personnalisation de la TEI](04-personnalisation.html)
 
 ---
 
@@ -75,9 +72,9 @@ L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en&nbsp;:
 
 Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’[Journal of the TEI](https://jtei.revues.org) dans le menu activités.
 
-Vous disposez également d’un WIKI sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.
+Vous disposez également d’un Wiki sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.
 
-Une partie du WIKI est consacrée aux outils. Si vous deviez démarrer un gros projet, c’est une bonne page pour déterminer les outils existants pour faire l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est évidemment pas exhaustif.
+Une partie du Wiki est consacrée aux outils. Si vous deviez démarrer un gros projet, c’est une bonne page pour déterminer les outils existants pour faire l’état de l’art. Mais, si elle constitue un passage obligé, cette page n’est évidemment pas exhaustif.
 
 Les Guidelines, mais aussi About avec une rubrique sur l’histoire du projet.
 
@@ -114,7 +111,7 @@ En revanche le corps principal des Guidelines n’existe qu’en une seule langu
 
 ???
 
-Le corps de l’édition actuelle des Guidelines contient vingt-trois chapitres arrangés dans un ordre croissant d’intérêt spécial. Les cinq premiers chapitres abordent en détail les questions importantes pour les personnes envisageant d’employer la TEI pour n’importe quel type de texte. Les sept chapitres suivants focalisent sur des genres de textes particuliers&nbsp;: versifiés, dramatiques, textes oraux, dictionnaires, et manuscrits. Les neuf derniers chapitres s’occupent de sujets variés concernant plutôt des applications spécialisées. Enfin, les deux derniers chapitres s’occupent de l’utilisation de ODD qui sert à déclarer son utilisation de la TEI, et les questions de conformance et d’interopérabilité.
+Le corps de l’édition actuelle des Guidelines contient vingt-trois chapitres arrangés dans un ordre croissant d’intérêt particulier. Les cinq premiers chapitres abordent en détail les questions importantes pour les personnes envisageant d’employer la TEI pour n’importe quel type de texte. Les sept chapitres suivants focalisent sur des genres de textes spécifiques : versifiés, dramatiques, textes oraux, dictionnaires, et manuscrits. Les neuf derniers chapitres s’occupent de sujets variés concernant plutôt des applications spécialisées. Enfin, les deux derniers chapitres s’occupent de l’utilisation de ODD qui sert à déclarer son utilisation de la TEI, et les questions de conformance et d’interopérabilité.
 
 Bien évidemment, ces Guidelines ne sont pas faites pour être lues de bout en bout (même si vous pouvez le faire&nbsp;!). Il s’agit plutôt d’une documentation de référence.
 

@@ -1,0 +1,21 @@
+/**
+ * Conteneur pour les diapositives
+ */
+ .conteneur-diapositives {
+  margin-block: 2rem;
+}
+.conteneur-diapositives-etiquette {
+  margin-block-end: -1px; /* border */
+
+  padding: .5rem .75rem;
+
+  border: 1px solid var(--couleur-texte);
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+
+  color: var(--gris-athenes-600);
+}
+.conteneur-diapositives > .reveal {
+  border: 1px solid var(--couleur-texte);
+}

@@ -1,0 +1,49 @@
+/**
+ * Styleguide specific styles (sg => styleguide)
+ */
+.sg-section-tuiles {
+  margin-block: 1rem;
+}
+
+.sg-section-tuiles__alignement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: .125rem;
+}
+@media (min-width: 60rem) {
+  .sg-section-tuiles__alignement {
+    flex-wrap: nowrap;
+    gap: .25rem;
+  }
+}
+.sg-section-tuiles__entete {
+  margin-block: 0 .5rem;
+  font-size: 1.25rem;
+}
+
+.sg-tuile {
+  --tuile-bg: var(--gris-athenes-100); /* replace me! */
+  --tuile-couleur-bordure: var(--tuile-bg); /* replace me! */
+
+  flex: 1 1 0;
+  max-width: 4.5rem;
+  width: 100%;
+}
+
+.sg-tuile__pastille {
+  aspect-ratio: 3 / 2;
+
+  background-color: var(--tuile-bg);
+  border: 0px solid var(--tuile-couleur-bordure);
+  border-radius: .35rem;
+}
+
+.sg-tuile__description {
+  padding: .125rem;
+
+  color: var(--gris-athenes-800);
+  font-size: 0.75rem;
+}

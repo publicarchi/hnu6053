@@ -187,7 +187,7 @@ Date      : 10 mars 2011, relecture 12 avril 2011, adaptation xslt2 mai 2015
     </span>
   </xsl:template>
   <xsl:template match="address">
-    <!-- si on ne veut pas que l'adresse de l'organisme responsable de la publication figure dans la sortie, il suffit de mettre le contenu de cette règle en commentaire, pour qu'elle soit vide -->
+    <!-- si on ne veut pas que l'adresse de l'organisme responsable de la publication figure dans la ie, il suffit de mettre le contenu de cette règle en commentaire, pour qu'elle soit vide -->
     <xsl:text> (</xsl:text>
     <xsl:apply-templates select="addrLine"/>
     <xsl:text>). </xsl:text>
