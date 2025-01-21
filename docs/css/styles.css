@@ -1,165 +1,199 @@
-*,:after,:before {
-	box-sizing:border-box;
-	/*margin:0;*/
-	padding:0;
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    /*margin:0;*/
+    padding: 0;
 }
 
 body {
-	font: 1.125rem/1.5 -apple-system,BlinkMacSystemFont,"avenir next",avenir,helvetica,"helvetica neue",ubuntu,roboto,noto,"segoe ui",arial,sans-serif;
-	text-rendering:optimizeSpeed;
+    font:
+        1.125rem/1.5 -apple-system,
+        BlinkMacSystemFont,
+        "avenir next",
+        avenir,
+        helvetica,
+        "helvetica neue",
+        ubuntu,
+        roboto,
+        noto,
+        "segoe ui",
+        arial,
+        sans-serif;
+    text-rendering: optimizeSpeed;
 }
 
 .posts hr {
-	margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
-    margin-right: .5rem;
-    margin-left: .5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     height: 1px;
     border: none;
-    border-bottom: 1px #0609C6;
+    border-bottom: 1px #0609c6;
     flex: 1 0 1rem;
-    //opacity: .25;
+    //opacity: 0.25;
 }
 
 p {
-	color: blue;
+    color: #0609c6;
 }
 
 main {
-	max-width: 90ch;
-	padding: 2ch;
-	margin: auto;
+    max-width: 90ch;
+    padding: 2ch;
+    margin: auto;
 }
 
 h2 {
-	font-size: 1.75em;
+    font-size: 1.75em;
 }
 
-a, body {
-	color: #0609C6;
+a,
+body {
+    color: #0609c6;
 }
 
-::selection, a:focus, a:hover {
-	background-color: #0609C6;
-	color: #fff;
+::selection,
+a:focus,
+a:hover {
+    background-color: #0609c6;
+    color: #fff;
 }
 
 .meta {
-	margin: 0 0 2.5rem;
+    margin: 0 0 2.5rem;
 }
 
 .suppra {
-	margin: 3em 0 0 0;
-	text-align: right;
+    margin: 3em 0 0 0;
+    text-align: right;
 }
 
 .tags::before {
-	content: "\2022";
-	margin-left: 1rem;
+    content: "\2022";
+    margin-left: 1rem;
 }
 
-code,pre {
-	color: #0609C6;
-	font-family: San Francisco Mono,Monaco,"Consolas","Lucida Console","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-	font-size: normal;
-	border: 1px solid #0609C6;
+code,
+pre {
+    color: #0609c6;
+    font-family:
+        San Francisco Mono,
+        Monaco,
+        "Consolas",
+        "Lucida Console",
+        "DejaVu Sans Mono",
+        "Bitstream Vera Sans Mono",
+        monospace;
+    font-size: normal;
+    border: 1px solid #0609c6;
     font-size: 0.9em;
 }
 
 code {
-	padding: .1rem;
-	border: none;
+    padding: 0.1rem;
+    border: none;
 }
 
 pre {
-	padding: .5rem;
-	overflow-x: auto;
+    padding: 0.5rem;
+    overflow-x: auto;
 }
 
 pre code {
-	border: none;
+    border: none;
 }
 
 img {
-	max-width:100%;
-	border: 1px solid #0609C6;
+    max-width: 100%;
+    border: 1px solid #0609c6;
 }
 
 hr {
-	background: #0609C6;
+    background: #0609c6;
     height: 2px;
     border: 0;
 }
 
 ul {
-	list-style-type: square;
+    list-style-type: square;
 }
 
-ul, ol {
-	padding-left: 1.2rem;
+ul,
+ol {
+    padding-left: 1.2rem;
 }
 
-header li, footer li {
+header li,
+footer li {
     display: inline;
     text-transform: uppercase;
 }
 
-header a, footer a {
+header a,
+footer a {
     text-decoration: none;
 }
 
-header ul, footer ul {
+header ul,
+footer ul {
     justify-content: space-between;
     display: flex;
 }
 
-
 [aria-current="page"] {
-	font-weight: bold;
-	text-decoration: wavy underline;
+    font-weight: bold;
+    text-decoration: wavy underline;
 }
 
-header,section, footer {
-	padding:1rem 0;
+header,
+section,
+footer {
+    padding: 1rem 0;
 }
 
 blockquote {
-    border-left: 5px solid #0609C6;
+    border-left: 5px solid #0609c6;
     padding-left: 1rem;
 }
-.posts ul,header ul, footer ul {
-	list-style:none;
+.posts ul,
+header ul,
+footer ul {
+    list-style: none;
 }
 
-.posts, header ul, footer ul {
-	padding: 0;
+.posts,
+header ul,
+footer ul {
+    padding: 0;
 }
 
 .posts li {
-	align-items:center;
-	display:flex;
-	justify-content:space-between;
-    margin-bottom: .7rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
 }
 
-.posts li a, .posts li div {
-	white-space:nowrap;
-	overflow:hidden;
-	text-overflow:ellipsis;
-	text-decoration: none;
+.posts li a,
+.posts li div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
 }
 
 .posts li time {
-	padding-left: 1rem;
-	white-space: nowrap;
-	font-variant-numeric: tabular-nums;
+    padding-left: 1rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .hash {
-	opacity: .25;
-	text-decoration: none;
+    opacity: 0.25;
+    text-decoration: none;
 }
-
 
 table {
     border-collapse: collapse;
@@ -168,24 +202,83 @@ table {
 }
 table tr {
     background: white;
-    border-bottom: 1px solid
+    border-bottom: 1px solid;
 }
-table th, table td {
+table th,
+table td {
     padding: 10px 20px;
 }
 
 iframe {
-	width: 100%;
-	height: 500px;
-	border: 2px solid;
+    width: 100%;
+    height: 500px;
+    border: 2px solid;
 }
 
 audio {
-	width: 100%;
+    width: 100%;
 }
 
 //expand
-input[type='checkbox'] { display: none; } .wrap-collabsible { margin: 1.2rem 0; } .lbl-toggle { display: block; font-weight: bold; font-family: monospace; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 1rem; color: #DDD; background: #0069ff; cursor: pointer; border-radius: 7px; transition: all 0.25s ease-out; } .lbl-toggle:hover { color: #FFF; } .lbl-toggle::before { content: ' '; display: inline-block; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid currentColor; vertical-align: middle; margin-right: .7rem; transform: translateY(-2px); transition: transform .2s ease-out; } .toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } .collapsible-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; } .toggle:checked + .lbl-toggle + .collapsible-content { max-height: 350px; } .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } .collapsible-content .content-inner { background: rgba(0, 105, 255, .2); border-bottom: 1px solid rgba(0, 105, 255, .45); border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; padding: .5rem 1rem; } .collapsible-content p { margin-bottom: 0; }
+input[type='checkbox'] {
+    display: none;
+}
+.wrap-collabsible {
+    margin: 1.2rem 0;
+}
+.lbl-toggle {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    color: #ddd;
+    background: #0069ff;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+.lbl-toggle:hover {
+    color: #fff;
+}
+.lbl-toggle::before {
+    content: " ";
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+}
+.toggle:checked + .lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+}
+.toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: 350px;
+}
+.toggle:checked + .lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.collapsible-content .content-inner {
+    background: rgba(0, 105, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 105, 255, 0.45);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.5rem 1rem;
+}
+.collapsible-content p {
+    margin-bottom: 0;
+}
 
 .description {
     border: 2px solid;
@@ -193,50 +286,51 @@ input[type='checkbox'] { display: none; } .wrap-collabsible { margin: 1.2rem 0; 
 }
 
 .hugo-cite-intext {
-	display: inline-block;
-	vertical-align: baseline; /*compensate for lower height */
-	position: relative;
-	font-size: 1em; /* reduce to avoid some breaks */
-  }
-.hugo-cite-intext
-.hugo-cite-citation {
-	visibility: hidden;
-	background-color: #ffffff;
-	color: inherit;
-	border: 1px solid currentColor;
-	padding: 1rem;
-	position: absolute;
-	width: 350px;
-	max-width: 100vw;
-	z-index: 1;
-	bottom: 140%;
-	left: 0;
-	margin-left: -50px;
-
-	z-index: 2;
-	transition:
-	visibility 0s .3s,
-	transform .3s ease 0s,
-	opacity .3s ease 0s;
-	opacity: 0;
-	transform: translateY(-8px);
+    display: inline-block;
+    vertical-align: baseline; /*compensate for lower height */
+    position: relative;
+    font-size: 1em; /* reduce to avoid some breaks */
 }
-.hugo-cite-intext:hover
-.hugo-cite-citation {
-	visibility: visible;
-	transition: visibility 0s 0s, transform .3s, opacity .3s;
-	opacity: 1;
-	transform: translateY(0);
+.hugo-cite-intext .hugo-cite-citation {
+    visibility: hidden;
+    background-color: #ffffff;
+    color: inherit;
+    border: 1px solid currentColor;
+    padding: 1rem;
+    position: absolute;
+    width: 350px;
+    max-width: 100vw;
+    z-index: 1;
+    bottom: 140%;
+    left: 0;
+    margin-left: -50px;
+
+    z-index: 2;
+    transition:
+        visibility 0s 0.3s,
+        transform 0.3s ease 0s,
+        opacity 0.3s ease 0s;
+    opacity: 0;
+    transform: translateY(-8px);
+}
+.hugo-cite-intext:hover .hugo-cite-citation {
+    visibility: visible;
+    transition:
+        visibility 0s 0s,
+        transform 0.3s,
+        opacity 0.3s;
+    opacity: 1;
+    transform: translateY(0);
 }
 /* Visually Hidden utility class */
 .visually-hidden {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
 }
 .hugo-cite-bibliography {
-	padding-top: 0em;
-	padding-bottom: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
 }
