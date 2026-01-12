@@ -70,7 +70,7 @@ L’infrastructure de la Proposition numéro 5 de la TEI (P5) consiste en&nbsp;:
 
 ### Le site du consortium
 
-Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers l’[Journal of the TEI](https://jtei.revues.org) dans le menu activités.
+Un site web très touffu dans lequel on peut parfois se perdre. On peut accéder à la liste des membres. Vous avez également un lien vers le [Journal of the TEI](https://jtei.revues.org) dans le menu activités.
 
 Vous disposez également d’un Wiki sur la TEI qui est un regroupement de tutoriaux, projets de la TEI. Une liste des projets utilisant la TEI. Il n’est pas obligatoire de déclarer que l’on travaille avec TEI. C’est une démarche libre, puisqu’il s’agit d’un logiciel libre avec lequel on fait ce que l’on veut.
 

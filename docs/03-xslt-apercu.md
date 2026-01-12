@@ -12,7 +12,7 @@ name: index
 
 # Rétro-ingénierie d’une XSLT simple
 
-### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
+### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
 ---
 layout: false
@@ -21,7 +21,7 @@ layout: false
 
 ???
 
-Au cours de cette première présentation, nous commencerons par examiner le modèle de données XML, puis nous aborderons les diverses expressions XPath et de leur types, avant de nous concentrer sur des expressions servant à décrire des chemins pour sélectionner des ensembles de nœuds dans un arbre XML.
+Après avoir examiné le modèle de données de XML et des rudiments de XPath, nous abordons le langage de transformation de feuille de style XML, XSLT. XSLT est un langage de transformation de document XML.
 
 ---
 

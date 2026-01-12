@@ -9,17 +9,17 @@ class: inverse
 ---
 # Introduction à XSLT
 
-## HNU3052/HNU6052 Humanités numériques : introduction à la TEI
+## HNU3052/HNU6052 Humanités numériques&nbsp;: introduction à la TEI
 
 ???
 
-Transformation simple tei2html.
+L’exercice auquel je vous propose de vous prêter consiste au cas de figure de produire une transformation d’un document XML TEI vers HTML avec XSLT.
 
-Ceci n’est pas une formation complète! son objectif est de ...
+Bien évidemment, dans le temps imparti, il ne s’agit pas de faire de vous des spécialistes de ce langage. L’objectif de cette formation consiste à :
 
 * vous donner un avant-goût des possibilités offertes par les normes XSLT et XPath
-* surtout dans le domaine de traitement des documents « XML-TEI », principalement donc sortis des sciences humaines
-* aborder les concepts fondamentaux et les usages les plus répandus du norme XSLT
+* à découvrir leur application dans le domaine de traitement des documents « XML-TEI », principalement donc dans le domaine des sciences humaines
+* aborder les concepts fondamentaux et les usages les plus répandus de la norme XSLT
 
 Lorsque l’on veut appliquer des traitements à des documents XML (transformation de documents p.e. pour produire une page web, création de liens hypertextes, extraction sélective d’informations p.e. dans une base de données XML native), il est souvent nécessaire de pouvoir localiser des fragments précis au sein de documents XML.
 
@@ -32,7 +32,7 @@ Au cours de cette première présentation, nous commencerons par examiner le mod
 ---
 layout:false
 
-## Qu’est-ce que XSLT ?
+## Qu’est-ce que XSLT&nbsp;?
 
 Un langage informatique, certes !
 
@@ -196,16 +196,13 @@ cf. [XSLT cover page](https://www.w3.org/TR/xslt/)
 
 ???
 
-À quelques différences près, on peut considérer XPath et XSLT1 comme des sous-ensembles de XSLT2 et XPath 2.
+À quelques différences près, on peut considérer XPath et XSLT1 comme des sous-ensembles de XSLT2 et XPath 2. On abordera aujourd’hui principalement XPath 3.1 et XSLT 3.0 pour plus de facilité.
 
-On abordera aujourd’hui principalement XPath 3.1 et XSLT 3.0 pour plus de facilité.
+Pendant longtemps, des problèmes de compatibilité XSLT 2.0 avec l’environnement PHP ont limité son utilisation dans le contexte du web. Cette question est en partie réglée notamment avec le portage du processeur Saxon en C++.
 
-Pendant longtemps problème de compatibilité XPath 2.0 avec environnement PHP.
-En passe d’être réglé par le portage du processeur Saxon en C++.
+Certaines choses sont plus simples à réaliser en XSLT 2.0 par rapport à XSLT 1.0. Mais cette version du langage présente également une plus grande complexité.
 
-Certaines choses plus simples à faire en XPath 2.0 qu’avec XPath 1.0. Mais plus grande complexité du langage.
-
-Une partie seulement de la version 3 est supportée par les processeurs libres. La couverture la plus complète du standard est offerte par Saxon qui propose également un processeur en JavaScript. Dans le domaine de XQuery, on travaille habituellement avec la version 3.1.
+Une partie seulement de la version 3 est supportée par les processeurs libres. La couverture la plus complète du standard est actuellement (en 2025) offerte par Saxon qui propose également un processeur en JavaScript. Dans le domaine de XQuery, on travaille habituellement avec la version 3.1.
 
 [XPath and XQuery Functions and Operators 3.1](https://www.w3.org/TR/xpath-functions-31/)
 
@@ -219,12 +216,12 @@ background-image: url(images/whatXsltCanDo.png)
 
 - passage d’un modèle à l’autre
 - transformation pour un site statique
-- transformation dynamique (framework XML)
+- transformation dynamique (*framework XML*)
 - base de données XML-native
 
 Besoins
 
-- d’un document bien formé
+- d’un document bien formé ou de n’importe quel type de document texte (depuis v2)
 - un programme XSLT
 - un processeur
 
@@ -361,7 +358,7 @@ Ces **instructions** sont exprimées à l’aide des éléments XML définis par
 
 ### Constructeurs littéraux
 
-Il est possible
+Il est possible de créer directement tout type de nœud, ou de séquence du modèle de données XDM.
 
 ---
 
@@ -431,6 +428,7 @@ Elle copie le nœud courant, puis applique les règles en descendant dans l’or
 Ou bien elle se contente d’indiquer au processeur de descendre dans l’ordre de parcours du document en appliquant les règles.
 
 Comme vous l’aurez compris, cette règle est récursive. S’il y a un attribut, la même règle s’applique et copie le nœud attribut.
+
 S’il n’y a pas d’attribut la règle copie les nœuds.
 
 Conjointement avec l’instruction par défaut, cette règle créée donc une copie à l’identique du document.
@@ -593,6 +591,6 @@ Solution : [../xsl/02tei2html06.xsl](../xsl/02tei2html06.xsl)
 
 ---
 
-Cours en ligne
+## Cours en ligne
 
 - Beshero-Bondar, Elisa. s. d. « NewtFire DH Courses and Workshops ». Consulté le 1 décembre 2022. https://newtfire.org/courses/.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- commentaire -->
+<body xmlns="http://www.tei-c.org/ns/1.0" n="spleenEtIdeal" 
+    xmlns:mpam="http://truc">
+    <div type="longPoem">
+        <head>Les Phares</head>
+        <lg type="stanza">
+            <l n="1">Rubens, fleuve d'oubli, jardin de la paresse,</l>
+            <l n="2">Oreiller de chair fraîche où l'on ne peut aimer,</l>
+            <l n="3">Mais où la vie afflue et s'agite sans cesse,</l>
+            <l n="4">Comme l'air dans le ciel et la mer dans la mer ;</l>
+            <!-- nœud commentaire -->
+        </lg>
+        <lg type="stanza">
+            <l n="5">Léonard de Vinci, miroir profond et sombre,</l>
+            <l n="6">Où des anges charmants, avec un doux souris</l>
+            <l n="7">Tout chargé de mystère, apparaissent à l'ombre</l>
+            <l n="8">Des glaciers et des pins qui ferment leur pays ;</l>
+        </lg>
+        <gap reason="sampling" quantity="9" unit="stanza"/>
+    </div>
+    <div type="longPoem">
+        <head>La Muse malade</head>
+        <gap reason="sampling" quantity="4" unit="stanza"/>
+    </div>
+</body>

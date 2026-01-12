@@ -2,7 +2,7 @@
 
 ### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
-~~~
+---
 
 # Introduction à One Document Does It All (ODD)
 
@@ -12,7 +12,7 @@ Lorsque l’on édite des textes, l’infrastructure de la TEI permet de souteni
 
 À l’instar de XML Schema du W3C ou de RelaxNG, ODD propose un langage très complet pour décrire une classe de document et munir son édition d’une documentation formelle. C’est le langage utilisé pour la spécification technique de la TEI qui est mis à disposition des utilisateurs pour déclarer leur utlisation de la TEI ainsi que leurs personnalisations.
 
-~~~
+---
 
 ## Qu’est-ce qu’un ODD
 
@@ -26,7 +26,7 @@ Note:
 
 One Document Does it all (ODD) propose un langage de spécification de document applicable à n’importe quel type de balisage. Il s’agit du langage de spécification et de mainenance utilisé par la Text Encoding Initiative. Si le modèle peut être utilisé pour spécifier n’importe quelle classe de documents, il est habituellement employé pour déclarer 
 
-~~~
+---
 
 ## La TEI, un modèle extensible pour l’encodage des textes
 
@@ -40,7 +40,7 @@ Elle offre&nbsp;:
 * des mécanismes étendus de personnalisation et d’extension
 
 
-~~~
+---
 
 ## De quoi avons nous besoin&nbsp;?
 
@@ -60,7 +60,7 @@ Une **documentation** pour expliciter aux utilisateurs/développeurs nos princip
 
 * dans plusieurs formats de fichier (PDF, MsWord, HTML, epub,...).
 
-~~~
+---
 
 ## Pourquoi ODD&nbsp;?
 
@@ -77,7 +77,7 @@ Ces différents pré-requis pourraient être satisfaits de diverses manières. L
 * il permet de partager des standardisations
 
 
-~~~
+---
 
 
 ## L’idée essentielle de ODD
@@ -102,7 +102,7 @@ Un **schéma** peut combiner&nbsp;:
 * des références à un regroupement prédéfini de tels objets (moduleRef)
 
 
-~~~
+---
 
 
 ## Un ODD peut combiner plusieurs spécifications
@@ -117,7 +117,7 @@ Un ODD peut combiner plusieurs spécifications pour un même objet
 
 * le statut de chaque spécification supplémentaire est explicité par son attribut `@mode` (par défaut `add`)
 
-~~~
+---
 
 
 ## Le langage de spécification de la TEI
@@ -136,7 +136,7 @@ Le code source disponible à cette adresse, [http://www.tei-c.org/release/xml/te
 
 
 
-~~~
+---
 
 
 # Un fichier ODD peut également consister en une personnalisation
@@ -155,7 +155,7 @@ Cette personnalisation peut être définie par rapport à une autre spécificati
 
 * éventuellement avec la spécification d’objets nouveaux
 
-~~~
+---
 
 
 ## Comment créer un ODD&nbsp;?
@@ -170,7 +170,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 * En le rédigeant manuellement.
 
 
-~~~
+---
 
 
 ## TP01 – Manipuler un fichier ODD avec Roma
@@ -183,7 +183,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 
 * Ouvrir le fichier XML résultat de l’export ODD
 
-~~~
+---
 
 
 ## TP02 – Générer un fichier ODD à partir d’un exemple
@@ -199,7 +199,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 
 * Donner un nom à votre scénario (par exemple, oddByExample)
 
-~~~
+---
 
 ## TP02 – Générer un fichier ODD à partir d’un exemple (suite)
 
@@ -211,7 +211,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 
 * Cliquer sur l’engrenage près de cette boîte de dialogue pour choisir les Options avancées : vous avez besoin de renseigner la valeur `main` pour Template("-it") puis valider
 
-~~~
+---
 
 ## TP02 – Générer un fichier ODD à partir d’un exemple (suite)
 
@@ -225,7 +225,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 
 * Exécuter la transformation Lancer la transformation en cliquant sur le bouton `Appliquer les scénarios associés`
 
-~~~
+---
 
 ## Orientations bibliographiques
 
@@ -237,7 +237,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 - Rahtz, Sebastian, et Lou Burnard. 2013. « Reviewing the TEI ODD System ». In *Proceedings of the 2013 ACM Symposium on Document Engineering*, 193‑96. Florence Italy: ACM. https://doi.org/10.1145/2494266.2494321.
 - Viglianti, Raffaele. s. d. « One Document Does-it-all (ODD): a language for documentation, schema generation, and customization from the Text Encoding Initiative ». In . Washington, DC. Consulté le 14 janvier 2025. https://doi.org/10.4242/BalisageVol24.Viglianti01.
 
-~~~
+---
 
 ## Exemples de personnalisations
 
@@ -248,7 +248,7 @@ Il y a plusieurs manières possibles de créer un fichier ODD&nbsp;:
 - Romary, Laurent, et Charles Riondet. 2018. « EAD ODD: A Solution for Project-Specific EAD Schemes ». *Archival Science* 18 (2): 165‑84. https://doi.org/10.1007/s10502-018-9290-y.
 - Tomasek, Kathryn, et Syd Bauman. 2013. « Encoding Financial Records for Historical Research ». *Journal of the Text Encoding Initiative*, no Issue 6 (septembre). https://doi.org/10.4000/jtei.895.
 
-~~~
+---
 
 ## Tutoriaux
 

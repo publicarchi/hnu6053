@@ -22,21 +22,16 @@ layout:false
 La TEI s’exprime en langage ODD. C’est d’ailleurs la raison initiale pour laquelle le langage fut inventé.
 
 La source TEI P5 (disponible [ici](https://tei-c.org/guidelines/p5/using-the-tei-github-repository/) ) rassemble&nbsp;:
-* 39 fichiers en TEI-XML, dont 25 contiennent un chapitre de documentation en XML-TEI, la plupart définissant un module, par exemple `PH-PrimarySources.xml`
 
-* 778 fichiers en TEI-XML, chacun définissant un élément, une classe, ou une macro
-* 29 datatypes (`data.xxxx`) par ex. `teidata.sex.xml`
-* 116 classes de type modèle (code>model.xxxx) par ex. `model.biblLike.xml`
-
-* 71 classes de type attribut (`att.xxxx`) par ex. `att.divLike.xml`
-
-* 8 macros (macro.xxxx) par ex. `macro.phraseSeq.xml`
-
-* 555 spécifications d’éléments de `ab.xml` jusqu'à `zone.xml`
+* 39 fichiers en TEI, dont 25 chapitres de la documentation correspondant à un module
+* 835 fichiers TEI qui définissent un élément, une classe, un type de donnée ou encore une macro&nbsp;:
+  * 33 types de données (`teidata.xxx`)
+  * 126 classes de modèle de contenu (`xxx.model.xxx`)
+  * 81 classes d’attribut (`att.xxx`)
+  * 36 modèles de données (`teidata.xxx`) et 6 fichiers de macros (`macro.xxx`)
+  * 585 spécifications d’éléments de `ab.xml` jusqu’à `zone.xml`)
 
 Nous allons regarder cela de plus près…
-
-<!-- voir slide début -->
 
 ---
 
@@ -189,7 +184,7 @@ Ouvrez `model.biblLike.xml` avec oXygen
 
 * Comme ailleurs, on se sert d’un élément `<listRef>` pour regrouper des pointeurs sur la partie des Guidelines où cette classe est décrite.
 
-* Notez l’élément `<classes>`&nbsp;: cette classe est réferencée par ("member of") d’autres classes modèles (`model.inter`, etc.). Une référence à la classe model.inter implique donc une référence à cette classe.
+* Notez l’élément `<classes>`&nbsp;: cette classe est réferencée par (“member of”) d’autres classes modèles (`model.inter`, etc.). Une référence à la classe model.inter implique donc une référence à cette classe.
 
 * Pour voir l’effet de cette hiérarchie de classes, regardez [la visualisation de cette spécification](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-model.biblLike.html)
 
