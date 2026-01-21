@@ -15,7 +15,6 @@ name: index
 
 ### HNU3053/HNU6053 Humanités numériques : Utilisation avancée de la TEI
 
-
 ---
 template: inverse
 class: center middle
@@ -52,33 +51,25 @@ One Document Does it all (ODD) propose un langage de spécification de document 
 La Text Encoding Initiative (TEI) offre un cadre de travail personnalisable et extensible pour traiter tout type de document textuels dans le contexte académique.
 
 Elle offre&nbsp;:
-* un cadre de travail pour l’édition structurée
-
-* un vocabulaire et des outils pour produire des textes balisés
-
-* des mécanismes étendus de personnalisation et d’extension
-
+- un cadre de travail pour l’édition structurée
+- un vocabulaire et des outils pour produire des textes balisés
+- des mécanismes étendus de personnalisation et d’extension
 
 ---
-
 
 # De quoi avons nous besoin&nbsp;?
 
 La documentation d’une édition structurée réclame deux choses complémentaires&nbsp;:
 Un .red[schéma formel] (à l’instar d’autres langages informatiques tels que DTD, RELAX NG, W3C Schema, Schematron) pour contrôler l’édition
 
-* déterminer quelles sont les balises disponibles
-
-* dans quels contextes
-
-* avec quels attributs, avec quelles valeurs
-
-* en respectant quelles contraintes
+- déterminer quelles sont les balises disponibles
+- dans quels contextes
+- avec quels attributs, avec quelles valeurs
+- en respectant quelles contraintes
 
 Une .red[documentation] pour expliciter aux utilisateurs/développeurs nos principes éditoriaux, nos principes de choix de balises, etc.&nbsp;:
-* dans plusieurs langues naturelles&nbsp;;
-
-* dans plusieurs formats de fichier (PDF, MsWord, HTML, epub,...).
+- dans plusieurs langues naturelles&nbsp;;
+- dans plusieurs formats de fichier (PDF, MsWord, HTML, epub,...).
 
 
 ---

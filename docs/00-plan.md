@@ -3,12 +3,12 @@
 > [!NOTE]
 >
 > - Cours optionnel, 1 crédits
-> - **Horaire** jeudis 16, 23, 30 janvier 2025, de 9h30 à 11h30 et de 12h30 à 15h30
-> - **Local** Pavillon Lionel-Groulx C-2035
+> - **Horaire** jeudis 21, 28 janvier et 4 février 2026, de 9h30 à 11h30 et de 12h30 à 15h30
+> - **Local** Pavillon Marie-Victorin, local A-332 (90, av. Vincent-d'Indy, Montréal, Métro Édouard-Montpetit)
 > - **Professeur** Emmanuel Château-Dutier
-> - **Bureau** Pavillon Lionel-Groulx, local C-3115
+> - **Bureau** Pavillon Lionel-Groulx, local C-2067
 > - **Disponibilités** : sur rendez-vous
-> - **Téléphone** +1 (514) 343-6026
+> - **Téléphone** +1 (514) 343-6111 #26206
 > - **Courriel** emmanuel.chateau.dutier@umontreal.ca
 
 La production d’une édition électronique exige la mobilisation de techniques spécifiques pour l’établissement des textes, l’enregistrement des annotations scientifiques et la publication. La Text Encoding Initiative (TEI) offre à la fois une infrastructure et un cadre conceptuel pour accompagner la production d’édition critique numérique. Le travail de modélisation d’une édition avec la TEI permet à la fois de documenter son édition en déclarant formellement son utilisation de la TEI mais aussi personnaliser la TEI pour l’adapter finement aux objectifs scientifiques de son projet. Par ailleurs, l’utilisation de technologies XML permet de bénéficier d’un important outillage technique qui permet de publier ou requêter son édition.
@@ -36,11 +36,8 @@ Dans l’éventualité où vous auriez besoin de vous rafraîchir la mémoire su
 
 - Burnard, Lou. 2015. *Qu’est-ce que la Text Encoding Initiative ?* Traduit par Marjorie Burghart. OpenEdition Press. https://books.openedition.org/oep/1237.
 
+Si vous souhaitez travailler sur votre ordinateur personnel au cours de ces ateliers, merci de bien vouloir installer le logiciel Oxyen XML Editor à partir de la logithèque de l’Université de Montréal https://ti.umontreal.ca/offre-de-services/services-par-categorie/logiciels/liste-des-logiciels/oxygen-27/.
+
 Au plaisir de bientôt vous retrouver ou vous rencontrer,
 
 Emmanuel Château
-
-
-
-## Calendrier des séances
-
